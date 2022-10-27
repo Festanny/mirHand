@@ -1,0 +1,242 @@
+:root {
+    --white: #fff;
+    --dark: #343434;
+    --black: #000;
+    --brown: #5B2F2F;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background-color: var(--white);
+    font-family: 'Arial', sans-serif;
+}
+
+a {
+    color: var(--dark);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--dark);
+}
+
+section:not(.banner):not(.ourCollections) {
+    padding: 81px 0;
+}
+
+header nav,
+.banner .bannerBlock .titleText,
+.btn,
+.title__page,
+.ourCollections .ourCollectionsBlock .photoCollections {
+    font-family: 'Bebas Neue', 'Arial', sans-serif;
+}
+
+header {
+    color: var(--white);
+    width: 100%;
+    position: relative;
+}
+header a,
+header a:hover {
+    color: var(--white)
+}
+header .headerTop {
+    background-color: var(--dark);
+}
+header .header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 12px;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+}
+header .header .city .block,
+header .header .phone .block {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    align-items: center;
+}
+header .header .city .block span,
+header .header .phone .block span {
+    display: flex;
+    line-height: 1;
+    font-weight: normal;
+}
+header .header .logo,
+header .header .city,
+header .header .phone {
+    display: flex;
+}
+header .header .logo {
+    justify-content: center;
+}
+header .header .city {
+    justify-content: flex-start;
+}
+header .header .phone {
+    justify-content: flex-end;
+}
+header .header .logo a {
+    display: block;
+    width: 177px;
+    height: 48px;
+}
+header .header .logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+header nav {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    top: auto;
+    left: 0;
+}
+header nav .nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding: 24px 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.banner {
+    display: flex;
+    position: relative;
+    color: var(--white);
+    background-image: url('../img/banner/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: 100%;
+    padding: 82px 0 118px;
+}
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brown);
+    opacity: .26;
+}
+.banner .bannerBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 5;
+}
+.banner .bannerBlock .titleText {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    font-size: 64px;
+    font-weight: 100;
+}
+.banner .bannerBlock .titleText span {
+    font-weight: 400;
+}
+.btn {
+    display: inline-block;
+    padding: 26px 34px;
+    border: 1px solid var(--white);
+    line-height: 1;
+}
+.banner .bannerBlock .btnDiscount a {
+    color: var(--white);
+    font-size: 24px;
+}
+.title__page {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+.ourCollections .ourCollectionsBlock .textBlockMain {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ourCollections .ourCollectionsBlock .textBlock.text-right {
+    width: 477px;
+    padding: 70px 25px 0 0;
+}
+.ourCollections .ourCollectionsBlock .textBlock.text-right {
+    margin-left: auto;
+}
+.ourCollections .ourCollectionsBlock .photoCollections {
+    position: relative;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.women,
+.ourCollections .ourCollectionsBlock .photoCollections.children {
+    width: 455px;
+    height: auto;
+}
+.ourCollections .ourCollectionsBlock .photoCollections img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.ourCollections .ourCollectionsBlock .photo-text {
+    display: flex;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.man {
+    width: 733px;
+    height: 452px;
+    margin-left: auto;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.man img {
+    height: 100%;
+    object-position: 0 -220px;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.children {
+    height: 616px;
+    margin: -226px auto 0;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.children img {
+    height: 100%;
+}
+.ourCollections .ourCollectionsBlock .photoManChildren {
+    margin-top: -100px;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.women::before,
+.ourCollections .ourCollectionsBlock .photoCollections.man::before,
+.ourCollections .ourCollectionsBlock .photoCollections.children::before {
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 30px;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.women::before {
+    content: 'Для нее';
+    top: 30%;
+    right: 50px;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.man::before {
+    content: 'Для него';
+    top: -15px;
+    left: 0;
+    color: var(--dark);
+    transform: translateY(-100%);
+}
+.ourCollections .ourCollectionsBlock .photoCollections.children::before {
+    content: 'Для него';
+    top: 40px;
+    left: 50%;
+    font-weight: bold;
+    transform: translateX(-50%);
+}
