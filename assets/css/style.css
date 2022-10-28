@@ -4,6 +4,7 @@
     --black: #000;
     --brown: #5B2F2F;
     --gray: #C4C4C4;
+    --bg-gray: #F5F5F5;
 }
 
 html,
@@ -22,14 +23,18 @@ a {
 a:hover {
     color: var(--dark);
 }
-
-section:not(.banner):not(.ourCollections):not(.aboutUs) {
+section {
     padding: 81px 0;
 }
-section.aboutUs {
-    padding: 162px 0 81px;
+section.ourCollections {
+    padding-top: 0;
 }
-
+section:last-of-type {
+    padding-bottom: 0;
+}
+.bgGray {
+    background-color: var(--bg-gray);
+}
 .bebas {
     font-family: 'Bebas Neue', 'Arial', sans-serif;
 }
@@ -163,12 +168,18 @@ header nav .nav ul {
 .btn {
     display: inline-block;
     padding: 26px 34px;
-    border: 1px solid var(--white);
+    border: 1px solid var(--dark);
     line-height: 1;
-}
-.banner .bannerBlock .btnDiscount a {
-    color: var(--white);
     font-size: 24px;
+    min-width: 320px;
+}
+.btn.white {
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+.btn.dark {
+    border: 1px solid var(--dark);
+    color: var(--dark);
 }
 .title__page {
     font-size: 64px;
@@ -192,13 +203,11 @@ header nav .nav ul {
     position: relative;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.women,
-.ourCollections .ourCollectionsBlock .photoCollections.children,
-.articles .articlesBlock .photoCollections {
+.ourCollections .ourCollectionsBlock .photoCollections.children {
     width: 455px;
     height: auto;
 }
-.ourCollections .ourCollectionsBlock .photoCollections img,
-.articles .articlesBlock .photoCollections img {
+.ourCollections .ourCollectionsBlock .photoCollections img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -293,7 +302,7 @@ header nav .nav ul {
     margin-top: 23px;
     padding: 0
 }
-.articles .articlesBlock .h2.title__page {
+.textBlockTitle {
     margin-bottom: 57px;
 }
 .articles .articlesBlock .textBlockMain .textBlock .textArticles {
@@ -348,4 +357,151 @@ header nav .nav ul {
     right: -1px;
     background-color: var(--dark);
     transform: rotate(-45deg);
+}
+
+.articles .articlesBlock .photo-text {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+.articles .articlesBlock .photo-text:last-of-type {
+    margin-bottom: 0;
+}
+.articles .articlesBlock .photo-text .photoCollections {
+    width: 733px;
+    height: 452px;
+}
+.articles .articlesBlock .photo-text .photoCollections img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.articles .articlesBlock .photo-text:nth-child(2n) .photo-text {
+    order: 2;
+}
+.articles .articlesBlock .photo-text:nth-child(2n) .textBlockMain .textBlock {
+    margin-left: 0;
+    margin-right: auto;
+}
+.articles .articlesBlock .photo-text:nth-child(2n) .photoCollections {
+    margin-left: auto;
+}
+
+.news .newsBlock .info-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+    gap: 96px;
+}
+.news .newsBlock .info-block .item .titleInfo {
+    position: relative;
+    font-size: 30px;
+    color: var(--white);
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    text-align: center;
+    padding: 66px 22px;
+    background-color: var(--dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.news .newsBlock .info-block .item .titleInfo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+    opacity: .58;
+}
+.news .newsBlock .info-block .item .titleInfo span {
+    position: relative;
+    z-index: 5;
+}
+.news .newsBlock .item-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+}
+.news .newsBlock .item-btn .btnBlock {
+    text-align: center;
+}
+.brand .brandBlock .brandBlockSlider {
+    position: relative;
+}
+.brand .brandBlock .brandBlockSlider .brandSlider {
+    padding: 130px 0;
+    width: calc(100% - 100px);
+}
+.brand .brandBlock .brandBlockSlider .brandSlider .swiper-wrapper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand .brandBlock .brandBlockSlider .brandSlider .swiper-wrapper .swiper-slide img {
+    width: 180px;
+    height: 90px;
+    object-fit: contain;
+    padding: 0 15px;
+}
+.brand .btnSwiperBlock {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.brand .btnSwiperBlock .btn-swiper {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+.location .locationBlock .map .container {
+    position: relative;
+}
+.location .locationBlock .map .container .locationInfo {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -60px;
+    right: -70px;
+    padding: 35px 12px;
+    background-color: var(--dark);
+    color: var(--white);
+    font-size: 12px;
+    width: 170px;
+    gap: 10px;
+}
+.location .locationBlock .map .container .locationInfo .locText {
+    display: flex;
+    gap: 5px;
+}
+.location .locationBlock .map .container .locationInfo .locText a {
+    color: var(--white);
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+}
+footer .footer {
+    display: grid;
+    grid-template-columns: 70% auto;
+    padding: 26px 0;
+}
+footer .footer .item nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 24px;
+}
+footer .footer .item nav a {
+    color: var(--white);
 }

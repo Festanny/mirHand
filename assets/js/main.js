@@ -50,3 +50,12 @@ $('#player').on('click', function() {
         $('.mejs__controls').removeClass('opTrue')
     }
 })
+
+var swiper = new Swiper(".brandSlider", {
+    slidesPerView: 3,
+    loop: true,
+    navigation: {
+        nextEl: ".btn-slide-next",
+        prevEl: ".btn-slide-prev",
+    }
+});
