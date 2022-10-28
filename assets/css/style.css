@@ -22,15 +22,23 @@ a:hover {
     color: var(--dark);
 }
 
-section:not(.banner):not(.ourCollections) {
+section:not(.banner):not(.ourCollections):not(.aboutUs) {
     padding: 81px 0;
+}
+section.aboutUs {
+    padding: 162px 0 81px;
+}
+
+.bebas {
+    font-family: 'Bebas Neue', 'Arial', sans-serif;
 }
 
 header nav,
 .banner .bannerBlock .titleText,
 .btn,
 .title__page,
-.ourCollections .ourCollectionsBlock .photoCollections {
+.ourCollections .ourCollectionsBlock .photoCollections,
+.aboutUs .aboutUsBlock .textBlock .title__page_down {
     font-family: 'Bebas Neue', 'Arial', sans-serif;
 }
 
@@ -239,4 +247,11 @@ header nav .nav ul {
     left: 50%;
     font-weight: bold;
     transform: translateX(-50%);
+}
+.aboutUs .aboutUsBlock .textBlock .title__page_down {
+    font-size: 30px;
+    margin: 21px 0 31px;
+}
+.aboutUs .aboutUsBlock .textBlock p {
+    width: 50%;
 }
