@@ -5,6 +5,7 @@
     --brown: #5B2F2F;
     --gray: #C4C4C4;
     --bg-gray: #F5F5F5;
+    --border: #6F6F6F;
 }
 
 html,
@@ -494,14 +495,84 @@ footer {
 footer .footer {
     display: grid;
     grid-template-columns: 70% auto;
-    padding: 26px 0;
+    gap: 33px;
 }
-footer .footer .item nav ul {
-    margin: 0;
+footer .footer ul {
     padding: 0;
+    margin: 0;
     list-style: none;
-    font-size: 24px;
 }
-footer .footer .item nav a {
+footer .footer .item nav > ul {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+footer .footer .item:not(:last-of-type) {
+    border-right: 1px solid var(--border);
+}
+footer .footer .item.navigation {
+    padding: 26px 33px 26px 0;
+}
+footer .footer .item.infoContactMain {
+    padding: 42px 0 22px;
+}
+footer .footer .item a {
     color: var(--white);
+}
+footer .footer .item nav > ul li > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer .footer .item nav > ul li.add__sub {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+footer .footer .item .logo {
+    width: 176px;
+    height: auto;
+}
+footer .footer .item .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+footer .footer .item .contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+footer .footer .item .contactInfo .soc ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+footer .footer .item .contactInfo .soc ul li .iconSoc:not(.inst):not(.vk) {
+    width: 29px;
+    height: 29px;
+    border-radius: 8px;
+    border: 2px solid var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+footer .footer .item .contactInfo .soc ul li .iconSoc.inst,
+footer .footer .item .contactInfo .soc ul li .iconSoc.vk {
+    font-size: 34px;
+}
+footer .footer .item .contactInfo .infoCommunication ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+footer .footer .item .contactInfo .infoCommunication ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+footer .footer .item .contactInfo .infoCommunication ul li i {
+    width: 29px;
 }
