@@ -198,11 +198,11 @@ header nav .nav > ul {
 }
 .btn {
     display: inline-block;
-    padding: 26px 34px;
+    padding: 21px 34px;
     border: 1px solid var(--dark);
     line-height: 1;
     font-size: 24px;
-    min-width: 320px;
+    min-width: 250px;
 }
 .btn.white {
     color: var(--white);
@@ -211,6 +211,9 @@ header nav .nav > ul {
 .btn.dark {
     border: 1px solid var(--dark);
     color: var(--dark);
+}
+.banner .bannerBlock .btn {
+    padding: 26px 34px;
 }
 .title__page {
     font-size: 64px;
@@ -825,6 +828,15 @@ progress{
     display:block;
     height:inherit;
 }
+.cooperation .cooperationBlock .info-block .item {
+    padding: 45px 0;
+}
+.cooperation .cooperationBlock .info-block .item:first-of-type {
+    padding-top: 0;
+}
+.cooperation .cooperationBlock .info-block .item:last-of-type {
+    padding-bottom: 135px;
+}
 .cooperation .cooperationBlock .info-block .item .textBlock .h3.title__page {
     font-size: 30px;
     color: var(--white);
@@ -855,4 +867,39 @@ progress{
 }
 .cooperation .cooperationBlock .info-block .item .textMainCooperation {
     margin-top: 32px;
+}
+.btnBlock a {
+    text-align: center;
+}
+.cooperation .cooperationBlock .info-block .item .textMainCooperation .btnBlock {
+    margin-top: 49px;
+}
+.cooperation .cooperationBlock .info-block .item .imgBlockCooperation {
+    position: relative;
+    width: 100%;
+    height: 215px;
+    margin-top: 26px;
+}
+.cooperation .cooperationBlock .info-block .item .imgBlockCooperation img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cooperation .cooperationBlock .info-block .item .imgBlockCooperation::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    opacity: .6;
+}
+
+.news .newsBlock .info-block {
+    display: flex;
+    flex-direction: column;
+}
+.news .newsBlock .info-block .item {
+    display: flex;
 }
