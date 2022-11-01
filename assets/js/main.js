@@ -1,3 +1,7 @@
+$('.marquee').marquee({
+	speed: 10
+});
+
 var sourcesSelector = document.body.querySelectorAll('select'),
     sourcesTotal = sourcesSelector.length;
 
@@ -59,3 +63,58 @@ var swiper = new Swiper(".brandSlider", {
         prevEl: ".btn-slide-prev",
     }
 });
+
+var widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
+$('footer .footer .item .contactInfo.beforeContactInfo').css('width', widthLine + 'px')
+$(window).resize(function() {
+    widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
+    $('footer .footer .item .contactInfo.beforeContactInfo').css('width', widthLine + 'px')
+});
+
+$('header nav').hover(
+    function() {
+      $( 'header nav' ).css('background-color', '#ffffff');
+    }, function() {
+        $( 'header nav' ).css('background-color', 'transparent');
+    }
+);
+
+(function($) {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= $('header .headerTop').offset().top + $('header .headerTop').height()) {
+            $('header nav').addClass('fixed_nav');
+        }
+        else {
+            $('header nav').removeClass('fixed_nav');
+        }
+    })
+
+    $(window).resize(function() {
+        styleInfoCompany()
+        styleCooperationText()
+    });
+    styleInfoCompany()
+    styleCooperationText()
+
+    $(window).on("scroll resize", function() {
+        var o = $(window).scrollTop() / ($(document).height() - $(window).height());
+        $(".progress-bar").css({
+            "width": (100 * o | 0) + "%"
+        });
+        $('progress')[0].value = o;
+    })
+})(jQuery);
+
+function styleInfoCompany() {
+    $('.infoCompanySection .infoCompanyBlock .photo-text').css({
+        'margin-right': ($('body').width() - $('.container').width()) / 2,
+        'grid-template-columns': `${(($('body').width() - $('.container').width()) / 2) + $('.container').width() / 2}px auto`
+    })
+}
+function styleCooperationText() {
+    $('.cooperation .cooperationBlock .info-block .item .textBlock').width($('body').width() / 2 + $('.container').width() * 25 / 100)
+    $('.cooperation .cooperationBlock .info-block .item .textBlock .h3.title__page').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.cooperation .cooperationBlock .info-block .item .textBlock .triangle').css('border-top-width', $('.cooperation .cooperationBlock .info-block .item .textBlock').height())
+}
