@@ -8,6 +8,8 @@
     --bg-gray: #F5F5F5;
     --border: #6F6F6F;
     --red: #D14444;
+    --gr-white: linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+    --green: #4BAB00;
 }
 
 html,
@@ -40,7 +42,6 @@ section:last-of-type {
     background-color: var(--bg-gray);
 }
 header.bgWhiteHeader nav a {
-    background-color: var(--white);
     color: var(--dark);
 }
 .bebas {
@@ -220,8 +221,7 @@ header nav .nav > ul {
     font-weight: bold;
     letter-spacing: 0.02em;
 }
-.ourCollections .ourCollectionsBlock .textBlockMain,
-.articles .articlesBlock .textBlockMain {
+.ourCollections .ourCollectionsBlock .textBlockMain {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -348,13 +348,14 @@ header nav .nav > ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+    background: var(--gr-white);
 }
 
 .arrows-block {
     display: flex;
     flex-direction: column;
     margin-top: 27px;
+    cursor: pointer;
 }
 .arrows-block span {
     display: block;
@@ -365,45 +366,55 @@ header nav .nav > ul {
     text-align: center;
     font-size: 15px;
     font-family: sans-serif;
+    margin-bottom: 13px;
 }
 .arrows {
-    margin-top: 13px;
     height: 1px;
     width: 100%;
     background: var(--dark);
     position: relative;
 }
-.arrows:after {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 1px;
-    top: -2px;
-    right: -1px;
-    background-color: var(--dark);
-    transform: rotate(45deg);
-}
+.arrows:after,
 .arrows:before {
     content: '';
     position: absolute;
     width: 5px;
     height: 1px;
-    top: 2px;
-    right: -1px;
+    right: 0;
     background-color: var(--dark);
+}
+.arrows:after {
+    top: -2px;
+    transform: rotate(45deg);
+}
+.arrows:before {
+    top: 2px;
     transform: rotate(-45deg);
+}
+.arrows.close:after {
+    left: 0;
+    transform: rotate(-45deg);
+}
+.arrows.close:before {
+    left: 0;
+    transform: rotate(45deg);
 }
 
 .articles .articlesBlock .photo-text {
-    display: flex;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 115px;
     margin-bottom: 100px;
+    justify-content: space-between;
+}
+.articles .articlesBlock .photo-text:nth-child(2n) {
+    grid-template-columns: auto 1fr;
 }
 .articles .articlesBlock .photo-text:last-of-type {
     margin-bottom: 0;
 }
 .articles .articlesBlock .photo-text .photoCollections {
-    width: 733px;
+    width: 100%;
     height: 452px;
 }
 .articles .articlesBlock .photo-text .photoCollections img {
@@ -412,7 +423,7 @@ header nav .nav > ul {
     object-fit: cover;
     object-position: center;
 }
-.articles .articlesBlock .photo-text:nth-child(2n) .photo-text {
+.articles .articlesBlock .photo-text:nth-child(2n) .photoCollections {
     order: 2;
 }
 .articles .articlesBlock .photo-text:nth-child(2n) .textBlockMain .textBlock {
@@ -759,6 +770,7 @@ header nav li:hover .submenu .submenu a {
 }
 .infoCompanySection .infoCompanyBlock .photo-text {
     display: grid;
+    grid-template-columns: auto 50%;
     gap: 33px;
 }
 .infoCompanySection .infoCompanyBlock .photo-text .photoCollections {
@@ -828,25 +840,29 @@ progress{
     display:block;
     height:inherit;
 }
-.cooperation .cooperationBlock .info-block .item {
+.cooperation .cooperationBlock .info-block .item,
+.newsSection .newsSectionBlock .info-block .item {
     padding: 45px 0;
 }
-.cooperation .cooperationBlock .info-block .item:first-of-type {
+.cooperation .cooperationBlock .info-block .item:first-of-type,
+.newsSection .newsSectionBlock .info-block .item:first-of-type {
     padding-top: 0;
 }
-.cooperation .cooperationBlock .info-block .item:last-of-type {
-    padding-bottom: 135px;
+.cooperation .cooperationBlock .info-block .item:last-of-type,
+.newsSection .newsSectionBlock .info-block .item:last-of-type {
+    padding-bottom: 90px;
 }
-.cooperation .cooperationBlock .info-block .item .textBlock .h3.title__page {
+.lineTitleSection .info-block .item .textBlock .h3.title__page {
     font-size: 30px;
     color: var(--white);
     padding: 10px 0;
     position: relative;
+    margin-right: 60px;
 }
-.cooperation .cooperationBlock .info-block .item .textBlock {
+.lineTitleSection .info-block .item .textBlock {
     position: relative;
 }
-.cooperation .cooperationBlock .info-block .item .textBlock::before {
+.lineTitleSection .info-block .item .textBlock::before {
     content: '';
     position: absolute;
     top: 0;
@@ -855,7 +871,7 @@ progress{
     width: 100%;
     height: 100%;
 }
-.cooperation .cooperationBlock .info-block .item .textBlock .triangle {
+.lineTitleSection .info-block .item .textBlock .triangle {
     content: '';
     position: absolute;
     top: 0;
@@ -896,10 +912,213 @@ progress{
     opacity: .6;
 }
 
-.news .newsBlock .info-block {
+.newsSection .newsSectionBlock .info-block {
     display: flex;
     flex-direction: column;
 }
-.news .newsBlock .info-block .item {
+.newsSection .newsSectionBlock .info-block .item {
     display: flex;
+}
+.newsSection .newsSectionBlock .info-block .item {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    gap: 110px;
+}
+.newsSection .newsSectionBlock .info-block .item .imgNews {
+    width: 100%;
+    height: 230px;
+}
+.newsSection .newsSectionBlock .info-block .item .imgNews img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+.newsSection .newsSectionBlock .textMainCooperation {
+    position: relative;
+    margin-top: 18px;
+    overflow: hidden;
+    line-height: 1.2;
+    transition: all .3s;
+}
+.newsSection .newsSectionBlock .textMainCooperation.close {
+    max-height: 110px;
+    transition: all .3s;
+}
+.newsSection .newsSectionBlock .textMainCooperation.open {
+    transition: all .3s;
+}
+.newsSection .newsSectionBlock .textMainCooperation .beforeWhite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gr-white);
+    opacity: 1;
+}
+.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block {
+    max-width: 250px;
+}
+
+.reviewsSection .reviewsSectionBlock .info-block {
+    display: flex;
+    flex-direction: column;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .titleBlock {
+    position: relative;
+    text-align: center;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .titleBlock::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    opacity: .7;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .titleBlock span {
+    position: relative;
+    display: block;
+    padding: 91px 0;
+    color: var(--white);
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    z-index: 1;
+}
+.custom-input.rating input {
+    position: relative;
+    margin-left: 20px;
+    opacity: 0;
+    display: none!important;
+}
+.custom-input.rating label::before {
+    content: "★";
+    color: var(--gray);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+}
+.custom-input.rating label.select::before {
+    content: "★";
+    color: var(--green);
+}
+
+.reviewsSection .reviewsSectionBlock .info-block .item .block {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 34px 0 71px;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .imgPerson {
+    width: 80px;
+    height: 80px;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .imgPerson img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson .datePublish {
+    font-size: 12px;
+    color: var(--gray)
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person {
+    display: flex;
+    gap: 15px;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson .rating {
+    margin-bottom: 7px;
+    cursor: default;
+    display: flex;
+    gap: 5px;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .newReview .review-block .person .infoPerson .rating label {
+    cursor: pointer;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson .datePublish {
+    margin-bottom: 5px;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .btn-review {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: max-content;
+    cursor: pointer;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .btn-review span {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .btn-review .arrows {
+    width: 39px;
+}
+.reviewsSection form.newReview .person .imgPerson input {
+    display: none;
+}
+.reviewsSection form.newReview .person .imgPerson {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reviewsSection form.newReview .person .imgPerson::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    opacity: 0;
+    transition: all .3s;
+}
+.reviewsSection form.newReview .person .imgPerson:hover::before {
+    opacity: .7;
+}
+.reviewsSection form.newReview .person .imgPerson .uploadIcon {
+    position: absolute;
+    color: var(--white);
+    font-size: 25px;
+    opacity: 0;
+    transition: all .3s;
+}
+.reviewsSection form.newReview .person .imgPerson:hover .uploadIcon {
+    opacity: 1;
+}
+.reviewsSection form.newReview .person .imgPerson {
+    cursor: pointer;
+    outline: 3px solid transparent;
+    outline-offset: -3px;
+    transition: all .3s;
+}
+.reviewsSection form.newReview .person .imgPerson i.success {
+    color: var(--green)
+}
+.reviewsSection form.newReview .person .imgPerson.success {
+    outline-color: var(--green);
+}
+.reviewsSection form.newReview .review-block input {
+    display: block;
+    width: 100%;
+    outline: 0;
+    border: 0;
+}
+.reviewsSection .reviewsSectionBlock .info-block .item .btnBlock {
+    margin-top: 39px;
 }

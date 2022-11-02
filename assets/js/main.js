@@ -2,10 +2,10 @@ $('.marquee').marquee({
 	speed: 10
 });
 
-var sourcesSelector = document.body.querySelectorAll('select'),
+let sourcesSelector = document.body.querySelectorAll('select'),
     sourcesTotal = sourcesSelector.length;
 
-for (var i = 0; i < sourcesTotal; i++) {
+for (let i = 0; i < sourcesTotal; i++) {
     if (mejs.Features.isiOS) {
         if (sourcesSelector[i].querySelector('option[value^="rtmp"]')) {
             sourcesSelector[i].querySelector('option[value^="rtmp"]').disabled = true;
@@ -26,15 +26,15 @@ for (var i = 0; i < sourcesTotal; i++) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+    let mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
 
-    for (var i = 0; i < total; i++) {
+    for (let i = 0; i < total; i++) {
         new MediaElementPlayer(mediaElements[i], {
             pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/',
             shimScriptAccess: 'always',
             success: function () {
-                var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
-                for (var j = 0; j < targetTotal; j++) {
+                let target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                for (let j = 0; j < targetTotal; j++) {
                     target[j].style.visibility = 'visible';
                 }
             }
@@ -55,7 +55,7 @@ $('#player').on('click', function() {
     }
 })
 
-var swiper = new Swiper(".brandSlider", {
+let swiper = new Swiper(".brandSlider", {
     slidesPerView: 3,
     loop: true,
     navigation: {
@@ -64,7 +64,7 @@ var swiper = new Swiper(".brandSlider", {
     }
 });
 
-var widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
+let widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
 $('footer .footer .item .contactInfo.beforeContactInfo').css('width', widthLine + 'px')
 $(window).resize(function() {
     widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
@@ -92,12 +92,16 @@ $('header nav').hover(
     $(window).resize(function() {
         styleInfoCompany()
         styleCooperationText()
+        styleNewsText()
+        styleTextAbout()
     });
     styleInfoCompany()
     styleCooperationText()
+    styleNewsText()
+    styleTextAbout()
 
     $(window).on("scroll resize", function() {
-        var o = $(window).scrollTop() / ($(document).height() - $(window).height());
+        let o = $(window).scrollTop() / ($(document).height() - $(window).height());
         $(".progress-bar").css({
             "width": (100 * o | 0) + "%"
         });
@@ -106,9 +110,11 @@ $('header nav').hover(
 })(jQuery);
 
 function styleInfoCompany() {
-    $('.infoCompanySection .infoCompanyBlock .photo-text').css({
-        'margin-right': ($('body').width() - $('.container').width()) / 2,
-        'grid-template-columns': `${(($('body').width() - $('.container').width()) / 2) + $('.container').width() / 2}px auto`
+    $('.articles .articlesBlock .info-block .photo-text:nth-child(2n - 1) .textBlockMain .textBlock').css({
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.articles .articlesBlock .info-block .photo-text:nth-child(2n) .textBlockMain .textBlock').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
     })
 }
 function styleCooperationText() {
@@ -116,5 +122,85 @@ function styleCooperationText() {
     $('.cooperation .cooperationBlock .info-block .item .textBlock .h3.title__page').css({
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
     })
-    $('.cooperation .cooperationBlock .info-block .item .textBlock .triangle').css('border-top-width', $('.cooperation .cooperationBlock .info-block .item .textBlock').height())
+    let lengthTriagle = $('.cooperation .cooperationBlock .info-block .item .textBlock .triangle');
+    for (let i=0; i<lengthTriagle.length; i++) {
+        $(`.cooperation .cooperationBlock .info-block .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.cooperation .cooperationBlock .info-block .item:nth-child(${i+1}) .textBlock`).height())
+    }
 }
+function styleNewsText() {
+    $('.lineTitleSection .info-block .item .textBlock .h3.title__page').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.lineTitleSection .info-block .item .textAndBtn').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
+    for (let i=0; i<lengthTriagle.length; i++) {
+        $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock`).height())
+    }
+}
+function styleTextAbout() {
+    $('.infoCompanySection .infoCompanyBlock .photo-text .textBlockMain').css({
+        'margin-right': ($('body').width() - $('.container').width()) / 2
+    })
+}
+
+$('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').on('click', function() {
+    let blockNews = $(this)
+    blockNews.prev().toggleClass('close open')
+    blockNews.prev().height(blockNews.prev().children()) + 'px'
+    if (blockNews.prev().hasClass('open')) {
+        blockNews.prev().height(blockNews.prev().children()) + 'px'
+        blockNews.prev().css({'min-height': $('.newsSection .newsSectionBlock .textMainCooperation.close').height()}).animate({'max-height': blockNews.prev().children().height() + 'px'}, 100)
+        blockNews.prev().children().children('.beforeWhite').fadeOut(500)
+    } else {
+        blockNews.prev().css({
+            'max-height': ''
+        })
+        blockNews.prev().children().children('.beforeWhite').fadeIn(100)
+    }
+    if (blockNews.hasClass('close')) {
+        blockNews.children('span').text('Нажмите чтобы скрыть')
+        blockNews.children('.arrows').addClass('close')
+    } else {
+        blockNews.children('span').text('Нажмите чтобы увидеть')
+        blockNews.children('.arrows').removeClass('close')
+    }
+    blockNews.toggleClass('close open')
+})
+
+// Получение значения рейтинга по клику
+$(".newReview input[type='radio']").on('click', function (el) {
+    let id = $(el.target).parent().attr('data-review')
+    console.log(id)
+    let value = $(`.reviewsSection .item[data-review='${id}'] .newReview .rating input[type="radio"]:checked`).val();
+    let labels = $(`.reviewsSection .item[data-review='${id}'] .newReview .rating .rating-label`);
+
+    for (let i=0; i<labels.length; i++) {
+        labels.eq(i).removeClass("select");
+    }
+    for (let i = 0; i < value; i++) {
+        labels.eq(i).addClass("select");
+    }
+});
+
+for (let s=0; s<$('.reviewsSection .reviewsSectionBlock .info-block .item').length; s++) {
+    for (let j=0; j<$(`.reviewsSection .reviewsSectionBlock .info-block .item:nth-child(${s+1}) .rating`).length; j++) {
+        for (let i=0; i < $(`.reviewsSection .item:nth-child(${s+1}) .block .review-block:nth-child(${j+1}) .rating input[type="radio"]:checked`).val(); i++) {
+            $(`.reviewsSection .item:nth-child(${s+1}) .review-block:nth-child(${j+1}) .rating .rating-label`).eq(i).addClass("select");
+        }
+    }
+}
+
+$('.reviewsSection .info-block .item .btn-review').on('click', function(el) {
+    el = el.currentTarget
+    let elAttr = $(el).attr('data-review')
+    $(el).addClass('d-none')
+    $(`.reviewsSection .info-block .item[data-review='${elAttr}'] form.newReview`).removeClass('d-none')
+})
+
+$('.reviewsSection form.newReview input[type="file"]').change(function(el) {
+    $(el.target).prev().prev().children().removeClass().addClass('fa-solid fa-check success')
+    $(el.target).parent().addClass('success')
+    console.log($(el.target).parent())
+});
