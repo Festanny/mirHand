@@ -44,6 +44,9 @@ section:last-of-type {
 header.bgWhiteHeader nav a {
     color: var(--dark);
 }
+header.bgWhiteHeader nav {
+    background-color: var(--white)!important;
+}
 .bebas {
     font-family: 'Bebas Neue', 'Arial', sans-serif;
 }
@@ -1121,4 +1124,47 @@ progress{
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .btnBlock {
     margin-top: 39px;
+}
+.rags .ragsBlock .ragsBlockMain .info-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    width: calc(100% - 200px);
+    margin: 0 auto;
+}
+.rags .ragsBlock .ragsBlockMain .info-block .item {
+    width: 100%;
+}
+.rags .ragsBlock .ragsBlockMain .info-block .item .imgRags {
+    width: 100%;
+    height: auto;
+}
+.rags .ragsBlock .ragsBlockMain .info-block .item .imgRags img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.rags .ragsBlock .ragsBlockMain .info-block .item .textBlock .h2.title__page span {
+    font-size: 20px;
+}
+.rags .ragsBlock .ragsBlockMain .info-block .item .textBlock p.desc {
+    font-size: 15px;
+}
+.rags .ragsBlock .ragsBlockMain .info-block .item .btnBlock {
+    margin-top: 36px;
+}
+.rags .ragsBlock .ragsBlockMain .ragsTextBlock {
+    text-align: center;
+    margin: 40px auto 69px;
+    font-style: italic;
+}
+.rags .ragsBlock .imgRagsBottom {
+    width: 100%;
+    height: 200px;
+}
+.rags .ragsBlock .imgRagsBottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 -250px;
 }
