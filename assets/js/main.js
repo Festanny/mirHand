@@ -77,10 +77,10 @@ let swiper2 = new Swiper(".brandSliderPage", {
 });
 
 let widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
-$('footer .footer .item .contactInfo.beforeContactInfo').css('width', widthLine + 'px')
+$('footer .footer .item .contactInfo.beforeContactInfo .line').css('width', widthLine + 'px')
 $(window).resize(function() {
     widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
-    $('footer .footer .item .contactInfo.beforeContactInfo').css('width', widthLine + 'px')
+    $('footer .footer .item .contactInfo.beforeContactInfo .line').css('width', widthLine + 'px')
 });
 
 $('header nav').hover(
@@ -151,9 +151,22 @@ function styleNewsText() {
     $('.brandSection .brandSectionBlock .search').css({
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
     })
+    $('.banner.job .bannerBlock .block').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.banner.job .bannerBlock .h3.title__page').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.banner.job .bannerBlock').css({
+        'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.5)
+    })
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
         $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock`).height())
+    }
+    let lengthTriagle2 = $('.job .lineTitleSection .item .textBlock .triangle');
+    for (let i=0; i<lengthTriagle2.length; i++) {
+        $(`.job .lineTitleSection .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.job .lineTitleSection .item:nth-child(${i+1}) .textBlock`).height())
     }
 }
 function styleLineTitleText50() {
@@ -252,4 +265,15 @@ $('.brandSection .brandSectionBlock .search input').on('input', function() {
             $(this).removeClass('d-none')
         })
     }
+})
+$('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain').on('click', function(el) {
+    
+    if ($(el.target).parent().parent().hasClass('open')) {
+        $(el.target).parent().parent().removeClass('open')
+    } else {
+        $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
+        $(el.target).parent().parent().addClass('open')
+    }
+    console.log($(el.target).parent().parent())
+    
 })
