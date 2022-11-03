@@ -1233,3 +1233,113 @@ progress{
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText p i {
     margin-top: 5px;
 }
+section.brandSection {
+    padding-bottom: 81px;
+}
+.brandSection .brandSectionBlock .search {
+    width: 315px;
+    border-bottom: 1px solid var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.brandSection .brandSectionBlock .search input {
+    border: 0;
+    outline: none;
+    width: 100%;
+}
+.brandSection .brandSectionBlock .info-block {
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    column-gap: 75px;
+    row-gap: 95px;
+    margin-top: 44px;
+}
+.brandSection .brandSectionBlock .info-block .item {
+    display: flex;
+    flex-direction: column;
+}
+.brandSection .brandSectionBlock .info-block .item .imgBrand {
+    position: relative;
+    width: 100%;
+    height: 278px;
+}
+.brandSection .brandSectionBlock .info-block .item .imgBrand::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    opacity: .4;
+}
+.brandSection .brandSectionBlock .info-block .item .imgBrand > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.brandSection .brandSectionBlock .info-block .item .imgBrand .nameBrand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    padding: 20px 60px;
+}
+.brandSection .brandSectionBlock .info-block .item .imgBrand .nameBrand img {
+    width: 100%;
+    height: 100%;
+}
+.brandSection .brandSectionBlock .info-block .item .btnMore {
+    padding: 21px;
+    text-align: center;
+    background-color: var(--dark)
+}
+.brandSection .brandSectionBlock .info-block .item .btnMore span {
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    font-size: 24px;
+    font-weight: 100;
+}
+.brandSection .brandSectionBlock .info-block .item.d-none {
+    display: none!important;
+}
+.brandSectionPage .brandSectionBlockPage .imgBrandBlock {
+    filter: invert(100%);
+    max-width: 50%;
+    margin-bottom: 32px;
+}
+.brandSectionPage .brandSectionBlockPage .imgBrandBlock img {
+    max-width: 100%;
+}
+.brandSectionPage .brandSectionBlockPage .info-block {
+    display: grid;
+    grid-template-columns: 30% auto;
+    gap: 78px;
+}
+.brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText span {
+    font-size: 30px;
+    font-weight: bold;
+}
+.brandSectionPage .brandSectionBlockPage .info-block .item.sliderBlockBrand {
+    width: 100%;
+    max-height: 90vh;
+}
+.brandSectionPage .brandSectionBlockPage .info-block .item.sliderBlockBrand .brandSliderPage {
+    width: 100%;
+    height: 100%;
+}
+.brandSectionPage .brandSectionBlockPage .info-block .item.sliderBlockBrand .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}

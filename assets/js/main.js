@@ -63,6 +63,18 @@ let swiper = new Swiper(".brandSlider", {
         prevEl: ".btn-slide-prev",
     }
 });
+let swiper2 = new Swiper(".brandSliderPage", {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".btn-slide-next",
+        prevEl: ".btn-slide-prev",
+    }
+});
 
 let widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
 $('footer .footer .item .contactInfo.beforeContactInfo').css('width', widthLine + 'px')
@@ -136,6 +148,9 @@ function styleNewsText() {
     $('.lineTitleSection .info-block .item .textAndBtn').css({
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
     })
+    $('.brandSection .brandSectionBlock .search').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
         $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock`).height())
@@ -153,6 +168,12 @@ function styleLineTitleText50() {
 function styleTextAbout() {
     $('.infoCompanySection .infoCompanyBlock .photo-text .textBlockMain').css({
         'margin-right': ($('body').width() - $('.container').width()) / 2
+    })
+    $('.brandSectionPage .brandSectionBlockPage .info-block .item.desc').css({
+        'margin-right': ($('body').width() - $('.container').width()) / 2
+    })
+    $('.brandSectionPage .brandSectionBlockPage .info-block').css({
+        'grid-template-columns': `${($('body').width() / 2)-78}px ${$('body').width() / 2}px`
     })
 }
 
@@ -215,3 +236,20 @@ $('.reviewsSection form.newReview input[type="file"]').change(function(el) {
     $(el.target).parent().addClass('success')
     console.log($(el.target).parent())
 });
+
+$('.brandSection .brandSectionBlock .search input').on('input', function() {
+    let temp = $(this).val()
+    if (temp) {
+        $('.brandSection .brandSectionBlock .info-block .item').each(function () {
+            if ($(this).attr('data-search').toLowerCase().indexOf(temp.toLowerCase()) > -1) {
+                $(this).removeClass('d-none')
+            } else {
+                $(this).addClass('d-none')
+            }
+        })
+    } else {
+        $('.brandSection .brandSectionBlock .info-block .item').each(function () {
+            $(this).removeClass('d-none')
+        })
+    }
+})
