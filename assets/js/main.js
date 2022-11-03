@@ -94,11 +94,13 @@ $('header nav').hover(
         styleCooperationText()
         styleNewsText()
         styleTextAbout()
+        styleLineTitleText50()
     });
     styleInfoCompany()
     styleCooperationText()
     styleNewsText()
     styleTextAbout()
+    styleLineTitleText50()
 
     $(window).on("scroll resize", function() {
         let o = $(window).scrollTop() / ($(document).height() - $(window).height());
@@ -137,6 +139,15 @@ function styleNewsText() {
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
         $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.lineTitleSection .info-block .item:nth-child(${i+1}) .textBlock`).height())
+    }
+}
+function styleLineTitleText50() {
+    $('.lineTitleSection50 .info-block .item .textBlock .h3.title__page').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    let lengthTriagle = $('.lineTitleSection50 .info-block .item .textBlock .triangle');
+    for (let i=0; i<lengthTriagle.length; i++) {
+        $(`.lineTitleSection50 .info-block .item:nth-child(${i+1}) .textBlock .triangle`).css('border-top-width', $(`.lineTitleSection50 .info-block .item:nth-child(${i+1}) .textBlock`).height())
     }
 }
 function styleTextAbout() {

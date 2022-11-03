@@ -855,17 +855,20 @@ progress{
 .newsSection .newsSectionBlock .info-block .item:last-of-type {
     padding-bottom: 90px;
 }
-.lineTitleSection .info-block .item .textBlock .h3.title__page {
+.lineTitleSection .info-block .item .textBlock .h3.title__page,
+.lineTitleSection50 .info-block .item .textBlock .h3.title__page {
     font-size: 30px;
     color: var(--white);
     padding: 10px 0;
     position: relative;
-    margin-right: 60px;
+    margin-right: 50px;
 }
-.lineTitleSection .info-block .item .textBlock {
+.lineTitleSection .info-block .item .textBlock,
+.lineTitleSection50 .info-block .item .textBlock {
     position: relative;
 }
-.lineTitleSection .info-block .item .textBlock::before {
+.lineTitleSection .info-block .item .textBlock::before,
+.lineTitleSection50 .info-block .item .textBlock::before {
     content: '';
     position: absolute;
     top: 0;
@@ -874,7 +877,8 @@ progress{
     width: 100%;
     height: 100%;
 }
-.lineTitleSection .info-block .item .textBlock .triangle {
+.lineTitleSection .info-block .item .textBlock .triangle,
+.lineTitleSection50 .info-block .item .textBlock .triangle {
     content: '';
     position: absolute;
     top: 0;
@@ -1158,13 +1162,74 @@ progress{
     margin: 40px auto 69px;
     font-style: italic;
 }
-.rags .ragsBlock .imgRagsBottom {
+.rags .ragsBlock .imgRagsBottom,
+.rent .rentBlock .imgRentBottom {
+    position: relative;
     width: 100%;
     height: 200px;
 }
-.rags .ragsBlock .imgRagsBottom img {
+.rags .ragsBlock .imgRagsBottom img,
+.rent .rentBlock .imgRentBottom img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: 0 -250px;
+}
+.rent .rentBlock .rentBlockMain .info-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.rent .rentBlock .rentBlockMain .info-block .item {
+    width: 100%;
+}
+.rent .rentBlock .rentBlockMain .info-block .item .imgRent {
+    width: 100%;
+}
+.rent .rentBlock .rentBlockMain .info-block .item .imgRent img {
+    width: 100%;
+}
+.rent .rentBlock .rentBlockMain .rentTextBlock {
+    font-style: italic;
+    text-align: center;
+    margin: 99px auto 41px;
+}
+.rent .rentBlock .imgRentBottom::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    opacity: .3;
+}
+.lineTitleSection50 .info-block .item .textBlock {
+    width: 50%;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo {
+    margin-top: 18px;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.requirements {
+    font-style: italic;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo p {
+    margin-bottom: 35px;
+}
+.infoLandlords {
+    padding-top: 0;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item {
+    margin-bottom: 91px;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText {
+    margin-top: 57px;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText p {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText p i {
+    margin-top: 5px;
 }
