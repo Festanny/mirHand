@@ -69,10 +69,18 @@ let swiper2 = new Swiper(".brandSliderPage", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+    }
+});
+let swiper3 = new Swiper(".discountSlider", {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
     navigation: {
-        nextEl: ".btn-slide-next",
-        prevEl: ".btn-slide-prev",
+        nextEl: ".btn-slide-next-dsc",
+        prevEl: ".btn-slide-prev-dsc",
     }
 });
 
@@ -157,8 +165,17 @@ function styleNewsText() {
     $('.banner.job .bannerBlock .h3.title__page').css({
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
     })
+    $('.stocksBlock .stocksBlockMain .info-block .item .textBlock .h3.title__page').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.stocksBlock .stocksBlockMain .info-block .item .textBlock').css({
+        'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.1)
+    })
     $('.banner.job .bannerBlock').css({
-        'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.5)
+        'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.1)
+    })
+    $('.infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain').css({
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10,
     })
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
@@ -266,14 +283,78 @@ $('.brandSection .brandSectionBlock .search input').on('input', function() {
         })
     }
 })
-$('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain').on('click', function(el) {
-    
+$('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .jobBlockMainTitle .nameJob').on('click', function(el) {
     if ($(el.target).parent().parent().hasClass('open')) {
         $(el.target).parent().parent().removeClass('open')
+        $(el.target).parent().parent().children().children().next().eq(0).removeClass('close')
     } else {
         $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
+        $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows.close').removeClass('close')
         $(el.target).parent().parent().addClass('open')
+        $(el.target).parent().parent().children().children().next().eq(0).addClass('close')
     }
-    console.log($(el.target).parent().parent())
-    
+})
+$('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block').on('click', function(el) {
+    console.log($(el.target).parent().parent().next())
+    if ($(el.target).parent().parent().next().hasClass('open')) {
+        // $(el.target).parent().parent().next().removeClass('open')
+        // $(el.target).parent().parent().children().next().children('span').text('Нажмите чтобы увидеть')
+        // $(el.target).parent().parent().children().next().children('.arrows').removeClass('close')
+        // $(el.target).parent().parent().next().next().removeClass('d-none')
+    } else {
+        // $('.jobList .jobListBlock .info-block .item .textInformation.open').removeClass('open')
+        // $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
+        // $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows.close').removeClass('close')
+        // $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block span').text('Нажмите чтобы увидеть')
+        // $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block .arrows.close').removeClass('close')
+        // $('.jobList .jobListBlock .info-block .item .imgPlace.d-none').removeClass('d-none')
+        // $(el.target).parent().parent().next().addClass('open')
+        // $(el.target).parent().parent().children().next().children('span').text('Нажмите чтобы скрыть')
+        // $(el.target).parent().parent().children().next().children('.arrows').addClass('close')
+        // $(el.target).parent().parent().next().next().addClass('d-none')
+    }  
+})
+
+if ($('.__select').length != 0) {
+    const selectSingle = document.querySelector('.__select');
+    const selectSingle_title = selectSingle.querySelector('.__select__title');
+    const selectSingle_labels = selectSingle.querySelectorAll('.__select__label');
+
+    // Toggle menu
+    selectSingle_title.addEventListener('click', () => {
+    if ('active' === selectSingle.getAttribute('data-state')) {
+        selectSingle.setAttribute('data-state', '');
+    } else {
+        selectSingle.setAttribute('data-state', 'active');
+    }
+    });
+
+    // Close when click to option
+    for (let i = 0; i < selectSingle_labels.length; i++) {
+    selectSingle_labels[i].addEventListener('click', (evt) => {
+        selectSingle_title.textContent = evt.target.textContent;
+        selectSingle.setAttribute('data-state', '');
+    });
+    }
+}
+
+$('.faqSection .faqSectionBlock .categoryFaq span').on('click', function() {
+    let id = $(this).attr('data-faq'),
+        content = $(`.faqSection .faqSectionBlock .info-block[data-faq='${id}']`)
+    $('.faqSection .faqSectionBlock .categoryFaq span.active').removeClass('active')
+    $(`.faqSection .faqSectionBlock .info-block.active`).removeClass('active')
+    $(this).addClass('active')
+    content.addClass('active')
+})
+
+$('.faqSection .faqSectionBlock .info-block .item .question').on('click', function() {
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active')
+        $(this).next('.answer').fadeOut().removeClass('active')
+    } else {
+        $('.faqSection .faqSectionBlock .info-block .item .question.active').removeClass('active')
+    $('.faqSection .faqSectionBlock .info-block .item .answer.active').removeClass('active')
+        $(this).addClass('active')
+        $(this).next('.answer').fadeIn().addClass('active')
+    }
 })
