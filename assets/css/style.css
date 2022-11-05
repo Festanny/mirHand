@@ -1419,6 +1419,7 @@ section.brandSection {
     width: 100%;
 }
 .jobList .jobListBlock .info-block .item .namePlace > span {
+    width: 100px;
     margin-top: 15px;
 }
 .jobList .jobListBlock .info-block .item .imgPlace {
@@ -1469,8 +1470,18 @@ section.jobList {
 .jobList .jobListBlock .info-block .item .textInformation.open {
     display: block;
 }
-.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain:not(:last-of-type) {
-    margin-bottom: 38px;
+.jobList .jobListBlock .info-block .item .textInformation.cityInfo {
+    display: none;
+    margin-top: 30px;
+}
+.jobList .jobListBlock .info-block .item .textInformation.cityInfo.open {
+    display: block;
+}
+.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain {
+    margin-bottom: 19px;
+}
+.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain:last-of-type {
+    margin-bottom: 0;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle {
     display: flex;

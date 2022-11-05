@@ -295,24 +295,29 @@ $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .jobB
     }
 })
 $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block').on('click', function(el) {
-    console.log($(el.target).parent().parent().next())
-    if ($(el.target).parent().parent().next().hasClass('open')) {
-        // $(el.target).parent().parent().next().removeClass('open')
-        // $(el.target).parent().parent().children().next().children('span').text('Нажмите чтобы увидеть')
-        // $(el.target).parent().parent().children().next().children('.arrows').removeClass('close')
-        // $(el.target).parent().parent().next().next().removeClass('d-none')
+    $('.jobList .jobListBlock .info-block .item').children('.textInformation').children('.jobBlockMain').removeClass('open')
+    $('.jobList .jobListBlock .info-block .item').children('.textInformation').children('.jobBlockMain').children('.jobBlockMainTitle').children('.arrows').removeClass('close')
+    $('.jobList .jobListBlock .info-block .item').children('.namePlace').children('.arrows-block').children('.arrows').removeClass('close')
+    if ($(this).parent().next().hasClass('open')) {
+        $(this).parent().next().removeClass('open')
+        $(this).parent().parent().children('.imgPlace').removeClass('d-none')
+        $(this).parent().children('.arrows-block').children('span').text('Нажмите чтобы увидеть')
     } else {
-        // $('.jobList .jobListBlock .info-block .item .textInformation.open').removeClass('open')
-        // $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
-        // $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows.close').removeClass('close')
-        // $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block span').text('Нажмите чтобы увидеть')
-        // $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block .arrows.close').removeClass('close')
-        // $('.jobList .jobListBlock .info-block .item .imgPlace.d-none').removeClass('d-none')
-        // $(el.target).parent().parent().next().addClass('open')
-        // $(el.target).parent().parent().children().next().children('span').text('Нажмите чтобы скрыть')
-        // $(el.target).parent().parent().children().next().children('.arrows').addClass('close')
-        // $(el.target).parent().parent().next().next().addClass('d-none')
-    }  
+        $('.jobList .jobListBlock .info-block .item').children().next().removeClass('open')
+        $('.jobList .jobListBlock .info-block .item').children('.imgPlace').removeClass('d-none')
+        $('.jobList .jobListBlock .info-block .item').children('.namePlace').children('.arrows-block').children('span').text('Нажмите чтобы увидеть')
+        $(this).parent().children('.arrows-block').children('span').text('Нажмите чтобы скрыть')
+        $(this).parent().children('.arrows-block').children('.arrows').addClass('close')
+        $(this).parent().next().addClass('open')
+        $(this).parent().parent().children('.imgPlace').addClass('d-none')
+    }
+})
+$('.jobList .jobListBlock .__select__label').on('click', function(el) {
+    let id = $(this).attr('data-city'),
+        content = $(`.jobList .jobListBlock .info-block .item .textInformation.cityInfo[data-city='${id}']`)
+
+    $(`.jobList .jobListBlock .info-block .item .textInformation.cityInfo.open`).removeClass('open')
+    content.addClass('open')
 })
 
 if ($('.__select').length != 0) {
