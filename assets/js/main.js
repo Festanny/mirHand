@@ -115,12 +115,14 @@ $('header nav').hover(
         styleNewsText()
         styleTextAbout()
         styleLineTitleText50()
+        heightBlock()
     });
     styleInfoCompany()
     styleCooperationText()
     styleNewsText()
     styleTextAbout()
     styleLineTitleText50()
+    heightBlock()
 
     $(window).on("scroll resize", function() {
         let o = $(window).scrollTop() / ($(document).height() - $(window).height());
@@ -213,12 +215,22 @@ $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAnd
     blockNews.prev().height(blockNews.prev().children()) + 'px'
     if (blockNews.prev().hasClass('open')) {
         blockNews.prev().height(blockNews.prev().children()) + 'px'
-        blockNews.prev().css({'min-height': $('.newsSection .newsSectionBlock .textMainCooperation.close').height()}).animate({'max-height': blockNews.prev().children().height() + 'px'}, 100)
+        blockNews.prev().css({'max-height': $('.newsSection .newsSectionBlock .textMainCooperation.close').height()}).animate({'max-height': blockNews.prev().children().height() + 'px'}, 100)
         blockNews.prev().children().children('.beforeWhite').fadeOut(500)
     } else {
         blockNews.prev().css({
             'max-height': ''
         })
+        for (let i=0; i < $('.newsSection .newsSectionBlock .info-block .item').length; i++) {
+            setTimeout(blockImgHeight, 1)
+            function blockImgHeight() {
+                let blockImgHeight = $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').height()
+                $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').css('max-height', blockImgHeight + 'px')
+                blockImgHeight = blockImgHeight - $('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() - $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').height() - 50
+                console.log(blockImgHeight)
+                $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.titleTextBlockNews').children('.textAndBtn').children('.textMainCooperation').css('max-height', blockImgHeight + 'px')
+            }
+        }
         blockNews.prev().children().children('.beforeWhite').fadeIn(100)
     }
     if (blockNews.hasClass('close')) {
@@ -316,6 +328,8 @@ $('.jobList .jobListBlock .__select__label').on('click', function(el) {
     let id = $(this).attr('data-city'),
         content = $(`.jobList .jobListBlock .info-block .item .textInformation.cityInfo[data-city='${id}']`)
 
+    $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
+    $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows.close').removeClass('close')
     $(`.jobList .jobListBlock .info-block .item .textInformation.cityInfo.open`).removeClass('open')
     content.addClass('open')
 })
@@ -363,3 +377,19 @@ $('.faqSection .faqSectionBlock .info-block .item .question').on('click', functi
         $(this).next('.answer').fadeIn().addClass('active')
     }
 })
+
+function heightBlock() {
+    for (let i=0; i < $('.articles .articlesBlock .photo-text').length; i++) {
+        $('.articles .articlesBlock .photo-text').eq(i).children('.photoCollections').height($('.articles .articlesBlock .textBlockMain .textBlock').height() + 23)
+    }
+    for (let i=0; i < $('.newsSection .newsSectionBlock .info-block .item').length; i++) {
+        setTimeout(blockImgHeight, 1)
+        function blockImgHeight() {
+            let blockImgHeight = $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').height()
+            $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').css('max-height', blockImgHeight + 'px')
+            blockImgHeight = blockImgHeight - $('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() - $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').height() - 50
+            console.log(blockImgHeight)
+            $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.titleTextBlockNews').children('.textAndBtn').children('.textMainCooperation').css('max-height', blockImgHeight + 'px')
+        }
+    }
+}
