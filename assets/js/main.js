@@ -177,7 +177,10 @@ function styleNewsText() {
         'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.1)
     })
     $('.infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain').css({
-        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10,
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.ourCollections .ourCollectionsBlock .textBlockMain').css({
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
     })
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
@@ -227,7 +230,6 @@ $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAnd
                 let blockImgHeight = $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').height()
                 $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').css('max-height', blockImgHeight + 'px')
                 blockImgHeight = blockImgHeight - $('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() - $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').height() - 50
-                console.log(blockImgHeight)
                 $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.titleTextBlockNews').children('.textAndBtn').children('.textMainCooperation').css('max-height', blockImgHeight + 'px')
             }
         }
@@ -246,7 +248,6 @@ $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAnd
 // Получение значения рейтинга по клику
 $(".newReview input[type='radio']").on('click', function (el) {
     let id = $(el.target).parent().attr('data-review')
-    console.log(id)
     let value = $(`.reviewsSection .item[data-review='${id}'] .newReview .rating input[type="radio"]:checked`).val();
     let labels = $(`.reviewsSection .item[data-review='${id}'] .newReview .rating .rating-label`);
 
@@ -276,7 +277,6 @@ $('.reviewsSection .info-block .item .btn-review').on('click', function(el) {
 $('.reviewsSection form.newReview input[type="file"]').change(function(el) {
     $(el.target).prev().prev().children().removeClass().addClass('fa-solid fa-check success')
     $(el.target).parent().addClass('success')
-    console.log($(el.target).parent())
 });
 
 $('.brandSection .brandSectionBlock .search input').on('input', function() {
@@ -310,6 +310,7 @@ $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block').on('cli
     $('.jobList .jobListBlock .info-block .item').children('.textInformation').children('.jobBlockMain').removeClass('open')
     $('.jobList .jobListBlock .info-block .item').children('.textInformation').children('.jobBlockMain').children('.jobBlockMainTitle').children('.arrows').removeClass('close')
     $('.jobList .jobListBlock .info-block .item').children('.namePlace').children('.arrows-block').children('.arrows').removeClass('close')
+    $('.jobList .jobListBlock .info-block .item .textInformation.cityInfo.open').removeClass('open')
     if ($(this).parent().next().hasClass('open')) {
         $(this).parent().next().removeClass('open')
         $(this).parent().parent().children('.imgPlace').removeClass('d-none')
@@ -318,6 +319,8 @@ $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block').on('cli
         $('.jobList .jobListBlock .info-block .item').children().next().removeClass('open')
         $('.jobList .jobListBlock .info-block .item').children('.imgPlace').removeClass('d-none')
         $('.jobList .jobListBlock .info-block .item').children('.namePlace').children('.arrows-block').children('span').text('Нажмите чтобы увидеть')
+        $('.__select .__select__title input').val('')
+        $('.__select .__select__input:checked').prop('checked', false)
         $(this).parent().children('.arrows-block').children('span').text('Нажмите чтобы скрыть')
         $(this).parent().children('.arrows-block').children('.arrows').addClass('close')
         $(this).parent().next().addClass('open')
@@ -335,26 +338,52 @@ $('.jobList .jobListBlock .__select__label').on('click', function(el) {
 })
 
 if ($('.__select').length != 0) {
-    const selectSingle = document.querySelector('.__select');
-    const selectSingle_title = selectSingle.querySelector('.__select__title');
-    const selectSingle_labels = selectSingle.querySelectorAll('.__select__label');
-
     // Toggle menu
-    selectSingle_title.addEventListener('click', () => {
-    if ('active' === selectSingle.getAttribute('data-state')) {
-        selectSingle.setAttribute('data-state', '');
-    } else {
-        selectSingle.setAttribute('data-state', 'active');
-    }
+    $('.__select__title').on('click', function(el) {
+        if ($(this).parent().attr('data-state') == 'active') {
+            $(this).children('input').prop('disabled', true)
+        } else {
+            $(this).children('input').prop('disabled', false)
+            $(this).children('input').focus()
+        }
+        if ($(el.target).parent().parent().attr('data-state') == 'active' ) {
+            $(el.target).parent().parent().attr('data-state', '');
+        } else {
+            $(el.target).parent().parent().attr('data-state', 'active');
+
+            $(document).mouseup( function(e){
+                var div = $( ".__select" );
+                if ( !div.is(e.target)
+                    && div.has(e.target).length === 0 ) {
+                    $(el.target).parent().parent().attr('data-state', '');
+                }
+            });
+        }
+        // Close when click to option
+        for (let i = 0; i < $(this).next().children('.__select__label').length; i++) {
+            $(this).next().children('.__select__label').eq(i).on('click', (evt) => {
+                $(this).children().val(evt.target.textContent)
+                $(this).parent().attr('data-state', '');
+            });
+        }
     });
 
-    // Close when click to option
-    for (let i = 0; i < selectSingle_labels.length; i++) {
-    selectSingle_labels[i].addEventListener('click', (evt) => {
-        selectSingle_title.textContent = evt.target.textContent;
-        selectSingle.setAttribute('data-state', '');
-    });
-    }
+    $('.__select .__select__title input').on('input', function(el) {
+        let temp = $(this).val()
+        if (temp) {
+            $(this).parent().next().children('.__select__label').each(function () {
+                if ($(this).text().toLowerCase().indexOf(temp.toLowerCase()) > -1) {
+                    $(this).removeClass('d-none')
+                } else {
+                    $(this).addClass('d-none')
+                }
+            })
+        } else {
+            $(this).parent().next().children('.__select__label').each(function () {
+                $(this).removeClass('d-none')
+            })
+        }
+    })
 }
 
 $('.faqSection .faqSectionBlock .categoryFaq span').on('click', function() {
@@ -388,8 +417,51 @@ function heightBlock() {
             let blockImgHeight = $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').height()
             $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').css('max-height', blockImgHeight + 'px')
             blockImgHeight = blockImgHeight - $('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() - $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').height() - 50
-            console.log(blockImgHeight)
             $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.titleTextBlockNews').children('.textAndBtn').children('.textMainCooperation').css('max-height', blockImgHeight + 'px')
         }
     }
 }
+
+$('.modal#coupon .modal-body .btnTab span').on('click', function() {
+    let id = $(this).attr('data-coupon'),
+        content = $(`.modal#coupon .modal-body .info-block .item[data-coupon='${id}']`)
+    $('.modal#coupon .modal-body .btnTab span.active').removeClass('active')
+    $(`.modal#coupon .modal-body .info-block .item.active`).removeClass('active')
+    $(this).addClass('active')
+    content.addClass('active')
+})
+
+// mask for phone input
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call( document.querySelectorAll('#phone'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    }
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, true);
+    input.addEventListener("keydown", mask, false)
+  });
+});

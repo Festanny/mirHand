@@ -69,7 +69,7 @@
             <div class="bannerBlock container">
                 <div class="titleText">Научим одеваться <span>в секондах</span></div>
                 <div class="btnBlock btnDiscount">
-                    <a href="#" class="btn white">Прямо сейчас получи 500 руб</a>
+                    <a class="btn white" data-bs-toggle="modal" data-bs-target="#coupon">Прямо сейчас получи 500 руб</a>
                 </div>
             </div>
         </section>
@@ -79,8 +79,8 @@
                     <div class="photoCollections women">
                         <img src="assets/img/collections/women.jpg" alt="">
                     </div>
-                    <div class="textBlockMain container">
-                        <div class="textBlock text-right">
+                    <div class="textBlockMain">
+                        <div class="textBlock">
                             <div class="h2 title__page">Наши коллекции</div>
                             <p>"Мирхенд" – это новый формат магазинов секонд-хенд, предоставляющий одежду на площади порядка тысячи квадратных метров в городе {Название_города}. У нас вы сможете найти одежду для спорта, отдыха, деловых встреч или прогулок с друзьями.</p>
                         </div>
@@ -301,6 +301,114 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="h5 modal-title bebas" id="exampleModalLabel">Скидочный купон</div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="btnTab bebas">
+                    <span class="active" data-coupon="1">Получи 300 руб.</span>
+                    <span data-coupon="2">Получи 500 руб.</span>
+                </div>
+                <div class="info-block">
+                    <div class="item active" data-coupon="1">
+                        <div class="discount bebas">Получите 300 рублей</div>
+                        <p class="desc">Еще не совершали покупку в МЕГАХЕНД? Тогда заполните форму ниже и совершите первую покупку с выгодой!</p>
+                        <form action="">
+                            <div class="inputBlock">
+                                <input type="text" placeholder="Ваше имя" name="name">
+                                <input type="text" id='phone' placeholder="Телефон" name="phone">
+                                <div class="__select" data-state="">
+                                    <div class="__select__title">
+                                        <input type="text" placeholder="Выберите город" name="city">
+                                    </div>
+                                    <div class="__select__content">
+                                        <input id="singleSelect0_1" class="__select__input" type="radio" name="singleSelect" checked />
+                                        <label for="singleSelect0_1" class="__select__label">Выберите город</label>
+                                        <input id="singleSelect1_1" class="__select__input" type="radio" name="singleSelect" />
+                                        <label for="singleSelect1_1" class="__select__label">Город 1</label>
+                                        <input id="singleSelect3_1" class="__select__input" type="radio" name="singleSelect" />
+                                        <label for="singleSelect3_1" class="__select__label">Город 2</label>
+                                        <input id="singleSelect4_1" class="__select__input" type="radio" name="singleSelect" />
+                                        <label for="singleSelect4_1" class="__select__label">Город 3</label>
+                                    </div>
+                                </div>
+                                <label class="check">
+                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="color-4" value="yellow" checked>
+                                    <label for="color-4">Я ознакомлен(а) с условиями <a href="#">публичной оферты</a></label>
+                                </label>
+                                <div class="termsPromotion">
+                                    <a href="#">Условия проведения акции</a>
+                                </div>
+                            </div>
+                            <p class="infoText">Нажимая кнопку “получить” вы даете согласие на обработку персональных данных</p>
+                            <div class="btnBlock">
+                                <button class="btn dark" disabled>Получить</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="item" data-coupon="2">
+                        <div class="discount bebas">Получите 500 рублей</div>
+                        <p class="desc">Рекомендуйте нас своим друзьям и получите 500 руб после того, как оба друга совершат покупку в Мегахенд</p>
+                        <form action="">
+                            <div class="inputBlock">
+                                <input type="text" placeholder="Ваше имя" name="name">
+                                <input type="text" placeholder="Ваш телефон" name="phone">
+                                <div class="__select" data-state="">
+                                    <div class="__select__title">
+                                        <input type="text" placeholder="Ваш город" name="city">
+                                    </div>
+                                    <div class="__select__content">
+                                        <input id="singleSelect0_2" class="__select__input" type="radio" name="singleSelect2" checked />
+                                        <label for="singleSelect0_2" class="__select__label">Ваш город</label>
+                                        <input id="singleSelect1_2" class="__select__input" type="radio" name="singleSelect2" />
+                                        <label for="singleSelect1_2" class="__select__label">Город 1</label>
+                                        <input id="singleSelect3_2" class="__select__input" type="radio" name="singleSelect2" />
+                                        <label for="singleSelect3_2" class="__select__label">Город 2</label>
+                                        <input id="singleSelect4_2" class="__select__input" type="radio" name="singleSelect2" />
+                                        <label for="singleSelect4_2" class="__select__label">Город 3</label>
+                                    </div>
+                                </div>
+                                <input type="text" placeholder="Телефон друга" name="phoneFriend">
+                                <div class="__select" data-state="">
+                                    <div class="__select__title">
+                                        <input type="text" placeholder="Город друга" name="cityFriend">
+                                    </div>
+                                    <div class="__select__content">
+                                        <input id="singleSelect0_3" class="__select__input" type="radio" name="singleSelect3" checked />
+                                        <label for="singleSelect0_3" class="__select__label">Город друга</label>
+                                        <input id="singleSelect1_3" class="__select__input" type="radio" name="singleSelect3" />
+                                        <label for="singleSelect1_3" class="__select__label">Город 1</label>
+                                        <input id="singleSelect3_3" class="__select__input" type="radio" name="singleSelect3" />
+                                        <label for="singleSelect3_3" class="__select__label">Город 2</label>
+                                        <input id="singleSelect4_3" class="__select__input" type="radio" name="singleSelect3" />
+                                        <label for="singleSelect4_3" class="__select__label">Город 3</label>
+                                    </div>
+                                </div>
+                                <label class="check">
+                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="color-4" value="yellow" checked>
+                                    <label for="color-4">Я ознакомлен(а) с условиями <a href="#">публичной оферты</a></label>
+                                </label>
+                                <div class="termsPromotion">
+                                    <a href="#">Условия проведения акции</a>
+                                </div>
+                            </div>
+                            <p class="infoText">Нажимая кнопку “получить” вы даете согласие на обработку персональных данных</p>
+                            <div class="btnBlock">
+                                <button class="btn dark" disabled>Получить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

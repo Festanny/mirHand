@@ -7,10 +7,12 @@
     --gray: #C4C4C4;
     --gray2: #D3D3D3;
     --gray3: #EFEFEF;
+    --gray4: #D9D9D9;
     --bg-gray: #F5F5F5;
     --border: #6F6F6F;
     --red: #D14444;
     --red2: #C71818;
+    --red3: #9C1006;
     --gr-white: linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
     --green: #4BAB00;
     --light-gray: #ededed;
@@ -29,6 +31,7 @@ body {
 a {
     color: var(--dark);
     text-decoration: none;
+    cursor: pointer;
 }
 a:hover {
     color: var(--dark);
@@ -211,6 +214,7 @@ header nav .nav > ul {
     line-height: 1;
     font-size: 24px;
     min-width: 250px;
+    transition: all .3s;
 }
 .btn.white {
     color: var(--white);
@@ -220,6 +224,12 @@ header nav .nav > ul {
     border: 1px solid var(--dark);
     color: var(--dark);
 }
+.btn.dark:hover,
+.btn.white:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    border-color: transparent;
+}
 .banner .bannerBlock .btn {
     padding: 26px 34px;
 }
@@ -228,16 +238,14 @@ header nav .nav > ul {
     font-weight: bold;
     letter-spacing: 0.02em;
 }
-.ourCollections .ourCollectionsBlock .textBlockMain {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.ourCollections .ourCollectionsBlock .textBlock.text-right,
+.ourCollections .ourCollectionsBlock .textBlock,
 .articles .articlesBlock .textBlock.text-right {
     width: 477px;
     padding: 70px 25px 0 0;
     margin-left: auto;
+}
+.ourCollections .ourCollectionsBlock .textBlock {
+    width: auto;
 }
 .ourCollections .ourCollectionsBlock .photoCollections,
 .articles .articlesBlock .photoCollections {
@@ -245,20 +253,29 @@ header nav .nav > ul {
 }
 .ourCollections .ourCollectionsBlock .photoCollections.women,
 .ourCollections .ourCollectionsBlock .photoCollections.children {
-    width: 455px;
     height: auto;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.children {
+    width: 30%;
+}
+.ourCollections .ourCollectionsBlock .photoCollections.women {
+    width: 100%;
 }
 .ourCollections .ourCollectionsBlock .photoCollections img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
-.ourCollections .ourCollectionsBlock .photo-text,
 .articles .articlesBlock .photo-text {
     display: flex;
 }
+.ourCollections .ourCollectionsBlock .photo-text {
+    display: grid;
+    grid-template-columns: auto 55%;
+    gap: 170px;
+}
 .ourCollections .ourCollectionsBlock .photoCollections.man {
-    width: 733px;
+    width: 55%;
     height: 452px;
     margin-left: auto;
 }
@@ -267,8 +284,9 @@ header nav .nav > ul {
     object-position: 0 -220px;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.children {
-    height: 616px;
+    height: 100%;
     margin: -226px auto 0;
+    transform: translateX(-50px);
 }
 .ourCollections .ourCollectionsBlock .photoCollections.children img {
     height: 100%;
@@ -525,6 +543,9 @@ header nav .nav > ul {
 }
 .location .locationBlock .map .container {
     position: relative;
+}
+.location .locationBlock .map {
+    width: 100%;
 }
 .location .locationBlock .map .container .locationInfo {
     display: flex;
@@ -1281,6 +1302,7 @@ section.brandSection {
     border: 0;
     outline: none;
     width: 100%;
+    background-color: transparent
 }
 .brandSection .brandSectionBlock .info-block {
     display: grid;
@@ -1523,7 +1545,7 @@ section.jobList {
 .__select {
     position: relative;
     width: 400px;
-    height: 40px;
+    height: 46px;
     background-color: var(--light-gray)
 }
 .__select[data-state=active] .__select__title::before {
@@ -1558,7 +1580,8 @@ section.jobList {
     height: 2px;
     transition: all 0.3s ease-out;
     transform: translate(-3px, -50%) rotate(45deg);
-    background-color: var(--dark)
+    background-color: var(--dark);
+    z-index: 1;
 }
 .__select__title::after {
     transform: translate(3px, -50%) rotate(-45deg);
@@ -1566,7 +1589,7 @@ section.jobList {
   
 .__select__content {
     position: absolute;
-    top: 40px;
+    top: 46px;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -1805,4 +1828,178 @@ section.faqSection {
 }
 .faqSection .faqSectionBlock .info-block .item .question.active i {
     transform: rotate(-90deg);
+}
+.modal .modal-content .modal-header {
+    position: relative;
+    background: var(--red3) url('../img/other/da3e426c753014d29255c53873fc692d.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.modal .modal-content .modal-header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--red3);
+    opacity: .7;
+}
+.modal .modal-content .modal-header .modal-title {
+    position: relative;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+    color: var(--white);
+    transform: translateY(5px);
+}
+.modal .modal-content .modal-header .btn-close {
+    filter: invert(100%);
+}
+.modal .modal-content .modal-body {
+    padding: 32px 68px;
+}
+input {
+    width: 100%;
+    font-size: 12px;
+    padding: 13px;
+    border: 0;
+    outline: none;
+    background-color: var(--light-gray);
+    border: 1px solid transparent
+}
+input:focus {
+    border-color: var(--red)
+}
+.modal .modal-content .modal-body .info-block .item form .__select {
+    width: 100%;
+}
+.modal .modal-content .modal-body .info-block .item form .inputBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal .modal-content .modal-body .info-block .item {
+    display: none;
+}
+.modal .modal-content .modal-body .info-block .item.active {
+    display: block;
+}
+.__select .__select__title {
+    position: relative;
+}
+.__select .__select__title input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.d-none {
+    display: none!important;
+}
+.modal .check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    text-align: center;
+}
+.modal .check input {
+    width: auto;
+}
+.modal .check label {
+    font-size: 15px;
+}
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.custom-checkbox+label {
+    display: inline-block;
+    align-items: center;
+    user-select: none;
+}
+.custom-checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: var(--light-gray)
+}
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #adb5bd
+}
+.custom-checkbox:not(:disabled):active+label::before {
+    background-color: #e9ecef;
+    border-color: var(--light-gray);
+}
+.custom-checkbox:checked+label::before {
+    background-color: var(--light-gray);
+    background-image: url("../img/check.svg");
+}
+.custom-checkbox:disabled+label::before {
+    background-color: #e9ecef;
+}
+.checkbox {
+    margin-bottom: 1em;
+}
+.modal a:not(.btn) {
+    text-decoration: underline;
+}
+.modal .termsPromotion {
+    font-size: 15px;
+    text-align: center;
+}
+.modal .infoText {
+    font-size: 15px;
+    color: var(--gray);
+    margin: 14px 0 25px;
+    text-align: center;
+}
+.modal#coupon .info-block .item .discount {
+    color: var(--red);
+    font-size: 30px;
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.modal#coupon .info-block .item p.desc {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.modal#coupon .modal-body .btnTab {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 34px;
+}
+.modal#coupon .modal-body .btnTab span {
+    font-size: 24px;
+    color: var(--white);
+    text-align: center;
+    background-color: var(--gray4);
+    padding: 17px 10px;
+    line-height: 1;
+    cursor: pointer;
+}
+.modal#coupon .modal-body .btnTab span.active {
+    background-color: var(--red);
+    box-shadow: 0px 0px 13px rgba(199, 24, 24, 0.44);
+}
+.modal#coupon .modal-body .btnBlock {
+    text-align: center;
+}
+button {
+    background-color: transparent
 }
