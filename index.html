@@ -303,6 +303,7 @@
     </footer>
 
     <!-- Modal -->
+    <!-- Купон -->
     <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -339,7 +340,7 @@
                                     </div>
                                 </div>
                                 <label class="check">
-                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="color-4" value="yellow" checked>
+                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="offer" checked>
                                     <label for="color-4">Я ознакомлен(а) с условиями <a href="#">публичной оферты</a></label>
                                 </label>
                                 <div class="termsPromotion">
@@ -391,7 +392,7 @@
                                     </div>
                                 </div>
                                 <label class="check">
-                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="color-4" value="yellow" checked>
+                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="offer" checked>
                                     <label for="color-4">Я ознакомлен(а) с условиями <a href="#">публичной оферты</a></label>
                                 </label>
                                 <div class="termsPromotion">
@@ -400,7 +401,53 @@
                             </div>
                             <p class="infoText">Нажимая кнопку “получить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <button class="btn dark" disabled>Получить</button>
+                                <!-- <button class="btn dark" disabled>Получить</button> -->
+                                <a class="btn dark" data-bs-toggle="modal" data-bs-target="#leaveRequest">Получить</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Оставь заявку здесь -->
+    <div class="modal fade" id="leaveRequest" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="h5 modal-title bebas" id="exampleModalLabel">Оставь заявку здесь</div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="info-block">
+                    <div class="item active">
+                        <div class="discount bebas">После заполнения формы мы свяжимся с вами в течении двух дней</div>
+                        <form action="">
+                            <div class="inputBlock">
+                                <input type="text" placeholder="Имя" name="name">
+                                <input type="text" id='phone' placeholder="Телефон" name="phone">
+                                <input type="email" placeholder="E-mail" name="email">
+                                <div class="__select" data-state="">
+                                    <div class="__select__title">
+                                        <input type="text" placeholder="Город" name="city">
+                                    </div>
+                                    <div class="__select__content">
+                                        <input id="singleSelect0_4" class="__select__input" type="radio" name="singleSelect4" checked />
+                                        <label for="singleSelect0_4" class="__select__label">Город</label>
+                                        <input id="singleSelect1_4" class="__select__input" type="radio" name="singleSelect4" />
+                                        <label for="singleSelect1_4" class="__select__label">Город 1</label>
+                                        <input id="singleSelect3_4" class="__select__input" type="radio" name="singleSelect4" />
+                                        <label for="singleSelect3_4" class="__select__label">Город 2</label>
+                                        <input id="singleSelect4_4" class="__select__input" type="radio" name="singleSelect4" />
+                                        <label for="singleSelect4_4" class="__select__label">Город 3</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
+                            <div class="btnBlock">
+                                <button class="btn dark" disabled>Отправить</button>
                             </div>
                         </form>
                     </div>
