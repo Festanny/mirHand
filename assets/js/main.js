@@ -552,9 +552,7 @@ $(document).ready(function(){
         });
     })
     $('#cityInput').parent().next().children('.__select__label').on('click', function(el) {
-        
         $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error');
-        
         setTimeout(function() {
             checkInput()
         }, 1)
@@ -562,7 +560,7 @@ $(document).ready(function(){
 
     $('.modal#leaveRequest .btnBlock button').on('click', function(el) {
         el.preventDefault()
-        console.log(checkInput())
+        checkInput()
         if (checkInput()) {
             $('.modal#leaveRequest').modal('hide')
             $('#successModal').modal('show')
