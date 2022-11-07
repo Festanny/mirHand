@@ -16,13 +16,25 @@
     --gr-white: linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
     --green: #4BAB00;
     --light-gray: #ededed;
+    --fz128: 7.62vw;
+    --fz64: 3.81vw;
+    --fz40: 2.38vw;
+    --fz34: 2.02vw;
+    --fz32: 1.90vw;
+    --fz30: 1.79vw;
+    --fz25: 1.49vw;
+    --fz24: 1.43vw;
+    --fz20: 1.19vw;
+    --fz16: 0.95vw;
+    --fz15: 0.89vw;
+    --fz12: 0.71vw;
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: var(--fz20);
     background-color: var(--white);
     font-family: Arial, sans-serif;
     color: var(--dark);
@@ -37,7 +49,7 @@ a:hover {
     color: var(--dark);
 }
 section {
-    padding: 81px 0;
+    padding: 4.82vw 0;
 }
 section.ourCollections {
     padding-top: 0;
@@ -90,18 +102,18 @@ header .headerTop {
 }
 header .header {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(13.10vw, auto));
     justify-content: space-between;
     align-items: center;
-    padding: 7px 12px;
-    gap: 10px;
+    padding: 0.42vw 0.71vw;
+    gap: 0.60vw;
     font-family: 'Arial', sans-serif;
 }
 header .header .city .block,
 header .header .phone .block {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.43vw;
     align-items: center;
 }
 header .header .city .block span,
@@ -126,8 +138,8 @@ header .header .phone {
 }
 header .header .logo a {
     display: block;
-    width: 177px;
-    height: 48px;
+    width: 10.54vw;
+    height: 2.86vw;
 }
 header .header .logo a img {
     width: 100%;
@@ -162,8 +174,8 @@ header nav .nav > ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    padding: 24px 0;
-    font-size: 24px;
+    padding: 1.43vw 0;
+    font-size: var(--fz24);
     font-weight: 300;
 }
 
@@ -174,9 +186,9 @@ header nav .nav > ul {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 400px;
+    min-height: 23.81vw;
     height: 100vh;
-    padding: 82px 0 118px;
+    padding: 4.88vw 0 7.02vw;
 }
 .banner::before {
     content: '';
@@ -193,7 +205,7 @@ header nav .nav > ul {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    gap: 30px;
+    gap: 1.79vw;
     z-index: 5;
 }
 .banner .bannerBlock .titleText {
@@ -201,7 +213,7 @@ header nav .nav > ul {
     flex-direction: column;
     letter-spacing: 0.02em;
     line-height: 1;
-    font-size: 64px;
+    font-size: var(--fz64);
     font-weight: 100;
 }
 .banner .bannerBlock .titleText span {
@@ -209,11 +221,11 @@ header nav .nav > ul {
 }
 .btn {
     display: inline-block;
-    padding: 21px 34px;
+    padding: 1.25vw 2.02vw;
     border: 1px solid var(--dark);
     line-height: 1;
-    font-size: 24px;
-    min-width: 250px;
+    font-size: var(--fz24);
+    min-width: 14.88vw;
     transition: all .3s;
 }
 .btn.white {
@@ -231,17 +243,17 @@ header nav .nav > ul {
     border-color: transparent;
 }
 .banner .bannerBlock .btn {
-    padding: 26px 34px;
+    padding: 1.55vw 2.02vw;
 }
 .title__page {
-    font-size: 64px;
+    font-size: var(--fz64);
     font-weight: bold;
     letter-spacing: 0.02em;
 }
 .ourCollections .ourCollectionsBlock .textBlock,
 .articles .articlesBlock .textBlock.text-right {
-    width: 477px;
-    padding: 70px 25px 0 0;
+    width: 28.39vw;
+    padding: 4.17vw 1.49vw 0 0;
     margin-left: auto;
 }
 .ourCollections .ourCollectionsBlock .textBlock {
@@ -272,27 +284,27 @@ header nav .nav > ul {
 .ourCollections .ourCollectionsBlock .photo-text {
     display: grid;
     grid-template-columns: auto 55%;
-    gap: 170px;
+    gap: 10.12vw;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.man {
     width: 55%;
-    height: 452px;
+    height: 38.10vw;
     margin-left: auto;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.man img {
     height: 100%;
-    object-position: 0 -220px;
+    object-position: 0 -13.10vw;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.children {
     height: 100%;
-    margin: -226px auto 0;
-    transform: translateX(-50px);
+    margin: -13.45vw auto 0;
+    transform: translateX(-2.98vw);
 }
 .ourCollections .ourCollectionsBlock .photoCollections.children img {
     height: 100%;
 }
 .ourCollections .ourCollectionsBlock .photoManChildren {
-    margin-top: -100px;
+    margin-top: -5.95vw;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.women::before,
 .ourCollections .ourCollectionsBlock .photoCollections.man::before,
@@ -300,38 +312,38 @@ header nav .nav > ul {
     position: absolute;
     text-transform: uppercase;
     color: var(--white);
-    font-size: 30px;
+    font-size: var(--fz30);
 }
 .ourCollections .ourCollectionsBlock .photoCollections.women::before {
     content: 'Для нее';
     top: 30%;
-    right: 50px;
+    right: 2.98vw;
 }
 .ourCollections .ourCollectionsBlock .photoCollections.man::before {
     content: 'Для него';
-    top: -15px;
+    top: -0.89vw;
     left: 0;
     color: var(--dark);
     transform: translateY(-100%);
 }
 .ourCollections .ourCollectionsBlock .photoCollections.children::before {
-    content: 'Для него';
-    top: 40px;
+    content: 'Дети';
+    top: 2.38vw;
     left: 50%;
     font-weight: bold;
     transform: translateX(-50%);
 }
 .aboutUs .aboutUsBlock .textBlock {
-    margin-bottom: 56px;
+    margin-bottom: 3.33vw;
     position: relative;
 }
 .aboutUs .aboutUsBlock .textBlock::before {
     content: '';
     position: absolute;
-    width: 172px;
-    height: 172px;
-    bottom: calc(50% - 40px);
-    right: calc(50% - 100px);
+    width: 10.24vw;
+    height: 10.24vw;
+    bottom: calc(50% - 2.38vw);
+    right: calc(50% - 5.95vw);
     background-image: url('../img/arrow.svg');
     background-size: contain;
     background-position: center;
@@ -339,8 +351,8 @@ header nav .nav > ul {
     transform: translate(50%, 50%);
 }
 .aboutUs .aboutUsBlock .textBlock .title__page_down {
-    font-size: 30px;
-    margin: 21px 0 31px;
+    font-size: var(--fz30);
+    margin: 1.25vw 0 1.85vw;
 }
 .aboutUs .aboutUsBlock .textBlock p {
     width: 50%;
@@ -349,26 +361,27 @@ header nav .nav > ul {
     opacity: 0;
 }
 .articles .articlesBlock .textBlockMain .textBlock {
-    width: 477px;
+    /* width: 477px; */
     margin-left: auto;
 }
 .articles .articlesBlock .textBlockMain .textBlock .h3.title__page,
 .infoCompanySection .infoCompanyBlock .textBlock .h3.title__page {
-    font-size: 30px;
+    font-size: var(--fz30);
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 2.98vw;
 }
 .articles .articlesBlock .textBlockMain {
-    margin-top: 23px;
-    padding: 0
+    margin-top: 1.37vw;
+    padding: 0;
+    padding-left: 3.39vw;
 }
 .textBlockTitle {
-    margin-bottom: 57px;
+    margin-bottom: 3.39vw;
 }
 .articles .articlesBlock .textBlockMain .textBlock .textArticles {
     position: relative;
     overflow: hidden;
-    max-height: 225px;
+    max-height: 13.39vw;
 }
 .articles .articlesBlock .textBlockMain .textBlock .textArticles::before {
     content: '';
@@ -381,7 +394,7 @@ header nav .nav > ul {
 .arrows-block {
     display: flex;
     flex-direction: column;
-    margin-top: 27px;
+    margin-top: 1.61vw;
     cursor: pointer;
 }
 .arrows-block span {
@@ -391,9 +404,9 @@ header nav .nav > ul {
     letter-spacing: 0.03em;
     font-weight: 100;
     text-align: center;
-    font-size: 15px;
+    font-size: var(--fz15);
     font-family: sans-serif;
-    margin-bottom: 13px;
+    margin-bottom: 0.77vw;
 }
 .arrows {
     height: 1px;
@@ -429,20 +442,21 @@ header nav .nav > ul {
 
 .articles .articlesBlock .photo-text {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 115px;
-    margin-bottom: 100px;
+    grid-template-columns: 50% 50%;
+    /* gap: 115px; */
+    margin-bottom: 5.95vw;
     justify-content: space-between;
 }
 .articles .articlesBlock .photo-text:nth-child(2n) {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 50% 50%;
 }
 .articles .articlesBlock .photo-text:last-of-type {
     margin-bottom: 0;
 }
 .articles .articlesBlock .photo-text .photoCollections {
     width: 100%;
-    height: 452px;
+    height: 26.90vw;
+    padding-right: 3.39vw;
 }
 .articles .articlesBlock .photo-text .photoCollections img {
     width: 100%;
@@ -452,10 +466,16 @@ header nav .nav > ul {
 }
 .articles .articlesBlock .photo-text:nth-child(2n) .photoCollections {
     order: 2;
+    padding-left: 3.39vw;
+    padding-right: 0;
 }
 .articles .articlesBlock .photo-text:nth-child(2n) .textBlockMain .textBlock {
     margin-left: 0;
     margin-right: auto;
+}
+.articles .articlesBlock .photo-text:nth-child(2n) .textBlockMain {
+    padding-right: 3.39vw;
+    padding-left: 0;
 }
 .articles .articlesBlock .photo-text:nth-child(2n) .photoCollections {
     margin-left: auto;
@@ -463,18 +483,18 @@ header nav .nav > ul {
 
 .news .newsBlock .info-block {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
-    gap: 96px;
+    grid-template-columns: repeat(auto-fit, minmax(20.83vw, auto));
+    gap: 5.71vw;
 }
 .news .newsBlock .info-block .item .titleInfo {
     position: relative;
-    font-size: 30px;
+    font-size: var(--fz30);
     color: var(--white);
     font-weight: bold;
     letter-spacing: 0.03em;
     line-height: 1;
     text-align: center;
-    padding: 66px 22px;
+    padding: 3.93vw 1.31vw;
     background-color: var(--dark);
     background-repeat: no-repeat;
     background-size: cover;
@@ -496,8 +516,8 @@ header nav .nav > ul {
 .news .newsBlock .item-btn {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 40px 0;
+    gap: 2.38vw;
+    padding: 2.38vw 0;
 }
 .news .newsBlock .item-btn .btnBlock {
     text-align: center;
@@ -506,8 +526,8 @@ header nav .nav > ul {
     position: relative;
 }
 .brand .brandBlock .brandBlockSlider .brandSlider {
-    padding: 130px 0;
-    width: calc(100% - 100px);
+    padding: 7.74vw 0;
+    width: calc(100% - 5.95vw);
 }
 .brand .brandBlock .brandBlockSlider .brandSlider .swiper-wrapper .swiper-slide {
     display: flex;
@@ -515,10 +535,10 @@ header nav .nav > ul {
     justify-content: center;
 }
 .brand .brandBlock .brandBlockSlider .brandSlider .swiper-wrapper .swiper-slide img {
-    width: 180px;
-    height: 90px;
+    width: 10.71vw;
+    height: 5.36vw;
     object-fit: contain;
-    padding: 0 15px;
+    padding: 0 0.89vw;
 }
 .brand .btnSwiperBlock {
     position: absolute;
@@ -531,14 +551,14 @@ header nav .nav > ul {
     z-index: 1000;
 }
 .brand .btnSwiperBlock .btn-swiper {
-    width: 55px;
-    height: 55px;
+    width: 3.27vw;
+    height: 3.27vw;
     border-radius: 50%;
     background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: var(--fz30);
     color: var(--dark);
 }
 .location .locationBlock .map .container {
@@ -551,18 +571,18 @@ header nav .nav > ul {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: -60px;
-    right: -70px;
-    padding: 35px 12px;
+    top: -3.57vw;
+    right: -4.17vw;
+    padding: 2.08vw 0.71vw;
     background-color: var(--dark);
     color: var(--white);
-    font-size: 12px;
-    width: 170px;
-    gap: 10px;
+    font-size: var(--fz12);
+    width: 10.12vw;
+    gap: 0.60vw;
 }
 .location .locationBlock .map .container .locationInfo .locText {
     display: flex;
-    gap: 5px;
+    gap: 0.30vw;
 }
 .location .locationBlock .map .container .locationInfo .locText a {
     color: var(--white);
@@ -577,11 +597,12 @@ footer::before,
 footer::after {
     content: '';
     position: absolute;
-    width: 247px;
+    width: 14.70vw;
     height: 100%;
     top: 0;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 5;
 }
 footer::before {
     left: 0;
@@ -605,16 +626,16 @@ footer .footer ul {
     list-style: none;
 }
 footer .footer .item nav > ul {
-    font-size: 24px;
+    font-size: var(--fz24);
     display: flex;
     justify-content: space-between;
-    gap: 5px;
+    gap: 0.30vw;
 }
 footer .footer .item:not(:last-of-type) {
     border-right: 1px solid var(--border);
 }
 footer .footer .item.navigation {
-    padding: 26px 33px 26px 0;
+    padding: 1.55vw 1.96vw 1.55vw 0;
 }
 footer .footer .item a {
     color: var(--white);
@@ -622,18 +643,18 @@ footer .footer .item a {
 footer .footer .item nav > ul li > ul {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    font-size: 20px;
+    gap: 1.19vw;
+    font-size: var(--fz20);
 }
 footer .footer .item nav > ul li.add__sub {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0.89vw;
 }
 footer .footer .item .logo {
-    width: 176px;
+    width: 10.48vw;
     height: auto;
-    padding: 42px 0 42px 37px;
+    padding: 2.50vw 0 2.50vw 2.20vw;
 }
 footer .footer .item .logo img {
     width: 100%;
@@ -644,8 +665,8 @@ footer .footer .item .contactInfo {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    padding: 23px 37px 0 23px;
+    gap: 1.49vw;
+    padding: 1.37vw 2.20vw 0 1.37vw;
 }
 footer .footer .item .contactInfo.beforeContactInfo {
     position: relative;
@@ -662,34 +683,34 @@ footer .footer .item .contactInfo.beforeContactInfo .line {
 footer .footer .item .contactInfo .soc ul {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 1.19vw;
 }
 footer .footer .item .contactInfo .soc ul li .iconSoc:not(.inst):not(.vk) {
-    width: 29px;
-    height: 29px;
+    width: 1.73vw;
+    height: 1.73vw;
     border-radius: 8px;
     border: 2px solid var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: var(--fz15);
 }
 footer .footer .item .contactInfo .soc ul li .iconSoc.inst,
 footer .footer .item .contactInfo .soc ul li .iconSoc.vk {
-    font-size: 34px;
+    font-size: var(--fz34);
 }
 footer .footer .item .contactInfo .infoCommunication ul {
     display: flex;
     flex-direction: column;
-    gap: 15px
+    gap: 0.89vw
 }
 footer .footer .item .contactInfo .infoCommunication ul li {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.60vw;
 }
 footer .footer .item .contactInfo .infoCommunication ul li i {
-    width: 29px;
+    width: 1.73vw;
 }
 
 header nav {
@@ -713,10 +734,10 @@ header nav li {
 }
 header .submenu {
     position: absolute;
-    padding-top: 24px;
-    left: -15px;
+    padding-top: 1.43vw;
+    left: -0.89vw;
     z-index: 9000;
-    max-width: 240px;
+    max-width: 14.29vw;
     width: max-content;
     visibility: hidden;
     opacity: 0;
@@ -730,8 +751,8 @@ header .submenu a {
     background: white;
     color: var(--dark);
     text-align: left;
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: var(--fz20);
+    padding: 0.60vw 1.19vw;
     display: block;
 }
 header .submenu a:hover {
@@ -743,21 +764,21 @@ header .submenu .submenu {
     left: calc(100% - 1px);
     left: -webkit-calc(100% - 1px);
     padding-top: 0;
-    padding-left: 10px;
+    padding-left: 0.60vw;
 }
 header nav li:hover > .submenu {
     visibility: visible;
     opacity: 1;
 }
 header nav li > .submenu li:first-of-type a {
-    padding-top: 23px;
+    padding-top: 1.37vw;
 }
 header nav li > .submenu li:last-of-type a {
-    padding-bottom: 23px;
+    padding-bottom: 1.37vw;
 }
 header nav li .submenu .submenu a,
 header nav li:hover .submenu .submenu a {
-    font-size: 16px;
+    font-size: var(--fz16);
 }
 
 
@@ -778,7 +799,7 @@ header nav li:hover .submenu .submenu a {
     opacity: .6;
 }
 .citySection {
-    padding: 67px 0;
+    padding: 3.99vw 0;
     background-color: var(--dark)
 }
 .citySection .cityBlock {
@@ -789,7 +810,7 @@ header nav li:hover .submenu .submenu a {
     width: 100%;
     overflow: hidden;
     color: var(--dark2);
-    font-size: 128px;
+    font-size: var(--fz128);
     letter-spacing: 0.03em;
     font-weight: 700;
     line-height: 1;
@@ -801,12 +822,12 @@ header nav li:hover .submenu .submenu a {
 .infoContactsSection .infoContactsSectionBlock .photo-text {
     display: grid;
     grid-template-columns: auto 50%;
-    gap: 33px;
+    gap: 1.96vw;
 }
 .infoCompanySection .infoCompanyBlock .photo-text .photoCollections,
 .infoContactsSection .infoContactsSectionBlock .photo-text .photoCollections {
     width: 100%;
-    height: 390px;
+    height: 23.21vw;
 }
 .infoCompanySection .infoCompanyBlock .photo-text .photoCollections img,
 .infoContactsSection .infoContactsSectionBlock .photo-text .photoCollections img {
@@ -816,15 +837,15 @@ header nav li:hover .submenu .submenu a {
 }
 .infoCompanySection .infoCompanyBlock .photo-text .textBlockMain,
 .infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain {
-    padding-top: 69px;
+    padding-top: 4.11vw;
 }
 .infoCompanySection .infoCompanyBlock .aboutUsTextBlock {
     text-align: center;
-    padding: 161px 0;
+    padding: 9.58vw 0;
 }
 .imgAboutUsBottom {
     width: 100%;
-    height: 390px;
+    height: 23.21vw;
 }
 .imgAboutUsBottom img {
     width: 100%;
@@ -875,7 +896,7 @@ progress{
 }
 .cooperation .cooperationBlock .info-block .item,
 .newsSection .newsSectionBlock .info-block .item {
-    padding: 45px 0;
+    padding: 2.68vw 0;
 }
 .cooperation .cooperationBlock .info-block .item:first-of-type,
 .newsSection .newsSectionBlock .info-block .item:first-of-type {
@@ -883,26 +904,26 @@ progress{
 }
 .cooperation .cooperationBlock .info-block .item:last-of-type,
 .newsSection .newsSectionBlock .info-block .item:last-of-type {
-    padding-bottom: 90px;
+    padding-bottom: 5.36vw;
 }
 .lineTitleSection .info-block .item .textBlock .h3.title__page,
 .lineTitleSection50 .info-block .item .textBlock .h3.title__page {
-    font-size: 30px;
+    font-size: var(--fz30);
     color: var(--white);
-    padding: 10px 0;
+    padding: 0.60vw 0;
     position: relative;
-    margin-right: 50px;
+    margin-right: 2.98vw;
 }
 .job .lineTitleSection {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 1.79vw;
 }
 .job .lineTitleSection .textBlock .h3.title__page,
 .stocksBlock .stocksBlockMain .info-block .textBlock .h3.title__page {
     position: relative;
-    font-size: 20px;
-    padding: 10px 0;
+    font-size: var(--fz20);
+    padding: 0.60vw 0;
     font-weight: 100;
     font-style: italic;
     margin-right: 5%;
@@ -943,19 +964,19 @@ progress{
 	border-left: 50px solid transparent;
 }
 .cooperation .cooperationBlock .info-block .item .textMainCooperation {
-    margin-top: 32px;
+    margin-top: 1.90vw;
 }
 .btnBlock a {
     text-align: center;
 }
 .cooperation .cooperationBlock .info-block .item .textMainCooperation .btnBlock {
-    margin-top: 49px;
+    margin-top: 2.92vw;
 }
 .cooperation .cooperationBlock .info-block .item .imgBlockCooperation {
     position: relative;
     width: 100%;
-    height: 215px;
-    margin-top: 26px;
+    height: 12.80vw;
+    margin-top: 1.55vw;
 }
 .cooperation .cooperationBlock .info-block .item .imgBlockCooperation img {
     width: 100%;
@@ -983,7 +1004,7 @@ progress{
 .newsSection .newsSectionBlock .info-block .item {
     display: grid;
     grid-template-columns: 50% 1fr;
-    gap: 110px;
+    gap: 6.55vw;
 }
 .newsSection .newsSectionBlock .info-block .item .imgNews {
     width: 100%;
@@ -996,13 +1017,13 @@ progress{
 }
 .newsSection .newsSectionBlock .textMainCooperation {
     position: relative;
-    margin-top: 18px;
+    margin-top: 1.07vw;
     overflow: hidden;
     line-height: 1.2;
     transition: all .3s;
 }
 .newsSection .newsSectionBlock .textMainCooperation.close {
-    max-height: 110px;
+    max-height: 6.55vw;
     transition: all .3s;
 }
 .newsSection .newsSectionBlock .textMainCooperation.open {
@@ -1019,7 +1040,7 @@ progress{
 }
 .newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block,
 .jobList .jobListBlock .info-block .item .namePlace .arrows-block {
-    max-width: 250px;
+    max-width: 14.88vw;
 }
 
 .reviewsSection .reviewsSectionBlock .info-block {
@@ -1043,26 +1064,26 @@ progress{
 .reviewsSection .reviewsSectionBlock .info-block .item .titleBlock span {
     position: relative;
     display: block;
-    padding: 91px 0;
+    padding: 5.42vw 0;
     color: var(--white);
-    font-size: 64px;
+    font-size: var(--fz34);
     font-weight: 700;
     letter-spacing: 0.02em;
     z-index: 1;
 }
 .custom-input.rating input {
     position: relative;
-    margin-left: 20px;
+    margin-left: 1.19vw;
     opacity: 0;
     display: none!important;
 }
 .custom-input.rating label::before {
     content: "★";
     color: var(--gray);
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    top: -10px;
+    font-size: var(--fz20);
+    width: 1.19vw;
+    height: 1.19vw;
+    top: -0.60vw;
 }
 .custom-input.rating label.select::before {
     content: "★";
@@ -1072,18 +1093,18 @@ progress{
 .reviewsSection .reviewsSectionBlock .info-block .item .block {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding: 34px 0 71px;
+    gap: 2.98vw;
+    padding: 2.02vw 0 4.23vw;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block {
-    font-size: 15px;
+    font-size: var(--fz15);
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 1.49vw;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .imgPerson {
-    width: 80px;
-    height: 80px;
+    width: 4.76vw;
+    height: 4.76vw;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .imgPerson img {
     width: 100%;
@@ -1091,12 +1112,12 @@ progress{
     object-fit: cover;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson .datePublish {
-    font-size: 12px;
+    font-size: var(--fz12);
     color: var(--gray)
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person {
     display: flex;
-    gap: 15px;
+    gap: 0.89vw;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson {
     display: flex;
@@ -1104,31 +1125,31 @@ progress{
     justify-content: space-between;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson .rating {
-    margin-bottom: 7px;
+    margin-bottom: 0.42vw;
     cursor: default;
     display: flex;
-    gap: 5px;
+    gap: 0.30vw;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .newReview .review-block .person .infoPerson .rating label {
     cursor: pointer;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .infoPerson .datePublish {
-    margin-bottom: 5px;
+    margin-bottom: 0.30vw;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .btn-review {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 0.95vw;
     width: max-content;
     cursor: pointer;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .btn-review span {
     display: inline-block;
-    font-size: 24px;
+    font-size: var(--fz24);
     line-height: 1;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .btn-review .arrows {
-    width: 39px;
+    width: 2.32vw;
 }
 .reviewsSection form.newReview .person .imgPerson input {
     display: none;
@@ -1156,7 +1177,7 @@ progress{
 .reviewsSection form.newReview .person .imgPerson .uploadIcon {
     position: absolute;
     color: var(--white);
-    font-size: 25px;
+    font-size: var(--fz25);
     opacity: 0;
     transition: all .3s;
 }
@@ -1182,13 +1203,13 @@ progress{
     border: 0;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .btnBlock {
-    margin-top: 39px;
+    margin-top: 2.32vw;
 }
 .rags .ragsBlock .ragsBlockMain .info-block {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    width: calc(100% - 200px);
+    gap: 2.98vw;
+    width: calc(100% - 11.90vw);
     margin: 0 auto;
 }
 .rags .ragsBlock .ragsBlockMain .info-block .item {
@@ -1204,36 +1225,36 @@ progress{
     object-fit: contain;
 }
 .rags .ragsBlock .ragsBlockMain .info-block .item .textBlock .h2.title__page span {
-    font-size: 20px;
+    font-size: var(--fz20);
 }
 .rags .ragsBlock .ragsBlockMain .info-block .item .textBlock p.desc {
-    font-size: 15px;
+    font-size: var(--fz15);
 }
 .rags .ragsBlock .ragsBlockMain .info-block .item .btnBlock {
-    margin-top: 36px;
+    margin-top: 2.14vw;
 }
 .rags .ragsBlock .ragsBlockMain .ragsTextBlock {
     text-align: center;
-    margin: 40px auto 69px;
+    margin: 2.38vw auto 4.11vw;
     font-style: italic;
 }
 .rags .ragsBlock .imgRagsBottom,
 .rent .rentBlock .imgRentBottom {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 11.90vw;
 }
 .rags .ragsBlock .imgRagsBottom img,
 .rent .rentBlock .imgRentBottom img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 0 -250px;
+    object-position: 0 -14.88vw;
 }
 .rent .rentBlock .rentBlockMain .info-block {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 2.98vw;
 }
 .rent .rentBlock .rentBlockMain .info-block .item {
     width: 100%;
@@ -1247,7 +1268,7 @@ progress{
 .rent .rentBlock .rentBlockMain .rentTextBlock {
     font-style: italic;
     text-align: center;
-    margin: 99px auto 41px;
+    margin: 5.89vw auto 2.44vw;
 }
 .rent .rentBlock .imgRentBottom::before {
     content: '';
@@ -1263,40 +1284,40 @@ progress{
     width: 50%;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo {
-    margin-top: 18px;
+    margin-top: 1.07vw;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.requirements {
     font-style: italic;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo p {
-    margin-bottom: 35px;
+    margin-bottom: 2.08vw;
 }
 .infoLandlords {
     padding-top: 0;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item {
-    margin-bottom: 91px;
+    margin-bottom: 5.42vw;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText {
-    margin-top: 57px;
+    margin-top: 3.39vw;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText p {
     display: flex;
     gap: 10px;
-    margin-bottom: 22px;
+    margin-bottom: 1.31vw;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText p i {
-    margin-top: 5px;
+    margin-top: 0.30vw;
 }
 section.brandSection {
-    padding-bottom: 81px;
+    padding-bottom: 4.82vw;
 }
 .brandSection .brandSectionBlock .search {
-    width: 315px;
+    width: 18.75vw;
     border-bottom: 1px solid var(--dark);
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.30vw;
 }
 .brandSection .brandSectionBlock .search input {
     border: 0;
@@ -1306,10 +1327,10 @@ section.brandSection {
 }
 .brandSection .brandSectionBlock .info-block {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-    column-gap: 75px;
-    row-gap: 95px;
-    margin-top: 44px;
+    grid-template-columns: repeat(auto-fit, minmax(14.88vw, auto));
+    column-gap: 4.46vw;
+    row-gap: 5.65vw;
+    margin-top: 2.62vw;
     justify-content: space-between;
 }
 .brandSection .brandSectionBlock .info-block .item {
@@ -1319,7 +1340,7 @@ section.brandSection {
 .brandSection .brandSectionBlock .info-block .item .imgBrand {
     position: relative;
     width: 100%;
-    height: 278px;
+    height: 16.55vw;
 }
 .brandSection .brandSectionBlock .info-block .item .imgBrand::before {
     content: '';
@@ -1344,14 +1365,14 @@ section.brandSection {
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
-    padding: 20px 60px;
+    padding: 1.19vw 3.57vw;
 }
 .brandSection .brandSectionBlock .info-block .item .imgBrand .nameBrand img {
     width: 100%;
     height: 100%;
 }
 .brandSection .brandSectionBlock .info-block .item .btnMore {
-    padding: 21px;
+    padding: 1.25vw;
     text-align: center;
     background-color: var(--dark)
 }
@@ -1359,7 +1380,7 @@ section.brandSection {
     color: var(--white);
     line-height: 1;
     letter-spacing: 0.03em;
-    font-size: 24px;
+    font-size: var(--fz24);
     font-weight: 100;
 }
 .brandSection .brandSectionBlock .info-block .item.d-none {
@@ -1368,7 +1389,7 @@ section.brandSection {
 .brandSectionPage .brandSectionBlockPage .imgBrandBlock {
     filter: invert(100%);
     max-width: 50%;
-    margin-bottom: 32px;
+    margin-bottom: 1.90vw;
 }
 .brandSectionPage .brandSectionBlockPage .imgBrandBlock img {
     max-width: 100%;
@@ -1376,14 +1397,14 @@ section.brandSection {
 .brandSectionPage .brandSectionBlockPage .info-block {
     display: grid;
     grid-template-columns: 30% auto;
-    gap: 78px;
+    gap: 4.64vw;
 }
 .brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText {
-    font-size: 15px;
-    margin-bottom: 25px;
+    font-size: var(--fz15);
+    margin-bottom: 1.49vw;
 }
 .brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText span {
-    font-size: 30px;
+    font-size: var(--fz30);
     font-weight: bold;
 }
 .brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText .text {
@@ -1404,22 +1425,22 @@ section.brandSection {
     object-position: top;
 }
 .brandSectionPage .brandSectionBlockPage .info-block .item.sliderBlockBrand .swiper-pagination {
-    width: 30px;
+    width: 1.79vw;
     height: 100%;
-    right: 22px;
+    right: 1.31vw;
     left: auto;
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 0.89vw;
 }
 .brandSectionPage .brandSectionBlockPage .swiper-pagination-bullet {
     background-color: var(--white);
     box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.25);
     opacity: 1;
-    width: 22px;
-    height: 22px;
+    width: 1.31vw;
+    height: 1.31vw;
 }
 .brandSectionPage .brandSectionBlockPage .swiper-pagination-bullet-active {
     background-color: var(--dark)
@@ -1430,13 +1451,13 @@ section.brandSection {
 .jobList .jobListBlock .info-block {
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 5.36vw;
 }
 .jobList .jobListBlock .info-block .item .namePlace {
-    font-size: 30px;
+    font-size: var(--fz30);
     display: flex;
-    gap: 66px;
-    margin-bottom: 38px;
+    gap: 3.93vw;
+    margin-bottom: 2.26vw;
 }
 .jobList .jobListBlock .info-block .item .namePlace > .arrows-block {
     margin-top: 0;
@@ -1444,12 +1465,12 @@ section.brandSection {
 }
 .jobList .jobListBlock .info-block .item .namePlace > span {
     width: 100px;
-    margin-top: 15px;
+    margin-top: 0.89vw;
 }
 .jobList .jobListBlock .info-block .item .imgPlace {
     position: relative;
     width: 50%;
-    height: 300px;
+    height: 17.86vw;
 }
 .jobList .jobListBlock .info-block .item .imgPlace img {
     width: 100%;
@@ -1479,11 +1500,11 @@ section.brandSection {
     font-weight: bold;
     letter-spacing: 0.02em;
     width: 100%;
-    padding: 10px;
+    padding: 0.60vw;
     text-align: center;
 }
 section.jobList {
-    padding-bottom: 81px;
+    padding-bottom: 4.82vw;
 }
 .italic {
     font-style: italic;
@@ -1496,13 +1517,13 @@ section.jobList {
 }
 .jobList .jobListBlock .info-block .item .textInformation.cityInfo {
     display: none;
-    margin-top: 30px;
+    margin-top: 1.79vw;
 }
 .jobList .jobListBlock .info-block .item .textInformation.cityInfo.open {
     display: block;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain {
-    margin-bottom: 19px;
+    margin-bottom: 1.13vw;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain:last-of-type {
     margin-bottom: 0;
@@ -1510,28 +1531,28 @@ section.jobList {
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 1.49vw;
     cursor: pointer;
     width: max-content;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows {
-    width: 39px;
+    width: 2.32vw;
     opacity: .4;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text {
     display: flex;
     flex-direction: column;
-    gap: 29px;
-    margin-top: 32px;
-    font-size: 15px;
+    gap: 1.73vw;
+    margin-top: 1.90vw;
+    font-size: var(--fz15);
     display: none
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text .h4 {
     font-weight: bold;
-    font-size: 15px;
+    font-size: var(--fz15);
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text ul {
-    padding-left: 30px;
+    padding-left: 1.79vw;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open .text {
     display: flex;
@@ -1544,8 +1565,8 @@ section.jobList {
 }
 .__select {
     position: relative;
-    width: 400px;
-    height: 46px;
+    width: 23.81vw;
+    height: 2.74vw;
     background-color: var(--light-gray)
 }
 .__select[data-state=active] .__select__title::before {
@@ -1558,7 +1579,7 @@ section.jobList {
     opacity: 1;
 }
 .__select[data-state=active] .__select__label + .__select__input + .__select__label {
-    max-height: 40px;
+    max-height: 2.38vw;
     border-top-width: 1px;
 }
 .__select__title {
@@ -1566,9 +1587,9 @@ section.jobList {
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 8px 16px;
+    padding: 0.48vw 0.95vw;
     cursor: pointer;
-    font-size: 12px;
+    font-size: var(--fz12);
 }
 .__select__title::before, .__select__title::after {
     content: "";
@@ -1589,7 +1610,7 @@ section.jobList {
   
 .__select__content {
     position: absolute;
-    top: 46px;
+    top: 2.74vw;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -1618,13 +1639,13 @@ section.jobList {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 40px;
+    height: 2.38vw;
     max-height: 0;
-    padding: 0 16px;
+    padding: 0 0.95vw;
     transition: all 0.2s ease-out;
     cursor: pointer;
     overflow: hidden;
-    font-size: 12px;
+    font-size: var(--fz12);
 }
 .__select__label:hover {
     color: var(--white);
@@ -1634,39 +1655,39 @@ section.jobList {
     display: none;
 }
 .jobList .jobListBlock .info-block .item .selectCity .selectCityTitle {
-    font-size: 12px;
+    font-size: var(--fz12);
     color: var(--gray);
-    margin-bottom: 19px;
+    margin-bottom: 1.13vw;
 }
 .discountBlock .discountBlockMain .textBlockTitle .h2.title__page {
     text-align: center;
     font-weight: 400;
-    margin-bottom: 45px;
+    margin-bottom: 2.68vw;
 }
 .discountBlock .discountBlockMain .discountSlider .nameMonth {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 1.90vw;
 }
 .discountBlock .discountBlockMain .discountSlider .nameMonth span {
-    font-size: 64px;
+    font-size: var(--fz64);
     font-weight: bold;
     line-height: 1;
 }
 .discountBlock .discountBlockMain .discountSlider .nameMonth .arrows {
-    width: 100px;
-    margin-bottom: 10px;
+    width: 5.95vw;
+    margin-bottom: 0.60vw;
 }
 .discountBlock .discountBlockMain .discountSlider .nameMonth .btn-dsc {
-    height: 30px;
+    height: 1.79vw;
     display: flex;
     align-items: center;
 }
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .nameDay {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 6px;
+    gap: 0.36vw;
     border-bottom: 1px solid var(--dark)
 }
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .nameDay span {
@@ -1676,9 +1697,9 @@ section.jobList {
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 6px;
-    row-gap: 25px;
-    margin-top: 12px;
+    column-gap: 0.36vw;
+    row-gap: 1.49vw;
+    margin-top: 0.71vw;
 }
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item {
     background-color: var(--gray2);
@@ -1686,7 +1707,7 @@ section.jobList {
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    padding: 12px;
+    padding: 0.71vw;
 }
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item:nth-child(7n - 1),
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item:nth-child(7n) {
@@ -1699,28 +1720,28 @@ section.jobList {
 }
 .discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item .discountNum {
     text-align: right;
-    font-size: 32px;
+    font-size: var(--fz32);
     line-height: 1;
 }
 section.discountBlock {
-    padding-bottom: 58px;
+    padding-bottom: 3.45vw;
 }
 section.stocksBlock {
     padding-top: 0;
 }
 .stocksBlock .stocksBlockMain .info-block .item .textBlock .h3.title__page {
-    font-size: 30px;
+    font-size: var(--fz30);
     color: var(--white);
     font-style: normal;
     font-weight: bold;
 }
 .stocksBlock .stocksBlockMain .info-block .item .textBlock {
-    margin-bottom: 42px;
+    margin-bottom: 2.50vw;
 }
 .stocksBlock .stocksBlockMain .blockStocksInfo {
     display: grid;
     grid-template-columns: 60% 40%;
-    gap: 47px;
+    gap: 2.80vw;
 }
 .stocksBlock .stocksBlockMain .blockStocksInfo .item.imgStocks {
     width: 100%;
@@ -1733,17 +1754,17 @@ section.stocksBlock {
 .stocksBlock .stocksBlockMain .info-block {
     display: flex;
     flex-direction: column;
-    gap: 146px;
+    gap: 8.69vw;
 }
 .stocksBlock .stocksBlockMain .info-block .item:last-of-type {
-    margin-bottom: 180px;
+    margin-bottom: 10.71vw;
 }
 .infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain {
     padding: 0;
 }
 .infoContactsSection .infoContactsSectionBlock .photo-text .photoCollections {
     position: relative;
-    height: 295px;
+    height: 17.56vw;
 }
 .infoContactsSection .infoContactsSectionBlock .photo-text {
     align-items: center;
@@ -1751,28 +1772,28 @@ section.stocksBlock {
 .infoContactsSection .info-block .item .textBlockMain .locationInfo {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 1.31vw;
 }
 .infoContactsSection .info-block .item .textBlockMain .locationInfo .locText {
     display: flex;
-    gap: 12px;
+    gap: 0.71vw;
 }
 .infoContactsSection .infoContactsSectionBlock .info-block {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 5.95vw;
 }
 .faqSection .faqSectionBlock .categoryFaq {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    gap: 18px;
-    margin-bottom: 65px;
+    grid-template-columns: repeat(auto-fit, minmax(16.67vw, auto));
+    gap: 1.07vw;
+    margin-bottom: 3.87vw;
 }
 .faqSection .faqSectionBlock .categoryFaq span {
     display: block;
     background-color: var(--gray3);
     text-transform: uppercase;
-    padding: 16px 10px;
+    padding: 0.95vw 0.60vw;
     text-align: center;
     cursor: pointer;
     border-bottom: 4px solid transparent
@@ -1781,24 +1802,24 @@ section.stocksBlock {
     border-color: var(--red)
 }
 section.faqSection {
-    padding-bottom: 91px;
+    padding-bottom: 5.42vw;
 }
 .faqSection .faqSectionBlock .info-block {
     display: none;
     flex-direction: column;
-    gap: 40px;
+    gap: 2.38vw;
 }
 .faqSection .faqSectionBlock .info-block.active {
     display: flex;
 }
 .faqSection .faqSectionBlock .info-block .item {
-    padding: 50px 66px;
+    padding: 2.98vw 3.93vw;
     background-color: var(--gray3);
 }
 .faqSection .faqSectionBlock .info-block .item .answer {
     display: none;
-    font-size: 16px;
-    margin-top: 25px;
+    font-size: var(--fz16);
+    margin-top: 1.49vw;
 }
 .faqSection .faqSectionBlock .info-block .item .answer.active {
     display: block;
@@ -1807,18 +1828,18 @@ section.faqSection {
     display: block;
     font-style: italic;
     font-weight: bold;
-    margin-top: 54px;
+    margin-top: 3.21vw;
 }
 .faqSection .faqSectionBlock .info-block .item .question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 0.60vw;
     cursor: pointer;
 }
 .faqSection .faqSectionBlock .info-block .item .question i {
-    width: 50px;
-    height: 50px;
+    width: 2.98vw;
+    height: 2.98vw;
     border: 1px solid var(--dark);
     border-radius: 50%;
     display: flex;
@@ -1848,7 +1869,7 @@ section.faqSection {
 }
 .modal .modal-content .modal-header .modal-title {
     position: relative;
-    font-size: 40px;
+    font-size: var(--fz40);
     font-weight: bold;
     line-height: 1;
     color: var(--white);
@@ -1858,12 +1879,12 @@ section.faqSection {
     filter: invert(100%);
 }
 .modal .modal-content .modal-body {
-    padding: 32px 68px;
+    padding: 1.90vw 4.05vw;
 }
 input {
     width: 100%;
-    font-size: 12px;
-    padding: 13px;
+    font-size: var(--fz12);
+    padding: 0.77vw;
     border: 0;
     outline: none;
     background-color: var(--light-gray);
@@ -1878,7 +1899,7 @@ input:focus {
 .modal .modal-content .modal-body .info-block .item form .inputBlock {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.19vw;
 }
 .modal .modal-content .modal-body .info-block .item {
     display: none;
@@ -1901,7 +1922,7 @@ input:focus {
 .modal .check {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.71vw;
     justify-content: center;
     text-align: center;
 }
@@ -1909,7 +1930,7 @@ input:focus {
     width: auto;
 }
 .modal .check label {
-    font-size: 15px;
+    font-size: var(--fz15);
 }
 .custom-checkbox {
     position: absolute;
@@ -1924,8 +1945,8 @@ input:focus {
 .custom-checkbox+label::before {
     content: '';
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 0.89vw;
+    height: 0.89vw;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
@@ -1956,39 +1977,39 @@ input:focus {
     text-decoration: underline;
 }
 .modal .termsPromotion {
-    font-size: 15px;
+    font-size: var(--fz15);
     text-align: center;
 }
 .modal .infoText {
-    font-size: 15px;
+    font-size: var(--fz15);
     color: var(--gray);
-    margin: 14px 0 25px;
+    margin: 0.83vw 0 1.49vw;
     text-align: center;
 }
 .modal .info-block .item .discount {
     color: var(--red);
-    font-size: 30px;
+    font-size: var(--fz30);
     line-height: 1;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 25px;
+    margin-bottom: 1.49vw;
 }
 .modal#coupon .info-block .item p.desc {
     text-align: center;
-    font-size: 15px;
-    margin-bottom: 25px;
+    font-size: var(--fz15);
+    margin-bottom: 1.49vw;
 }
 .modal#coupon .modal-body .btnTab {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 34px;
+    margin-bottom: 2.02vw;
 }
 .modal#coupon .modal-body .btnTab span {
-    font-size: 24px;
+    font-size: var(--fz24);
     color: var(--white);
     text-align: center;
     background-color: var(--gray4);
-    padding: 17px 10px;
+    padding: 1.01vw 0.60vw;
     line-height: 1;
     cursor: pointer;
 }
@@ -2005,17 +2026,17 @@ button {
 .modal .info-block .item .inputMain .questions {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 1.49vw;
 }
 .modal .info-block .item .inputMain .questions .check label {
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: var(--fz12);
 }
 .modal .info-block .item .inputMain > span {
     display: block;
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: var(--fz12);
+    margin-bottom: 0.60vw;
 }
 .modal .btnBlock {
     text-align: center;

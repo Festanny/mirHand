@@ -1,0 +1,21 @@
+/* 
+--fz64: 3.35vw;
+--fz30: 1.6vw;
+--fz24: 1.3vw;
+--fz20: 1.05vw;
+--fz16: 0.85vw;
+--fz15: 0.8vw;
+--fz12: 0.65vw;
+*/
+
+@media screen and (min-width: 1681px) {
+    .container {
+        max-width: 55vw;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .ourCollections .ourCollectionsBlock .photoCollections.man {
+        height: 750px;
+    }
+}

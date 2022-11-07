@@ -84,10 +84,10 @@ let swiper3 = new Swiper(".discountSlider", {
     }
 });
 
-let widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
+let widthLine = (($('footer').width() - $('.container').width()) / 2) + 200;
 $('footer .footer .item .contactInfo.beforeContactInfo .line').css('width', widthLine + 'px')
 $(window).resize(function() {
-    widthLine = (($('footer').width() - $('.container').width()) / 2) + 86;
+    widthLine = (($('footer').width() - $('.container').width()) / 2) + 200;
     $('footer .footer .item .contactInfo.beforeContactInfo .line').css('width', widthLine + 'px')
 });
 
@@ -465,3 +465,5 @@ window.addEventListener("DOMContentLoaded", function() {
     input.addEventListener("keydown", mask, false)
   });
 });
+
+// alert($('body').width())
