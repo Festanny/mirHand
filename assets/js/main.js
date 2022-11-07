@@ -466,4 +466,124 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// alert($('body').width())
+// mask for date input
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call( document.querySelectorAll('#date'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 0) event.preventDefault();
+        var matrix = "__.__.____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 10 && (i = 10);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 0 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 10)  this.value = ""
+    }
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, true);
+    input.addEventListener("keydown", mask, false)
+  });
+});
+
+$(document).ready(function(){
+    $('#name').click(function() {
+        var name = $(this);
+        name.blur(function(){
+            if(name.val() == ''){
+                name.addClass('error')
+            }else{
+                name.removeClass('error');
+            }
+            checkInput()
+        });
+    })
+    $('#phone').click(function() {
+        var phone = $(this);
+        phone.blur(function(){
+            if(phone.val() == '' || phone.val().length < 17){
+                phone.addClass('error')
+            }else{
+                phone.removeClass('error');
+            }
+            checkInput()
+        });
+    })
+    $('#email').click(function() {
+        var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
+        var mail = $(this);
+        mail.blur(function(){
+            if(mail.val() != ''){
+                if(mail.val().search(pattern) == 0){
+                    mail.removeClass('error')
+                }else{
+                    mail.addClass('error')
+                }
+            }else{
+                mail.addClass('error');
+            }
+            checkInput()
+        });
+    })
+    $('#cityInput').click(function() {
+        var city = $(this);
+        city.blur(function(){
+            if(city.val() == ''){
+                city.addClass('error')
+            }else{
+                city.removeClass('error');
+            }
+            checkInput()
+        });
+    })
+    $('#cityInput').parent().next().children('.__select__label').on('click', function(el) {
+        
+        $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error');
+        
+        setTimeout(function() {
+            checkInput()
+        }, 1)
+    })
+
+    $('.modal#leaveRequest .btnBlock button').on('click', function(el) {
+        el.preventDefault()
+        console.log(checkInput())
+        if (checkInput()) {
+            $('.modal#leaveRequest').modal('hide')
+            $('#successModal').modal('show')
+        } else {
+            console.log('error')
+        }
+        
+    })
+
+    function checkInput() {
+        if ($('.modal#leaveRequest #name').val()!=''
+        && $('.modal#leaveRequest #phone').val()!=''
+        && $('.modal#leaveRequest #phone').val().length == 17
+        && $('.modal#leaveRequest #email').val()!=''
+        && $('.modal#leaveRequest #cityInput').val()!='') {
+            $('.modal#leaveRequest .btnBlock button').prop('disabled', false)
+            return true
+        } else {
+            $('.modal#leaveRequest .btnBlock button').prop('disabled', true)
+            return false
+        }
+    }
+
+});

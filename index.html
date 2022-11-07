@@ -20,7 +20,7 @@
                 <div class="city">
                     <div class="block">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Тольятти</span>
+                        <span data-bs-toggle="modal" data-bs-target="#choosingСity">Тольятти</span>
                     </div>
                 </div>
                 <div class="logo">
@@ -330,7 +330,7 @@
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_1" class="__select__input" type="radio" name="singleSelect" checked />
-                                        <label for="singleSelect0_1" class="__select__label">Выберите город</label>
+                                        <label for="singleSelect0_1" class="__select__label first">Выберите город</label>
                                         <input id="singleSelect1_1" class="__select__input" type="radio" name="singleSelect" />
                                         <label for="singleSelect1_1" class="__select__label">Город 1</label>
                                         <input id="singleSelect3_1" class="__select__input" type="radio" name="singleSelect" />
@@ -366,7 +366,7 @@
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_2" class="__select__input" type="radio" name="singleSelect2" checked />
-                                        <label for="singleSelect0_2" class="__select__label">Ваш город</label>
+                                        <label for="singleSelect0_2" class="__select__label first">Ваш город</label>
                                         <input id="singleSelect1_2" class="__select__input" type="radio" name="singleSelect2" />
                                         <label for="singleSelect1_2" class="__select__label">Город 1</label>
                                         <input id="singleSelect3_2" class="__select__input" type="radio" name="singleSelect2" />
@@ -382,7 +382,7 @@
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_3" class="__select__input" type="radio" name="singleSelect3" checked />
-                                        <label for="singleSelect0_3" class="__select__label">Город друга</label>
+                                        <label for="singleSelect0_3" class="__select__label first">Город друга</label>
                                         <input id="singleSelect1_3" class="__select__input" type="radio" name="singleSelect3" />
                                         <label for="singleSelect1_3" class="__select__label">Город 1</label>
                                         <input id="singleSelect3_3" class="__select__input" type="radio" name="singleSelect3" />
@@ -401,8 +401,7 @@
                             </div>
                             <p class="infoText">Нажимая кнопку “получить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <!-- <button class="btn dark" disabled>Получить</button> -->
-                                <a class="btn dark" data-bs-toggle="modal" data-bs-target="#leaveRequest">Получить</a>
+                                <button class="btn dark" disabled>Получить</button>
                             </div>
                         </form>
                     </div>
@@ -412,30 +411,26 @@
         </div>
     </div>
 
-    <!-- Оставь заявку здесь -->
-    <div class="modal fade" id="leaveRequest" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Выбор города -->
+    <div class="modal fade" id="choosingСity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <div class="h5 modal-title bebas" id="exampleModalLabel">Оставь заявку здесь</div>
+              <div class="h5 modal-title bebas" id="exampleModalLabel">Выберите город</div>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
                 <div class="info-block">
                     <div class="item active">
-                        <div class="discount bebas">После заполнения формы мы свяжимся с вами в течении двух дней</div>
                         <form action="">
                             <div class="inputBlock">
-                                <input type="text" placeholder="Имя" name="name">
-                                <input type="text" id='phone' placeholder="Телефон" name="phone">
-                                <input type="email" placeholder="E-mail" name="email">
                                 <div class="__select" data-state="">
                                     <div class="__select__title">
-                                        <input type="text" placeholder="Город" name="city">
+                                        <input type="text" placeholder="Город" name="city" id="cityInput">
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_4" class="__select__input" type="radio" name="singleSelect4" checked />
-                                        <label for="singleSelect0_4" class="__select__label">Город</label>
+                                        <label for="singleSelect0_4" class="__select__label first">Город</label>
                                         <input id="singleSelect1_4" class="__select__input" type="radio" name="singleSelect4" />
                                         <label for="singleSelect1_4" class="__select__label">Город 1</label>
                                         <input id="singleSelect3_4" class="__select__input" type="radio" name="singleSelect4" />
@@ -445,11 +440,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <button class="btn dark" disabled>Отправить</button>
+                                <button class="btn dark" disabled>Сохранить</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Успех -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="h5 modal-title bebas" id="exampleModalLabel">Успешно!</div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="info-block">
+                    <div class="item active">
+                        <div class="discount bebas">Спасибо, ваша заявка принята.</div>
                     </div>
                 </div>
             </div>
