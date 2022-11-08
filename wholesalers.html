@@ -169,77 +169,32 @@
             </div>
             <div class="modal-body">
                 <div class="info-block">
-                    <div class="item active">
+                    <div class="item active" data-modal="wholesalers">
                         <div class="discount bebas">После заполнения формы мы свяжимся с вами в течении двух дней</div>
                         <form action="">
                             <div class="inputBlock">
-                                <input type="text" placeholder="Имя" name="name" id="name">
-                                <input type="text" id='phone' placeholder="Телефон" name="phone">
-                                <input type="email" placeholder="E-mail" name="email" id="email">
+                                <input type="text" placeholder="Имя" name="name" id="name" data-modal="wholesalers">
+                                <input type="text" id='phone' placeholder="Телефон" name="phone" data-modal="wholesalers">
+                                <input type="email" placeholder="E-mail" name="email" id="email" data-modal="wholesalers">
                                 <div class="__select" data-state="">
                                     <div class="__select__title">
-                                        <input type="text" placeholder="Город" name="city" id="cityInput">>
+                                        <input type="text" placeholder="Город" name="city" id="cityInput" data-modal="wholesalers">
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_4" class="__select__input" type="radio" name="singleSelect4" checked />
-                                        <label for="singleSelect0_4" class="__select__label first">Город</label>
+                                        <label for="singleSelect0_4" class="__select__label first" data-modal="wholesalers">Город</label>
                                         <input id="singleSelect1_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect1_4" class="__select__label">Город 1</label>
+                                        <label for="singleSelect1_4" class="__select__label" data-modal="wholesalers">Город 1</label>
                                         <input id="singleSelect3_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect3_4" class="__select__label">Город 2</label>
+                                        <label for="singleSelect3_4" class="__select__label" data-modal="wholesalers">Город 2</label>
                                         <input id="singleSelect4_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect4_4" class="__select__label">Город 3</label>
+                                        <label for="singleSelect4_4" class="__select__label" data-modal="wholesalers">Город 3</label>
                                     </div>
                                 </div>
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
                                 <button class="btn dark" disabled>Отправить</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- Оставь заявку здесь -->
-    <div class="modal fade" id="leaveRequest" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <div class="h5 modal-title bebas" id="exampleModalLabel">Оставь заявку здесь</div>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-            </div>
-            <div class="modal-body">
-                <div class="info-block">
-                    <div class="item active">
-                        <div class="discount bebas">После заполнения формы мы свяжимся с вами в течении двух дней</div>
-                        <form action="">
-                            <div class="inputBlock">
-                                <input type="text" placeholder="Имя" name="name" id="name">
-                                <input type="text" id='phone' placeholder="Телефон" name="phone">
-                                <input type="email" placeholder="E-mail" name="email" id="email">
-                                <div class="__select" data-state="">
-                                    <div class="__select__title">
-                                        <input type="text" placeholder="Город" name="city" id="cityInput">>
-                                    </div>
-                                    <div class="__select__content">
-                                        <input id="singleSelect0_4" class="__select__input" type="radio" name="singleSelect4" checked />
-                                        <label for="singleSelect0_4" class="__select__label first">Город</label>
-                                        <input id="singleSelect1_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect1_4" class="__select__label">Город 1</label>
-                                        <input id="singleSelect3_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect3_4" class="__select__label">Город 2</label>
-                                        <input id="singleSelect4_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect4_4" class="__select__label">Город 3</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
-                            <div class="btnBlock">
-                                <button type="button" class="btn dark" disabled onclick>Отправить</button>
                             </div>
                         </form>
                     </div>

@@ -322,11 +322,11 @@
                         <p class="desc">Еще не совершали покупку в МЕГАХЕНД? Тогда заполните форму ниже и совершите первую покупку с выгодой!</p>
                         <form action="">
                             <div class="inputBlock">
-                                <input type="text" placeholder="Ваше имя" name="name">
-                                <input type="text" id='phone' placeholder="Телефон" name="phone">
+                                <input type="text" placeholder="Ваше имя" name="name" id="name" data-modal="coupon300">
+                                <input type="text" id='phone' placeholder="Телефон" name="phone" data-modal="coupon300">
                                 <div class="__select" data-state="">
                                     <div class="__select__title">
-                                        <input type="text" placeholder="Выберите город" name="city">
+                                        <input type="text" placeholder="Выберите город" name="city" data-modal="coupon300">
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_1" class="__select__input" type="radio" name="singleSelect" checked />
@@ -358,37 +358,59 @@
                         <p class="desc">Рекомендуйте нас своим друзьям и получите 500 руб после того, как оба друга совершат покупку в Мегахенд</p>
                         <form action="">
                             <div class="inputBlock">
-                                <input type="text" placeholder="Ваше имя" name="name">
-                                <input type="text" placeholder="Ваш телефон" name="phone">
-                                <div class="__select" data-state="">
-                                    <div class="__select__title">
-                                        <input type="text" placeholder="Ваш город" name="city">
-                                    </div>
-                                    <div class="__select__content">
-                                        <input id="singleSelect0_2" class="__select__input" type="radio" name="singleSelect2" checked />
-                                        <label for="singleSelect0_2" class="__select__label first">Ваш город</label>
-                                        <input id="singleSelect1_2" class="__select__input" type="radio" name="singleSelect2" />
-                                        <label for="singleSelect1_2" class="__select__label">Город 1</label>
-                                        <input id="singleSelect3_2" class="__select__input" type="radio" name="singleSelect2" />
-                                        <label for="singleSelect3_2" class="__select__label">Город 2</label>
-                                        <input id="singleSelect4_2" class="__select__input" type="radio" name="singleSelect2" />
-                                        <label for="singleSelect4_2" class="__select__label">Город 3</label>
+                                <div>
+                                    <input class="mb-1" type="text" placeholder="Ваше имя" name="name">
+                                    <input class="mb-1" type="text" placeholder="Ваш телефон" name="phone">
+                                    <div class="__select" data-state="">
+                                        <div class="__select__title">
+                                            <input type="text" placeholder="Ваш город" name="city">
+                                        </div>
+                                        <div class="__select__content">
+                                            <input id="singleSelect0_2" class="__select__input" type="radio" name="singleSelect2" checked />
+                                            <label for="singleSelect0_2" class="__select__label first">Ваш город</label>
+                                            <input id="singleSelect1_2" class="__select__input" type="radio" name="singleSelect2" />
+                                            <label for="singleSelect1_2" class="__select__label">Город 1</label>
+                                            <input id="singleSelect3_2" class="__select__input" type="radio" name="singleSelect2" />
+                                            <label for="singleSelect3_2" class="__select__label">Город 2</label>
+                                            <input id="singleSelect4_2" class="__select__input" type="radio" name="singleSelect2" />
+                                            <label for="singleSelect4_2" class="__select__label">Город 3</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <input type="text" placeholder="Телефон друга" name="phoneFriend">
-                                <div class="__select" data-state="">
-                                    <div class="__select__title">
-                                        <input type="text" placeholder="Город друга" name="cityFriend">
+                                <div>
+                                    <input class="mb-1" type="text" placeholder="Телефон друга" name="phoneFriend">
+                                    <div class="__select" data-state="">
+                                        <div class="__select__title">
+                                            <input type="text" placeholder="Город друга" name="cityFriend">
+                                        </div>
+                                        <div class="__select__content">
+                                            <input id="singleSelect0_3" class="__select__input" type="radio" name="singleSelect3" checked />
+                                            <label for="singleSelect0_3" class="__select__label first">Город друга</label>
+                                            <input id="singleSelect1_3" class="__select__input" type="radio" name="singleSelect3" />
+                                            <label for="singleSelect1_3" class="__select__label">Город 1</label>
+                                            <input id="singleSelect3_3" class="__select__input" type="radio" name="singleSelect3" />
+                                            <label for="singleSelect3_3" class="__select__label">Город 2</label>
+                                            <input id="singleSelect4_3" class="__select__input" type="radio" name="singleSelect3" />
+                                            <label for="singleSelect4_3" class="__select__label">Город 3</label>
+                                        </div>
                                     </div>
-                                    <div class="__select__content">
-                                        <input id="singleSelect0_3" class="__select__input" type="radio" name="singleSelect3" checked />
-                                        <label for="singleSelect0_3" class="__select__label first">Город друга</label>
-                                        <input id="singleSelect1_3" class="__select__input" type="radio" name="singleSelect3" />
-                                        <label for="singleSelect1_3" class="__select__label">Город 1</label>
-                                        <input id="singleSelect3_3" class="__select__input" type="radio" name="singleSelect3" />
-                                        <label for="singleSelect3_3" class="__select__label">Город 2</label>
-                                        <input id="singleSelect4_3" class="__select__input" type="radio" name="singleSelect3" />
-                                        <label for="singleSelect4_3" class="__select__label">Город 3</label>
+                                </div>
+                                <div>
+                                    <input class="mb-1" type="text" placeholder="Телефон друга" name="phoneFriend2">
+                                    <div class="__select" data-state="">
+                                        <div class="__select__title">
+                                            <input type="text" placeholder="Город друга" name="cityFriend2">
+                                        </div>
+                                        <div class="__select__content">
+                                            <input id="singleSelect0_5" class="__select__input" type="radio" name="singleSelect5" checked />
+                                            <label for="singleSelect0_5" class="__select__label first">Город друга</label>
+                                            <input id="singleSelect1_5" class="__select__input" type="radio" name="singleSelect5" />
+                                            <label for="singleSelect1_5" class="__select__label">Город 1</label>
+                                            <input id="singleSelect3_5" class="__select__input" type="radio" name="singleSelect5" />
+                                            <label for="singleSelect3_5" class="__select__label">Город 2</label>
+                                            <input id="singleSelect4_5" class="__select__input" type="radio" name="singleSelect5" />
+                                            <label for="singleSelect4_5" class="__select__label">Город 3</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <label class="check">
@@ -426,7 +448,7 @@
                             <div class="inputBlock">
                                 <div class="__select" data-state="">
                                     <div class="__select__title">
-                                        <input type="text" placeholder="Город" name="city" id="cityInput">
+                                        <input type="text" placeholder="Город" name="city" id="choiceCityInput" data-modal="choiceCityInput">
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_4" class="__select__input" type="radio" name="singleSelect4" checked />

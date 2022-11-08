@@ -502,31 +502,37 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 $(document).ready(function(){
-    $('#name').click(function() {
-        var name = $(this);
+    $('input[name="name"]').click(function() {
+        var name = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
         name.blur(function(){
             if(name.val() == ''){
                 name.addClass('error')
             }else{
                 name.removeClass('error');
             }
-            checkInput()
+            checkInput(content)
         });
     })
     $('#phone').click(function() {
-        var phone = $(this);
+        var phone = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
         phone.blur(function(){
             if(phone.val() == '' || phone.val().length < 17){
                 phone.addClass('error')
             }else{
                 phone.removeClass('error');
             }
-            checkInput()
+            checkInput(content)
         });
     })
     $('#email').click(function() {
         var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
-        var mail = $(this);
+        var mail = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
         mail.blur(function(){
             if(mail.val() != ''){
                 if(mail.val().search(pattern) == 0){
@@ -537,26 +543,61 @@ $(document).ready(function(){
             }else{
                 mail.addClass('error');
             }
-            checkInput()
+            checkInput(content)
         });
     })
     $('#cityInput').click(function() {
-        var city = $(this);
+        var city = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
         city.blur(function(){
             if(city.val() == ''){
                 city.addClass('error')
             }else{
                 city.removeClass('error');
             }
-            checkInput()
+            checkInput(content)
+        });
+    })
+    $('#choiceCityInput').click(function() {
+        var city = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
+        city.blur(function(){
+            if(city.val() == ''){
+                city.addClass('error')
+            }else{
+                city.removeClass('error');
+            }
+            choiceCityInput()
         });
     })
     $('#cityInput').parent().next().children('.__select__label').on('click', function(el) {
         $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error');
+        let contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
         setTimeout(function() {
-            checkInput()
+            checkInput(content)
         }, 1)
     })
+
+    $('#choiceCityInput').parent().next().children('.__select__label').on('click', function(el) {
+        $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error');
+        console.log($(el.target))
+        setTimeout(function() {
+            choiceCityInput()
+        }, 1)
+    })
+
+    function choiceCityInput() {
+        if ($('.modal#choosingСity #choiceCityInput').val()!='') {
+            $('.modal#choosingСity .btnBlock button').prop('disabled', false)
+            return true
+        } else {
+            $('.modal#choosingСity .btnBlock button').prop('disabled', true)
+            return false
+        }
+    }
 
     $('.modal#leaveRequest .btnBlock button').on('click', function(el) {
         el.preventDefault()
@@ -567,21 +608,25 @@ $(document).ready(function(){
         } else {
             console.log('error')
         }
-        
     })
-
-    function checkInput() {
-        if ($('.modal#leaveRequest #name').val()!=''
-        && $('.modal#leaveRequest #phone').val()!=''
-        && $('.modal#leaveRequest #phone').val().length == 17
-        && $('.modal#leaveRequest #email').val()!=''
-        && $('.modal#leaveRequest #cityInput').val()!='') {
-            $('.modal#leaveRequest .btnBlock button').prop('disabled', false)
+    function checkInput(content) {
+        let contentInput = content.find('input')
+        for (let i=0;i<contentInput.length;i++) {
+            if ($(contentInput[i]).val()=='') {
+                $(contentInput[i]).addClass('no')
+            } else {
+                $(contentInput[i]).removeClass('no')
+            }
+        }
+        if (content.find('input.no').length == 0) {
+            content.find('.btnBlock button').prop('disabled', false)
             return true
         } else {
-            $('.modal#leaveRequest .btnBlock button').prop('disabled', true)
+            content.find('.btnBlock button').prop('disabled', true)
             return false
         }
     }
+
+    
 
 });
