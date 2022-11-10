@@ -54,8 +54,24 @@ section {
 section.ourCollections {
     padding-top: 0;
 }
-section:not(.error):not(.jobList):last-of-type {
+section:not(.error):not(.jobList):not(.faqSection):last-of-type {
     padding-bottom: 0;
+}
+input,
+textarea {
+    width: 100%;
+    font-size: var(--fz12);
+    padding: 0.77vw;
+    border: 0;
+    outline: none;
+    background-color: var(--light-gray);
+    border: 1px solid transparent
+}
+input:focus,
+input.error,
+textarea:focus,
+textarea.error {
+    border-color: var(--red)
 }
 .bgGray {
     background-color: var(--bg-gray);
@@ -1198,11 +1214,21 @@ progress{
 .reviewsSection form.newReview .person .imgPerson.success {
     outline-color: var(--green);
 }
-.reviewsSection form.newReview .review-block input {
+.reviewsSection form.newReview .review-block input,
+.reviewsSection form.newReview .review-block textarea {
     display: block;
     width: 100%;
     outline: 0;
     border: 0;
+}
+.reviewsSection form.newReview .review-block textarea {
+    width: 50%;
+    resize: none;
+}
+form.newReview input,
+form.newReview textarea {
+    background-color: transparent;
+    padding-left: 0;
 }
 .reviewsSection .reviewsSectionBlock .info-block .item .btnBlock {
     margin-top: 2.32vw;
@@ -1889,19 +1915,6 @@ section.faqSection {
 }
 .modal .modal-content .modal-body {
     padding: 1.90vw 4.05vw;
-}
-input {
-    width: 100%;
-    font-size: var(--fz12);
-    padding: 0.77vw;
-    border: 0;
-    outline: none;
-    background-color: var(--light-gray);
-    border: 1px solid transparent
-}
-input:focus,
-input.error {
-    border-color: var(--red)
 }
 .modal .modal-content .modal-body .info-block .item form .__select {
     width: 100%;
