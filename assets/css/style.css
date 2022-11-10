@@ -1549,15 +1549,15 @@ section.jobList {
     font-size: var(--fz15);
     display: none
 }
+.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open .text {
+    display: flex;
+}
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text .h4 {
     font-weight: bold;
     font-size: var(--fz15);
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text ul {
     padding-left: 1.79vw;
-}
-.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open .text {
-    display: flex;
 }
 .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .jobBlockMainTitle .nameJob span {
     display: none;
@@ -2085,4 +2085,10 @@ button {
 
 a.btnBlock {
     display: block;
+}
+#datepicker {
+    position: relative;
+}
+.ui-datepicker {
+    position: absolute!important;
 }

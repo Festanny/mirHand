@@ -295,15 +295,13 @@ $('.brandSection .brandSectionBlock .search input').on('input', function() {
         })
     }
 })
-$('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .jobBlockMainTitle .nameJob').on('click', function(el) {
-    if ($(el.target).parent().parent().hasClass('open')) {
-        $(el.target).parent().parent().removeClass('open')
-        $(el.target).parent().parent().children().children().next().eq(0).removeClass('close')
+$('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .jobBlockMainTitle').on('click', function(el) {
+    if ($(this).parent('.jobBlockMain').hasClass('open')) {
+        $(this).parent('.jobBlockMain').removeClass('open').children('.jobBlockMainTitle').children('.arrows').removeClass('close')
     } else {
         $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
         $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows.close').removeClass('close')
-        $(el.target).parent().parent().addClass('open')
-        $(el.target).parent().parent().children().children().next().eq(0).addClass('close')
+        $(this).parent('.jobBlockMain').addClass('open').children('.jobBlockMainTitle').children('.arrows').addClass('close')
     }
 })
 $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block').on('click', function(el) {
@@ -330,7 +328,6 @@ $('.jobList .jobListBlock .info-block .item .namePlace > .arrows-block').on('cli
 $('.jobList .jobListBlock .__select__label').on('click', function(el) {
     let id = $(this).attr('data-city'),
         content = $(`.jobList .jobListBlock .info-block .item .textInformation.cityInfo[data-city='${id}']`)
-
     $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMain.open').removeClass('open')
     $('.jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows.close').removeClass('close')
     $(`.jobList .jobListBlock .info-block .item .textInformation.cityInfo.open`).removeClass('open')
@@ -466,40 +463,43 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+$('#datepicker').mask('99.99.9999');
+
 // mask for date input
-window.addEventListener("DOMContentLoaded", function() {
-    [].forEach.call( document.querySelectorAll('#date'), function(input) {
-    var keyCode;
-    function mask(event) {
-        event.keyCode && (keyCode = event.keyCode);
-        var pos = this.selectionStart;
-        if (pos < 0) event.preventDefault();
-        var matrix = "__.__.____",
-            i = 0,
-            def = matrix.replace(/\D/g, ""),
-            val = this.value.replace(/\D/g, ""),
-            new_value = matrix.replace(/[_\d]/g, function(a) {
-                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-            });
-        i = new_value.indexOf("_");
-        if (i != -1) {
-            i < 10 && (i = 10);
-            new_value = new_value.slice(0, i)
-        }
-        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-            function(a) {
-                return "\\d{1," + a.length + "}"
-            }).replace(/[+()]/g, "\\$&");
-        reg = new RegExp("^" + reg + "$");
-        if (!reg.test(this.value) || this.value.length < 0 || keyCode > 47 && keyCode < 58) this.value = new_value;
-        if (event.type == "blur" && this.value.length < 10)  this.value = ""
-    }
-    input.addEventListener("input", mask, false);
-    input.addEventListener("focus", mask, false);
-    input.addEventListener("blur", mask, true);
-    input.addEventListener("keydown", mask, false)
-  });
-});
+// window.addEventListener("DOMContentLoaded", function() {
+//     [].forEach.call( document.querySelectorAll('#datepicker'), function(input) {
+//     var keyCode;
+//     function mask(event) {
+//         event.keyCode && (keyCode = event.keyCode);
+//         var pos = this.selectionStart;
+//         if (pos < 0) event.preventDefault();
+//         var matrix = "__.__.____",
+//             i = 0,
+//             def = matrix.replace(/\D/g, ""),
+//             val = this.value.replace(/\D/g, ""),
+//             new_value = matrix.replace(/[_\d]/g, function(a) {
+//                 return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+//             });
+//         i = new_value.indexOf("_");
+//         if (i != ) {
+//             i < 10 && (i = 10);
+//             new_value = new_value.slice(0, i)
+//         }
+//         var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+//             function(a) {
+//                 return "\\d{1," + a.length + "}"
+//             }).replace(/[+()]/g, "\\$&");
+//         reg = new RegExp("^" + reg + "$");
+//         if (!reg.test(this.value) || this.value.length < 0 || keyCode > 47 && keyCode < 58) this.value = new_value;
+//         if (event.type == "blur" && this.value.length < 10) this.value = ""
+//         console.log(this.value.length < 10)
+//     }
+//     input.addEventListener("input", mask, false);
+//     input.addEventListener("focus", mask, false);
+//     input.addEventListener("blur", mask, true);
+//     input.addEventListener("keydown", mask, false)
+//   });
+// });
 
 $(document).ready(function(){
     $('._nameClass').on('propertychange change click keyup input paste', function() {
@@ -551,6 +551,17 @@ $(document).ready(function(){
         }
         checkInput(content)
     })
+    $('._dateClass').on('propertychange change click keyup input paste', function() {
+        var date = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
+        if(date.val() == '' || $(date).val().indexOf('_') != -1){
+            date.addClass('error no')
+        }else{
+            date.removeClass('error no');
+        }
+        checkInput(content)
+    })
     $('._cityInput').parent().next().children('.__select__label').on('propertychange change click keyup input paste', function(el) {
         $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error no');
         let contentData = $(this).attr('data-modal'),
@@ -592,7 +603,17 @@ $(document).ready(function(){
         }
         checkInput(content)
     })
-
+    $("#datepicker").datepicker({ 
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+2"
+    });
+    $('._dateClass').on('click', function() {
+        let offset = $(this).offset().top + ($(this).height() * 2.5)
+        $('.ui-datepicker').css({
+            'top': offset
+        })
+    })
     
     $('.modal .btnBlock button').on('propertychange change click keyup input paste', function(el) {
         el.preventDefault()
@@ -608,9 +629,13 @@ $(document).ready(function(){
             $(`.modal#${contentModalId} .btnBlock button`).prop('disabled', true)
             if (contentSuccess=='success') {
                 $('#successModal').modal('show')
-            }
-            if (contentSuccess=='promoCode') {
-                $('#successModalPromoCode').modal('show')
+                $('#successModal .info-block .item .discount').html('').html('Спасибо, ваша заявка принята.<br><br>Мы перезвоним вам в ближайшее время')
+            } else if (contentSuccess=='promoCode') {
+                $('#successModal').modal('show')
+                $('#successModal .info-block .item .discount').html('').html('Спасибо, ваша заявка принята.<br><br>Промокод отправлен вам по номеру телефона в SMS')
+            } else if (contentSuccess=='vacancy') {
+                $('#successModal').modal('show')
+                $('#successModal .info-block .item .discount').html('').html('Спасибо, ваша заявка принята.<br><br>Ваша кандидатура будет рассмотрена')
             }
         } else {
             console.log('error')
