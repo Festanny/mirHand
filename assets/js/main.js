@@ -463,7 +463,7 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-$('#datepicker').mask('99.99.9999');
+$('.datepicker').mask('99.99.9999');
 
 // mask for date input
 // window.addEventListener("DOMContentLoaded", function() {
@@ -603,7 +603,7 @@ $(document).ready(function(){
         }
         checkInput(content)
     })
-    $("#datepicker").datepicker({ 
+    $(".datepicker").datepicker({ 
         changeMonth: true,
         changeYear: true,
         yearRange: "-100:+2"

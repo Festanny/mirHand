@@ -616,7 +616,7 @@
                                     <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name" data-modal="cashier">
                                 </div>
                                 <div class="inputMain">
-                                    <input type="text" class="_dateClass" placeholder="Дата рождения" name="datepicker" id="datepicker" data-modal="cashier" autocomplete="off">
+                                    <input type="text" class="datepicker _dateClass" placeholder="Дата рождения" name="date" data-modal="cashier" autocomplete="off">
                                 </div>
                                 <div class="inputMain">
                                     <span>Ваше гражданство</span>
@@ -685,50 +685,50 @@
             </div>
             <div class="modal-body">
                 <div class="info-block">
-                    <div class="item active">
+                    <div class="item active" data-modal="consultant">
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name" data-modal="consultant">
                                 </div>
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Дата рождения" name="date" id="date">
+                                    <input type="text" class="datepicker _dateClass" placeholder="Дата рождения" name="date" data-modal="cashier" autocomplete="off">
                                 </div>
                                 <div class="inputMain">
                                     <span>Ваше гражданство</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="checkbox" id="citizenship_2" name="citizenship">
+                                            <input class="custom-checkbox _quesCheck" type="checkbox" id="citizenship_2" name="citizenship" data-modal="consultant">
                                             <label for="citizenship_2">РФ</label>
                                         </label>
-                                        <input type="text" placeholder="Другое" name="citizenshipOther">
+                                        <input type="text" class="_quesOther" placeholder="Другое" name="citizenshipOther" data-modal="consultant">
                                     </div>
                                 </div>
                                 <div class="inputMain">
                                     <span>Были ли у Вас административные, уголовные, гражданские иски, судимости? Если да, по каким статьям?</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="checkbox" id="criminal_2" name="criminal">
+                                            <input class="custom-checkbox _quesCheck" type="checkbox" id="criminal_2" name="criminal" data-modal="consultant">
                                             <label for="criminal_2">Нет</label>
                                         </label>
-                                        <input type="text" placeholder="Другое" name="criminalOther">
+                                        <input type="text" class="_quesOther" placeholder="Другое" name="criminalOther" data-modal="consultant">
                                     </div>
                                 </div>
                                 <div class="inputMain">
                                     <span>Есть ли у Вас физические ограничения\инвалидность?</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="checkbox" id="limitations_2" name="limitations">
+                                            <input class="custom-checkbox _quesCheck" type="checkbox" id="limitations_2" name="limitations" data-modal="consultant">
                                             <label for="limitations_2">Нет</label>
                                         </label>
-                                        <input type="text" placeholder="Другое" name="limitationsOther">
+                                        <input type="text" class="_quesOther" placeholder="Другое" name="limitationsOther" data-modal="consultant">
                                     </div>
                                 </div>
-                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone" data-modal="consultant">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <button class="btn dark" disabled>Отправить</button>
+                                <button class="btn dark" data-modal="consultant" data-success="vacancy" disabled>Отправить</button>
                             </div>
                         </form>
                     </div>
