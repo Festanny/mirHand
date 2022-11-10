@@ -541,17 +541,13 @@ header nav .nav > ul {
     object-fit: contain;
     padding: 0 0.89vw;
 }
-.brand .btnSwiperBlock {
+.brand .btn-swiper.btn-slide-prev,
+.brand .btn-swiper.btn-slide-next {
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
     top: 50%;
-    left: 50%;
+    left: 0;
     transform: translate(-50%, -50%);
     z-index: 1000;
-}
-.brand .btnSwiperBlock .btn-swiper {
     width: 3.27vw;
     height: 3.27vw;
     border-radius: 50%;
@@ -561,6 +557,10 @@ header nav .nav > ul {
     align-items: center;
     font-size: var(--fz30);
     color: var(--dark);
+}
+.brand .btn-swiper.btn-slide-next {
+    right: 0;
+    left: auto;
 }
 .location .locationBlock .map .container {
     position: relative;
