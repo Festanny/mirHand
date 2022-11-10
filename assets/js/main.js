@@ -502,123 +502,143 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 $(document).ready(function(){
-    $('input[name="name"]').click(function() {
+    $('._nameClass').on('propertychange change click keyup input paste', function() {
         var name = $(this),
             contentData = $(this).attr('data-modal'),
             content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
-        name.blur(function(){
-            if(name.val() == ''){
-                name.addClass('error')
-            }else{
-                name.removeClass('error');
-            }
-            checkInput(content)
-        });
+        if (name.val() == ''){
+            name.addClass('error no')
+        } else{
+            name.removeClass('error no');
+        }
+        checkInput(content)
     })
-    $('#phone').click(function() {
+    $('._phoneClass').on('propertychange change click keyup input paste', function() {
         var phone = $(this),
             contentData = $(this).attr('data-modal'),
             content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
-        phone.blur(function(){
-            if(phone.val() == '' || phone.val().length < 17){
-                phone.addClass('error')
-            }else{
-                phone.removeClass('error');
-            }
-            checkInput(content)
-        });
+        if (phone.val() == '' || phone.val().length < 17){
+            phone.addClass('error no')
+        } else{
+            phone.removeClass('error no');
+        }
+        checkInput(content)
     })
-    $('#email').click(function() {
-        var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
-        var mail = $(this),
+    $('._emailClass').on('propertychange change click keyup input paste', function() {
+        var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i,
+            mail = $(this),
             contentData = $(this).attr('data-modal'),
             content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
-        mail.blur(function(){
-            if(mail.val() != ''){
-                if(mail.val().search(pattern) == 0){
-                    mail.removeClass('error')
-                }else{
-                    mail.addClass('error')
-                }
-            }else{
-                mail.addClass('error');
+        if (mail.val() != ''){
+            if(mail.val().search(pattern) == 0){
+                mail.removeClass('error no')
+            } else{
+                mail.addClass('error no')
             }
-            checkInput(content)
-        });
+        } else{
+            mail.addClass('error no')
+        }
+        checkInput(content)
     })
-    $('#cityInput').click(function() {
+    $('._cityInput').on('propertychange change click keyup input paste', function() {
         var city = $(this),
             contentData = $(this).attr('data-modal'),
             content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
-        city.blur(function(){
-            if(city.val() == ''){
-                city.addClass('error')
-            }else{
-                city.removeClass('error');
-            }
-            checkInput(content)
-        });
+        if(city.val() == ''){
+            city.addClass('error no')
+        }else{
+            city.removeClass('error no');
+        }
+        checkInput(content)
     })
-    $('#choiceCityInput').click(function() {
-        var city = $(this),
-            contentData = $(this).attr('data-modal'),
-            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
-        city.blur(function(){
-            if(city.val() == ''){
-                city.addClass('error')
-            }else{
-                city.removeClass('error');
-            }
-            choiceCityInput()
-        });
-    })
-    $('#cityInput').parent().next().children('.__select__label').on('click', function(el) {
-        $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error');
+    $('._cityInput').parent().next().children('.__select__label').on('propertychange change click keyup input paste', function(el) {
+        $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error no');
         let contentData = $(this).attr('data-modal'),
             content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
         setTimeout(function() {
             checkInput(content)
         }, 1)
     })
-
-    $('#choiceCityInput').parent().next().children('.__select__label').on('click', function(el) {
-        $(el.target).parent().parent().children('.__select__title').children('input').removeClass('error');
-        console.log($(el.target))
-        setTimeout(function() {
-            choiceCityInput()
-        }, 1)
+    $('._quesCheck').on('propertychange change click keyup input paste', function() {
+        let check = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
+        if(check.is(':checked')) {
+            check.parent().next('._quesOther').removeClass('error no')
+        }else{
+            check.parent().next('._quesOther').addClass('error no')
+        }
+        checkInput(content)
+    })
+    $('._quesOther').on('propertychange change keyup input paste', function() {
+        let check = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
+        if(check.val() == '') {
+            check.prev('.check').children('input._quesCheck').prop('checked', true)
+        }else{
+            check.prev('.check').children('input._quesCheck').prop('checked', false)
+        }
+        checkInput(content)
+    })
+    $('._checkOffer').on('propertychange change click keyup input paste', function() {
+        var offer = $(this),
+            contentData = $(this).attr('data-modal'),
+            content = $(`.modal .info-block .item[data-modal="${contentData}"]`)
+        if(offer.is(':checked')){
+            offer.removeClass('error no')
+        }else{
+            offer.addClass('error no');
+        }
+        checkInput(content)
     })
 
-    function choiceCityInput() {
-        if ($('.modal#choosingСity #choiceCityInput').val()!='') {
-            $('.modal#choosingСity .btnBlock button').prop('disabled', false)
-            return true
-        } else {
-            $('.modal#choosingСity .btnBlock button').prop('disabled', true)
-            return false
-        }
-    }
-
-    $('.modal#leaveRequest .btnBlock button').on('click', function(el) {
+    
+    $('.modal .btnBlock button').on('propertychange change click keyup input paste', function(el) {
         el.preventDefault()
-        checkInput()
-        if (checkInput()) {
-            $('.modal#leaveRequest').modal('hide')
-            $('#successModal').modal('show')
+        let contentDataModal = $(this).attr('data-modal'),
+            contentSuccess = $(this).attr('data-success'),
+            content = $(`.modal .info-block .item[data-modal="${contentDataModal}"]`)
+            contentModalId = content.parent('.info-block').parent('.modal-body').parent('.modal-content').parent('.modal-dialog').parent('.modal').attr('id')
+        checkInput(content)
+        if (checkInput(content)) {
+            $(`.modal#${contentModalId}`).modal('hide')
+            !$(`.modal#${contentModalId} input:not('.__select__input'):not([type="checkbox"]):not([type="radio"])`).val('')
+            $(`.modal#${contentModalId} .__select input`).prop('checked', false)
+            $(`.modal#${contentModalId} .btnBlock button`).prop('disabled', true)
+            if (contentSuccess=='success') {
+                $('#successModal').modal('show')
+            }
+            if (contentSuccess=='promoCode') {
+                $('#successModalPromoCode').modal('show')
+            }
         } else {
             console.log('error')
         }
     })
+    
     function checkInput(content) {
         let contentInput = content.find('input')
         for (let i=0;i<contentInput.length;i++) {
-            if ($(contentInput[i]).val()=='') {
-                $(contentInput[i]).addClass('no')
+            if ($(content).find('input._quesCheck').length!=0) {
+                if ($(contentInput[i]).is(':checked')) {
+                    $(contentInput[i]).parent().next('._quesOther').removeClass('error no')
+                } else {
+                    if ($(contentInput[i]).parent().next('._quesOther').val()=='') {
+                        $(contentInput[i]).parent().next('._quesOther').addClass('error no')
+                    } else {
+                        $(contentInput[i]).parent().next('._quesOther').removeClass('error no')
+                    }
+                }
             } else {
-                $(contentInput[i]).removeClass('no')
+                if ($(contentInput[i]).val()=='') {
+                    $(contentInput[i]).addClass('no')
+                } else {
+                    $(contentInput[i]).removeClass('no')
+                }
             }
         }
-        if (content.find('input.no').length == 0) {
+        if (content.find('input.no').length==0 && content.find('input.error').length==0) {
             content.find('.btnBlock button').prop('disabled', false)
             return true
         } else {
@@ -626,7 +646,4 @@ $(document).ready(function(){
             return false
         }
     }
-
-    
-
 });

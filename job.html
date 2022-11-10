@@ -608,63 +608,63 @@
             </div>
             <div class="modal-body">
                 <div class="info-block">
-                    <div class="item active">
+                    <div class="item active" data-modal="cashier">
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name" data-modal="cashier">
                                 </div>
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Дата рождения" name="date" id="date">
+                                    <input type="text" placeholder="Дата рождения" name="date" id="date" data-modal="cashier">
                                 </div>
                                 <div class="inputMain">
                                     <span>Ваше гражданство</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="checkbox" id="citizenship_1" name="citizenship">
+                                            <input class="custom-checkbox _quesCheck" type="checkbox" id="citizenship_1" name="citizenship" data-modal="cashier" checked>
                                             <label for="citizenship_1">РФ</label>
                                         </label>
-                                        <input type="text" placeholder="Другое" name="citizenshipOther">
+                                        <input type="text" class="_quesOther" placeholder="Другое" name="citizenshipOther" data-modal="cashier">
                                     </div>
                                 </div>
                                 <div class="inputMain">
                                     <span>Были ли у Вас административные, уголовные, гражданские иски, судимости? Если да, по каким статьям?</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="checkbox" id="criminal_1" name="criminal">
+                                            <input class="custom-checkbox _quesCheck" type="checkbox" id="criminal_1" name="criminal" data-modal="cashier" checked>
                                             <label for="criminal_1">Нет</label>
                                         </label>
-                                        <input type="text" placeholder="Другое" name="criminalOther">
+                                        <input type="text" class="_quesOther" placeholder="Другое" name="criminalOther" data-modal="cashier">
                                     </div>
                                 </div>
                                 <div class="inputMain">
                                     <span>Есть ли у Вас физические ограничения\инвалидность?</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="checkbox" id="limitations_1" name="limitations">
+                                            <input class="custom-checkbox _quesCheck" type="checkbox" id="limitations_1" name="limitations" data-modal="cashier" checked>
                                             <label for="limitations_1">Нет</label>
                                         </label>
-                                        <input type="text" placeholder="Другое" name="limitationsOther">
+                                        <input type="text" class="_quesOther" placeholder="Другое" name="limitationsOther" data-modal="cashier">
                                     </div>
                                 </div>
                                 <div class="inputMain">
                                     <span>Был ли у Вас опыт работы на кассе?</span>
                                     <div class="questions">
                                         <label class="check">
-                                            <input class="custom-checkbox" type="radio" id="experienceYes_1" name="experience">
+                                            <input class="custom-checkbox _quesCheckRadio" type="radio" id="experienceYes_1" name="experience" data-modal="cashier" checked>
                                             <label for="experienceYes_1">Да</label>
                                         </label>
                                         <label class="check">
-                                            <input class="custom-checkbox" type="radio" id="experienceNo_1" name="experience">
+                                            <input class="custom-checkbox _quesCheckRadio" type="radio" id="experienceNo_1" name="experience" data-modal="cashier">
                                             <label for="experienceNo_1">Нет</label>
                                         </label>
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone" data-modal="cashier">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <button class="btn dark" disabled>Отправить</button>
+                                <button class="btn dark" data-modal="cashier" disabled>Отправить</button>
                             </div>
                         </form>
                     </div>
@@ -688,7 +688,7 @@
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
                                 </div>
                                 <div class="inputMain">
                                     <input type="text" placeholder="Дата рождения" name="date" id="date">
@@ -723,7 +723,7 @@
                                         <input type="text" placeholder="Другое" name="limitationsOther">
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
@@ -751,7 +751,7 @@
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
                                 </div>
                                 <div class="inputMain">
                                     <input type="text" placeholder="Дата рождения" name="date" id="date">
@@ -809,7 +809,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
@@ -837,7 +837,7 @@
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
                                 </div>
                                 <div class="inputMain">
                                     <input type="text" placeholder="Дата рождения" name="date" id="date">
@@ -882,7 +882,7 @@
                                         <input type="text" placeholder="Другое" name="similarPositionOther">
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
@@ -910,7 +910,7 @@
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
                                 </div>
                                 <div class="inputMain">
                                     <input type="text" placeholder="Дата рождения" name="date" id="date">
@@ -945,7 +945,7 @@
                                         <input type="text" placeholder="Другое" name="limitationsOther">
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
@@ -973,7 +973,7 @@
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
                                 </div>
                                 <div class="inputMain">
                                     <input type="text" placeholder="Дата рождения" name="date" id="date">
@@ -1008,7 +1008,7 @@
                                         <input type="text" placeholder="Другое" name="limitationsOther">
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
@@ -1036,7 +1036,7 @@
                         <form action="">
                             <div class="inputBlock">
                                 <div class="inputMain">
-                                    <input type="text" placeholder="Фамилия Имя Отчество" name="name">
+                                    <input type="text" class="_nameClass" placeholder="Фамилия Имя Отчество" name="name">
                                 </div>
                                 <div class="inputMain">
                                     <input type="text" placeholder="Дата рождения" name="date" id="date">
@@ -1071,7 +1071,7 @@
                                         <input type="text" placeholder="Другое" name="limitationsOther">
                                     </div>
                                 </div>
-                                <input type="text" id='phone' placeholder="Номер телефона" name="phone">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Номер телефона" name="phone">
                             </div>
                             <p class="infoText">Нажимая кнопку “отправить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">

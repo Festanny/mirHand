@@ -317,30 +317,30 @@
                     <span data-coupon="2">Получи 500 руб.</span>
                 </div>
                 <div class="info-block">
-                    <div class="item active" data-coupon="1">
+                    <div class="item active" data-coupon="1" data-modal="coupon300">
                         <div class="discount bebas">Получите 300 рублей</div>
                         <p class="desc">Еще не совершали покупку в МЕГАХЕНД? Тогда заполните форму ниже и совершите первую покупку с выгодой!</p>
                         <form action="">
                             <div class="inputBlock">
-                                <input type="text" placeholder="Ваше имя" name="name" id="name" data-modal="coupon300">
-                                <input type="text" id='phone' placeholder="Телефон" name="phone" data-modal="coupon300">
+                                <input type="text" class="_nameClass" placeholder="Ваше имя" name="name" id="name" data-modal="coupon300">
+                                <input type="text" class="_phoneClass" id='phone' placeholder="Телефон" name="phone" data-modal="coupon300">
                                 <div class="__select" data-state="">
                                     <div class="__select__title">
-                                        <input type="text" placeholder="Выберите город" name="city" data-modal="coupon300">
+                                        <input type="text" class="_cityInput" placeholder="Выберите город" name="city" id="cityInput" data-modal="coupon300">
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_1" class="__select__input" type="radio" name="singleSelect" checked />
-                                        <label for="singleSelect0_1" class="__select__label first">Выберите город</label>
+                                        <label for="singleSelect0_1" class="__select__label first" data-modal="coupon300">Выберите город</label>
                                         <input id="singleSelect1_1" class="__select__input" type="radio" name="singleSelect" />
-                                        <label for="singleSelect1_1" class="__select__label">Город 1</label>
+                                        <label for="singleSelect1_1" class="__select__label" data-modal="coupon300">Город 1</label>
                                         <input id="singleSelect3_1" class="__select__input" type="radio" name="singleSelect" />
-                                        <label for="singleSelect3_1" class="__select__label">Город 2</label>
+                                        <label for="singleSelect3_1" class="__select__label" data-modal="coupon300">Город 2</label>
                                         <input id="singleSelect4_1" class="__select__input" type="radio" name="singleSelect" />
-                                        <label for="singleSelect4_1" class="__select__label">Город 3</label>
+                                        <label for="singleSelect4_1" class="__select__label" data-modal="coupon300">Город 3</label>
                                     </div>
                                 </div>
                                 <label class="check">
-                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="offer" checked>
+                                    <input class="custom-checkbox _checkOffer" type="checkbox" id="color-4" name="offer" checked data-modal="coupon300">
                                     <label for="color-4">Я ознакомлен(а) с условиями <a href="#">публичной оферты</a></label>
                                 </label>
                                 <div class="termsPromotion">
@@ -349,72 +349,72 @@
                             </div>
                             <p class="infoText">Нажимая кнопку “получить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <button class="btn dark" disabled>Получить</button>
+                                <button class="btn dark" data-modal="coupon300" data-success="promoCode" disabled>Получить</button>
                             </div>
                         </form>
                     </div>
-                    <div class="item" data-coupon="2">
+                    <div class="item" data-coupon="2" data-modal="coupon500">
                         <div class="discount bebas">Получите 500 рублей</div>
                         <p class="desc">Рекомендуйте нас своим друзьям и получите 500 руб после того, как оба друга совершат покупку в Мегахенд</p>
                         <form action="">
                             <div class="inputBlock">
                                 <div>
-                                    <input class="mb-1" type="text" placeholder="Ваше имя" name="name">
-                                    <input class="mb-1" type="text" placeholder="Ваш телефон" name="phone">
+                                    <input class="_nameClass mb-1" type="text" placeholder="Ваше имя" name="name" data-modal="coupon500">
+                                    <input class="_phoneClass mb-1" type="text" id='phone' placeholder="Ваш телефон" name="phone" data-modal="coupon500">
                                     <div class="__select" data-state="">
                                         <div class="__select__title">
-                                            <input type="text" placeholder="Ваш город" name="city">
+                                            <input type="text" class="_cityInput" placeholder="Ваш город" name="city" data-modal="coupon500">
                                         </div>
                                         <div class="__select__content">
                                             <input id="singleSelect0_2" class="__select__input" type="radio" name="singleSelect2" checked />
-                                            <label for="singleSelect0_2" class="__select__label first">Ваш город</label>
+                                            <label for="singleSelect0_2" class="__select__label first" data-modal="coupon500">Ваш город</label>
                                             <input id="singleSelect1_2" class="__select__input" type="radio" name="singleSelect2" />
-                                            <label for="singleSelect1_2" class="__select__label">Город 1</label>
+                                            <label for="singleSelect1_2" class="__select__label" data-modal="coupon500">Город 1</label>
                                             <input id="singleSelect3_2" class="__select__input" type="radio" name="singleSelect2" />
-                                            <label for="singleSelect3_2" class="__select__label">Город 2</label>
+                                            <label for="singleSelect3_2" class="__select__label" data-modal="coupon500">Город 2</label>
                                             <input id="singleSelect4_2" class="__select__input" type="radio" name="singleSelect2" />
-                                            <label for="singleSelect4_2" class="__select__label">Город 3</label>
+                                            <label for="singleSelect4_2" class="__select__label" data-modal="coupon500">Город 3</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <input class="mb-1" type="text" placeholder="Телефон друга" name="phoneFriend">
+                                    <input class="_phoneClass mb-1" type="text" id='phone' placeholder="Телефон друга" name="phoneFriend" data-modal="coupon500">
                                     <div class="__select" data-state="">
                                         <div class="__select__title">
-                                            <input type="text" placeholder="Город друга" name="cityFriend">
+                                            <input type="text" class="_cityInput" placeholder="Город друга" name="cityFriend" data-modal="coupon500">
                                         </div>
                                         <div class="__select__content">
                                             <input id="singleSelect0_3" class="__select__input" type="radio" name="singleSelect3" checked />
-                                            <label for="singleSelect0_3" class="__select__label first">Город друга</label>
+                                            <label for="singleSelect0_3" class="__select__label first" data-modal="coupon500">Город друга</label>
                                             <input id="singleSelect1_3" class="__select__input" type="radio" name="singleSelect3" />
-                                            <label for="singleSelect1_3" class="__select__label">Город 1</label>
+                                            <label for="singleSelect1_3" class="__select__label" data-modal="coupon500">Город 1</label>
                                             <input id="singleSelect3_3" class="__select__input" type="radio" name="singleSelect3" />
-                                            <label for="singleSelect3_3" class="__select__label">Город 2</label>
+                                            <label for="singleSelect3_3" class="__select__label" data-modal="coupon500">Город 2</label>
                                             <input id="singleSelect4_3" class="__select__input" type="radio" name="singleSelect3" />
-                                            <label for="singleSelect4_3" class="__select__label">Город 3</label>
+                                            <label for="singleSelect4_3" class="__select__label" data-modal="coupon500">Город 3</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <input class="mb-1" type="text" placeholder="Телефон друга" name="phoneFriend2">
+                                    <input class="_phoneClass mb-1" type="text" id='phone' placeholder="Телефон друга" name="phoneFriend2" data-modal="coupon500">
                                     <div class="__select" data-state="">
                                         <div class="__select__title">
-                                            <input type="text" placeholder="Город друга" name="cityFriend2">
+                                            <input type="text" class="_cityInput" placeholder="Город друга" name="cityFriend2" data-modal="coupon500">
                                         </div>
                                         <div class="__select__content">
                                             <input id="singleSelect0_5" class="__select__input" type="radio" name="singleSelect5" checked />
-                                            <label for="singleSelect0_5" class="__select__label first">Город друга</label>
+                                            <label for="singleSelect0_5" class="__select__label first" data-modal="coupon500">Город друга</label>
                                             <input id="singleSelect1_5" class="__select__input" type="radio" name="singleSelect5" />
-                                            <label for="singleSelect1_5" class="__select__label">Город 1</label>
+                                            <label for="singleSelect1_5" class="__select__label" data-modal="coupon500">Город 1</label>
                                             <input id="singleSelect3_5" class="__select__input" type="radio" name="singleSelect5" />
-                                            <label for="singleSelect3_5" class="__select__label">Город 2</label>
+                                            <label for="singleSelect3_5" class="__select__label" data-modal="coupon500">Город 2</label>
                                             <input id="singleSelect4_5" class="__select__input" type="radio" name="singleSelect5" />
-                                            <label for="singleSelect4_5" class="__select__label">Город 3</label>
+                                            <label for="singleSelect4_5" class="__select__label" data-modal="coupon500">Город 3</label>
                                         </div>
                                     </div>
                                 </div>
                                 <label class="check">
-                                    <input class="custom-checkbox" type="checkbox" id="color-4" name="offer" checked>
+                                    <input class="custom-checkbox _checkOffer" type="checkbox" id="color-4" name="offer" checked data-modal="coupon500">
                                     <label for="color-4">Я ознакомлен(а) с условиями <a href="#">публичной оферты</a></label>
                                 </label>
                                 <div class="termsPromotion">
@@ -423,7 +423,7 @@
                             </div>
                             <p class="infoText">Нажимая кнопку “получить” вы даете согласие на обработку персональных данных</p>
                             <div class="btnBlock">
-                                <button class="btn dark" disabled>Получить</button>
+                                <button class="btn dark" data-modal="coupon500" data-success="promoCode" disabled>Получить</button>
                             </div>
                         </form>
                     </div>
@@ -443,28 +443,28 @@
             </div>
             <div class="modal-body">
                 <div class="info-block">
-                    <div class="item active">
+                    <div class="item active" data-modal="choiceCityInput">
                         <form action="">
                             <div class="inputBlock">
                                 <div class="__select" data-state="">
                                     <div class="__select__title">
-                                        <input type="text" placeholder="Город" name="city" id="choiceCityInput" data-modal="choiceCityInput">
+                                        <input type="text" class="_cityInput" placeholder="Город" name="city" id="cityInput" data-modal="choiceCityInput">
                                     </div>
                                     <div class="__select__content">
                                         <input id="singleSelect0_4" class="__select__input" type="radio" name="singleSelect4" checked />
-                                        <label for="singleSelect0_4" class="__select__label first">Город</label>
+                                        <label for="singleSelect0_4" class="__select__label first" data-modal="choiceCityInput">Город</label>
                                         <input id="singleSelect1_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect1_4" class="__select__label">Город 1</label>
+                                        <label for="singleSelect1_4" class="__select__label" data-modal="choiceCityInput">Город 1</label>
                                         <input id="singleSelect3_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect3_4" class="__select__label">Город 2</label>
+                                        <label for="singleSelect3_4" class="__select__label" data-modal="choiceCityInput">Город 2</label>
                                         <input id="singleSelect4_4" class="__select__input" type="radio" name="singleSelect4" />
-                                        <label for="singleSelect4_4" class="__select__label">Город 3</label>
+                                        <label for="singleSelect4_4" class="__select__label" data-modal="choiceCityInput">Город 3</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="btnBlock">
-                                <button class="btn dark" disabled>Сохранить</button>
-                            </div>
+                            <a href="#" class="btnBlock">
+                                <button class="btn dark" data-modal="choiceCityInput" disabled>Сохранить</button>
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -473,7 +473,7 @@
         </div>
     </div>
 
-    <!-- Успех -->
+    <!-- Успех. Заявка принята -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -485,6 +485,26 @@
                 <div class="info-block">
                     <div class="item active">
                         <div class="discount bebas">Спасибо, ваша заявка принята.</div>
+                        <div class="discount bebas">Мы перезвоним вам в ближайшее время</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Успех. Отправление промокода -->
+    <div class="modal fade" id="successModalPromoCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="h5 modal-title bebas" id="exampleModalLabel">Успешно!</div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="info-block">
+                    <div class="item active">
+                        <div class="discount bebas">Спасибо, ваша заявка принята.</div>
+                        <div class="discount bebas">Промокод отправлен вам по номеру телефона в SMS</div>
                     </div>
                 </div>
             </div>

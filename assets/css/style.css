@@ -2004,6 +2004,9 @@ input.error {
     font-weight: bold;
     margin-bottom: 1.49vw;
 }
+.modal .info-block .item .discount:last-of-type {
+    margin-bottom: 0;
+}
 .modal#coupon .info-block .item p.desc {
     text-align: center;
     font-size: var(--fz15);
@@ -2083,3 +2086,6 @@ button {
     margin-bottom: 0;
 }
 
+a.btnBlock {
+    display: block;
+}
