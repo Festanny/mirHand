@@ -1,15 +1,74 @@
 /* 
---fz64: 3.35vw;
---fz30: 1.6vw;
---fz24: 1.3vw;
---fz20: 1.05vw;
---fz16: 0.85vw;
---fz15: 0.8vw;
---fz12: 0.65vw;
+--fz128: 7.62vw;
+--fz64: 3.81vw;
+--fz40: 2.38vw;
+--fz34: 2.02vw;
+--fz32: 1.90vw;
+--fz30: 1.79vw;
+--fz25: 1.49vw;
+--fz24: 1.43vw;
+--fz20: 1.19vw;
+--fz16: 0.95vw;
+--fz15: 0.89vw;
+--fz12: 0.71vw;
 */
 
-@media screen and (min-width: 1681px) {
-    .container {
-        max-width: 55vw;
+@media screen and (max-width: 1399px) {
+    :root {
+        --fz128: 9.15vw;
+        --fz64: 4.57vw;
+        --fz40: 2.86vw;
+        --fz38: 2.72vw;
+        --fz34: 2.43vw;
+        --fz32: 2.29vw;
+        --fz30: 2.14vw;
+        --fz25: 1.79vw;
+        --fz24: 1.72vw;
+        --fz20: 1.43vw;
+        --fz16: 1.14vw;
+        --fz15: 1.07vw;
+        --fz12: 0.86vw;
     }
+    footer::before, footer::after {
+        width: 5vw;
+    }
+    .location .locationBlock .map .container .locationInfo {
+        width: 13vw;
+    }
+    footer .footer {
+        grid-template-columns: 75% auto;
+    }
+}
+@media screen and (max-width: 1280px) {
+    footer::before, footer::after {
+        width: 3vw;
+    }
+}
+@media screen and (max-width: 1199px) {
+    footer::before, footer::after {
+        width: 7vw;
+    }
+}
+@media screen and (max-width: 1125px) {
+    footer::before, footer::after {
+        width: 5vw;
+    }
+    footer .footer .item .logo {
+        width: 13vw;
+    }
+    footer .footer .item .contactInfo .soc ul li .iconSoc.inst, footer .footer .item .contactInfo .soc ul li .iconSoc.vk {
+        font-size: 28px;
+    }
+    footer .footer .item .contactInfo .soc ul li .iconSoc:not(.inst):not(.vk) {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    footer::before, footer::after {
+        width: 3vw;
+    }
+}
+@media screen and (max-width: 991px) {
+
 }

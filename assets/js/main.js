@@ -79,17 +79,31 @@ let swiper3 = new Swiper(".discountSlider", {
         clickable: true,
     },
     navigation: {
-        nextEl: ".btn-slide-next-dsc",
         prevEl: ".btn-slide-prev-dsc",
+        nextEl: ".btn-slide-next-dsc",
+    }
+});
+let swiper4 = new Swiper(".calendarSlider", {
+    slidesPerView: 1,
+    loop: false,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        prevEl: ".btn-slide-prev-cld",
+        nextEl: ".btn-slide-next-cld",
     }
 });
 
-let widthLine = (($('footer').width() - $('.container').width()) / 2) + 200;
+let addWidth = 700;
+let widthLine = (($('footer').width() - $('.container').width()) / 2) + addWidth;
 $('footer .footer .item .contactInfo.beforeContactInfo .line').css('width', widthLine + 'px')
 $(window).resize(function() {
-    widthLine = (($('footer').width() - $('.container').width()) / 2) + 200;
+    widthLine = (($('footer').width() - $('.container').width()) / 2) + addWidth;
     $('footer .footer .item .contactInfo.beforeContactInfo .line').css('width', widthLine + 'px')
 });
+
 
 $('header nav').hover(
     function() {
@@ -181,6 +195,9 @@ function styleNewsText() {
     })
     $('.ourCollections .ourCollectionsBlock .textBlockMain').css({
         'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.advertisementSection .advertisementSectionBlock .info-block .item .textBlock').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
     })
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {

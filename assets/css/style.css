@@ -8,6 +8,8 @@
     --gray2: #D3D3D3;
     --gray3: #EFEFEF;
     --gray4: #D9D9D9;
+    --gray5: #F4F4F4;
+    --dark-gray: #737981;
     --bg-gray: #F5F5F5;
     --border: #6F6F6F;
     --red: #D14444;
@@ -19,6 +21,7 @@
     --fz128: 7.62vw;
     --fz64: 3.81vw;
     --fz40: 2.38vw;
+    --fz38: 2.26vw;
     --fz34: 2.02vw;
     --fz32: 1.90vw;
     --fz30: 1.79vw;
@@ -219,10 +222,9 @@ header nav .nav > ul {
 }
 .banner .bannerBlock {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    text-align: center;
-    gap: 1.79vw;
+    gap: 1vw;
+    padding: 129px 0;
     z-index: 5;
 }
 .banner .bannerBlock .titleText {
@@ -235,6 +237,94 @@ header nav .nav > ul {
 }
 .banner .bannerBlock .titleText span {
     font-weight: 400;
+}
+.banner .bannerBlock .calendar-coupon {
+    display: flex;
+    flex-direction: column;
+    gap: 1.96vw;
+}
+.banner .bannerBlock .calendar-coupon .circles-block {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.30vw;
+    padding-top: 0.89vw;
+}
+.banner .bannerBlock .calendar-coupon .circles-block .circles {
+    width: 1.13vw;
+    height: 1.13vw;
+    border-radius: 50%;
+    background-color: var(--dark-gray)
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendarSlider {
+    width: 20.65vw;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner {
+    background-color: var(--gray5)
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg {
+    background-color: var(--white);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    gap: 1.90vw;
+    border-radius: 0 0 1.79vw 1.79vw
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner {
+    text-align: center;
+    line-height: 1;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .nameDay {
+    font-size: var(--fz38);
+    font-weight: bold;
+    margin-bottom: 0.89vw;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount {
+    background-color: var(--red2);
+    color: var(--white);
+    font-size: var(--fz128);
+    padding: 0.95vw 0.95vw 0 0.95vw;
+    font-weight: bold;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .dayBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.71vw;
+    font-size: var(--fz30);
+    margin-top: 0.77vw;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .dayBlock .arrows {
+    width: 2.08vw;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .dayBlock .btn-slide  {
+    transform: translateY(-0.18vw);
+    height: 1.19vw;
+    display: flex;
+    align-items: center;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar {
+    padding: 1.31vw;
+    color: var(--dark)
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar a {
+    display: inline-block;
+    padding: 0.71vw 2.08vw;
+    border: 1px solid var(--dark);
+    min-width: auto;
+    width: auto;
+    cursor: pointer;
+    transition: all .3s;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar a:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    border-color: transparent
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .info-text {
+    width: 100%;
+    padding: 0.54vw 0.60vw 0.30vw;
+    background-color: var(--dark);
+    font-weight: bold;
 }
 .btn {
     display: inline-block;
@@ -260,7 +350,11 @@ header nav .nav > ul {
     border-color: transparent;
 }
 .banner .bannerBlock .btn {
+    width: 100%;
     padding: 1.55vw 2.02vw;
+    background-color: var(--dark);
+    color: var(--white);
+    border-color: transparent;
 }
 .title__page {
     font-size: var(--fz64);
@@ -704,18 +798,21 @@ footer .footer .item .contactInfo .soc ul {
     gap: 1.19vw;
 }
 footer .footer .item .contactInfo .soc ul li .iconSoc:not(.inst):not(.vk) {
-    width: 1.73vw;
-    height: 1.73vw;
+    width: 29px;
+    height: 29px;
     border-radius: 8px;
     border: 2px solid var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--fz15);
+    font-size: 15px;
+}
+footer .footer .item .contactInfo .soc ul li .iconSoc {
+    
 }
 footer .footer .item .contactInfo .soc ul li .iconSoc.inst,
 footer .footer .item .contactInfo .soc ul li .iconSoc.vk {
-    font-size: var(--fz34);
+    font-size: 34px;
 }
 footer .footer .item .contactInfo .infoCommunication ul {
     display: flex;
@@ -733,6 +830,7 @@ footer .footer .item .contactInfo .infoCommunication ul li i {
 
 header nav {
     transition: all .3s ease-in-out;
+    /* background-color: var(--white) */
 }
 header nav ul {
     list-style: none;
@@ -2095,7 +2193,6 @@ button {
 .modal#successModal .discount:last-of-type {
     margin-bottom: 0;
 }
-
 a.btnBlock {
     display: block;
 }
@@ -2104,4 +2201,31 @@ a.btnBlock {
 }
 .ui-datepicker {
     position: absolute!important;
+}
+.advertisementSection .advertisementSectionBlock .info-block .item p.title__page_down {
+    font-size: var(--fz30);
+}
+.advertisementSection .advertisementSectionBlock .imgRentBottom img {
+    object-position: 0 -42vw;
+}
+.infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements {
+    font-style: normal;
+}
+.infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements .title__page_down {
+    font-size: var(--fz30);
+    margin-top: 2.98vw;
+}
+.infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements div p:first-of-type {
+    font-style: italic;
+}
+.detailedNews .newsName {
+    font-size: var(--fz64);
+    font-weight: bold;
+    margin-bottom: 1.19vw;
+}
+.detailedNews .info-block .item.imgNews {
+    width: 100%;
+}
+.detailedNews .info-block .item.imgNews img {
+    width: 100%;
 }
