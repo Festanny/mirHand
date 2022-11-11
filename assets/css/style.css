@@ -57,7 +57,7 @@ section {
 section.ourCollections {
     padding-top: 0;
 }
-section:not(.error):not(.jobList):not(.faqSection):last-of-type {
+section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):last-of-type {
     padding-bottom: 0;
 }
 input,
@@ -1128,7 +1128,7 @@ progress{
 }
 .newsSection .newsSectionBlock .info-block .item .imgNews img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 .newsSection .newsSectionBlock .textMainCooperation {

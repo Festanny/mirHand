@@ -430,7 +430,7 @@ function heightBlock() {
         function blockImgHeight() {
             let blockImgHeight = $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').height()
             $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').css('max-height', blockImgHeight + 'px')
-            blockImgHeight = blockImgHeight - $('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() - $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').height() - 50
+            blockImgHeight = blockImgHeight - ($('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() + ($('body').width()/100*1.07)) - ($('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').eq(i).height() + ($('body').width()/100*1.61))
             $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.titleTextBlockNews').children('.textAndBtn').children('.textMainCooperation').css('max-height', blockImgHeight + 'px')
         }
     }
