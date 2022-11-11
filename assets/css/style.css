@@ -201,6 +201,7 @@ header nav .nav > ul {
 
 .banner {
     display: flex;
+    align-items: center;
     position: relative;
     color: var(--white);
     background-size: cover;
@@ -219,6 +220,22 @@ header nav .nav > ul {
     height: 100%;
     background-color: var(--brown);
     opacity: .26;
+}
+.banner.aboutUsPage .bannerBlock {
+    flex-direction: column;
+}
+.banner.aboutUsPage {
+    align-items: inherit;
+    padding-bottom: 1.43vw;
+}
+.banner.aboutUsPage .bannerBlock {
+    padding: 0;
+}
+.banner.aboutUsPage .bannerBlock .block p {
+    width: 50%;
+}
+.banner.aboutUsPage .bannerBlock .block.text-right p {
+    margin-left: auto;
 }
 .banner .bannerBlock {
     display: flex;
