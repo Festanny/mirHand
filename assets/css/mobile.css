@@ -52,6 +52,9 @@
     .brandSection .brandSectionBlock .info-block .item .imgBrand {
         height: 22.55vw;
     }
+    .banner {
+        height: 90vh;
+    }
 }
 @media screen and (max-width: 1199px) {
     footer::before, footer::after {
@@ -90,14 +93,9 @@
         --fz20: 1.85vw;
         --fz15: 1.5vw;
         --fz12: 1.21vw;
-
-        --fz40: 2.86vw;
-        --fz38: 2.42vw;
-        --fz34: 2.43vw;
-        --fz32: 2.29vw;
-        --fz25: 1.79vw;
-        --fz16: 1.14vw;
-        
+    }
+    .location .locationBlock .map {
+        height: 40.36vw;
     }
     .location .locationBlock .map .container .locationInfo {
         width: 20vw;
@@ -140,5 +138,14 @@
     }
     footer .footer .item .logo {
         width: 15vw;
+    }
+    section {
+        padding: 5vw 0;
+    }
+    section.discountBlock {
+        padding-bottom: 5vw;
+    }
+    .newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block, .jobList .jobListBlock .info-block .item .namePlace .arrows-block {
+        max-width: 20vw;
     }
 }

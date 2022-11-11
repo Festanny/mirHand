@@ -224,9 +224,6 @@ function styleTextAbout() {
     $('.brandSectionPage .brandSectionBlockPage .info-block .item.desc').css({
         'margin-right': ($('body').width() - $('.container').width()) / 2
     })
-    $('.brandSectionPage .brandSectionBlockPage .info-block').css({
-        'grid-template-columns': `${($('body').width() / 2)-78}px ${$('body').width() / 2}px`
-    })
 }
 
 $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').on('click', function() {
