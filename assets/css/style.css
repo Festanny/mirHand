@@ -1119,7 +1119,7 @@ progress{
 }
 .newsSection .newsSectionBlock .info-block .item {
     display: grid;
-    grid-template-columns: 50% 1fr;
+    grid-template-columns: 50% auto;
     gap: 6.55vw;
 }
 .newsSection .newsSectionBlock .info-block .item .imgNews {
