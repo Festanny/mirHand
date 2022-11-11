@@ -482,42 +482,6 @@ window.addEventListener("DOMContentLoaded", function() {
 
 $('.datepicker').mask('99.99.9999');
 
-// mask for date input
-// window.addEventListener("DOMContentLoaded", function() {
-//     [].forEach.call( document.querySelectorAll('#datepicker'), function(input) {
-//     var keyCode;
-//     function mask(event) {
-//         event.keyCode && (keyCode = event.keyCode);
-//         var pos = this.selectionStart;
-//         if (pos < 0) event.preventDefault();
-//         var matrix = "__.__.____",
-//             i = 0,
-//             def = matrix.replace(/\D/g, ""),
-//             val = this.value.replace(/\D/g, ""),
-//             new_value = matrix.replace(/[_\d]/g, function(a) {
-//                 return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-//             });
-//         i = new_value.indexOf("_");
-//         if (i != ) {
-//             i < 10 && (i = 10);
-//             new_value = new_value.slice(0, i)
-//         }
-//         var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-//             function(a) {
-//                 return "\\d{1," + a.length + "}"
-//             }).replace(/[+()]/g, "\\$&");
-//         reg = new RegExp("^" + reg + "$");
-//         if (!reg.test(this.value) || this.value.length < 0 || keyCode > 47 && keyCode < 58) this.value = new_value;
-//         if (event.type == "blur" && this.value.length < 10) this.value = ""
-//         console.log(this.value.length < 10)
-//     }
-//     input.addEventListener("input", mask, false);
-//     input.addEventListener("focus", mask, false);
-//     input.addEventListener("blur", mask, true);
-//     input.addEventListener("keydown", mask, false)
-//   });
-// });
-
 $(document).ready(function(){
     $('._nameClass').on('propertychange change click keyup input paste', function() {
         var name = $(this),

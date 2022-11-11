@@ -57,7 +57,7 @@ section {
 section.ourCollections {
     padding-top: 0;
 }
-section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):last-of-type {
+section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):not(.brandSection):last-of-type {
     padding-bottom: 0;
 }
 input,
@@ -207,7 +207,10 @@ header nav .nav > ul {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 23.81vw;
+    /* min-height: 23.81vw;
+    height: 100vh;
+    min-height: 23.81vw; */
+    min-height: 600px;
     height: 100vh;
     padding: 4.88vw 0 7.02vw;
 }
@@ -241,7 +244,7 @@ header nav .nav > ul {
     display: flex;
     justify-content: space-between;
     gap: 1vw;
-    padding: 129px 0;
+    padding: 7.68vw 0 0 0;
     z-index: 5;
 }
 .banner .bannerBlock .titleText {
@@ -386,6 +389,7 @@ header nav .nav > ul {
 }
 .ourCollections .ourCollectionsBlock .textBlock {
     width: auto;
+    padding-bottom: 10vw;
 }
 .ourCollections .ourCollectionsBlock .photoCollections,
 .articles .articlesBlock .photoCollections {
@@ -1045,7 +1049,7 @@ progress{
     color: var(--white);
     padding: 0.60vw 0;
     position: relative;
-    margin-right: 2.98vw;
+    margin-right: 60px;
 }
 .job .lineTitleSection {
     display: flex;
@@ -1589,6 +1593,7 @@ section.brandSection {
     background-color: var(--dark)
 }
 .banner.job .bannerBlock {
+    flex-direction: column;
     justify-content: center;
 }
 .jobList .jobListBlock .info-block {

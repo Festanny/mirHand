@@ -38,10 +38,19 @@
     footer .footer {
         grid-template-columns: 75% auto;
     }
+    .brandSection .brandSectionBlock .info-block .item .imgBrand {
+        height: 20vw;
+    }
 }
 @media screen and (max-width: 1280px) {
+    :root {
+        --fz15: 1.17vw;
+    }
     footer::before, footer::after {
         width: 3vw;
+    }
+    .brandSection .brandSectionBlock .info-block .item .imgBrand {
+        height: 22.55vw;
     }
 }
 @media screen and (max-width: 1199px) {
@@ -68,7 +77,68 @@
     footer::before, footer::after {
         width: 3vw;
     }
+    footer .footer {
+        grid-template-columns: 70% auto;
+    }
 }
 @media screen and (max-width: 991px) {
+    :root {
+        --fz128: 8.07vw;
+        --fz64: 4.5vw;
+        --fz30: 2.32vw;
+        --fz24: 2.02vw;
+        --fz20: 1.85vw;
+        --fz15: 1.5vw;
+        --fz12: 1.21vw;
 
+        --fz40: 2.86vw;
+        --fz38: 2.42vw;
+        --fz34: 2.43vw;
+        --fz32: 2.29vw;
+        --fz25: 1.79vw;
+        --fz16: 1.14vw;
+        
+    }
+    .location .locationBlock .map .container .locationInfo {
+        width: 20vw;
+    }
+    .location .locationBlock .map .container .locationInfo {
+        right: 2.83vw;
+    }
+    .textBlockTitle {
+        margin-bottom: 5vw;
+    }
+    footer .footer .item .logo,
+    footer .footer .item .contactInfo {
+        padding: 1.55vw 0 1.55vw 1.96vw ;
+    }
+    footer .footer .item .contactInfo .soc ul li .iconSoc.inst, footer .footer .item .contactInfo .soc ul li .iconSoc.vk {
+        font-size: 26px;
+    }
+    footer .footer .item .contactInfo .soc ul li .iconSoc:not(.inst):not(.vk) {
+        width: 23px;
+        height: 23px;
+        transform: translateY(-1px);
+        font-size: 12px;
+    }
+    .banner {
+        height: 80vh;
+    }
+    header .header .logo a {
+        width: 12vw;
+        height: 4vw;
+    }
+    .custom-checkbox+label::before {
+        width: 1.3vw;
+        height: 1.3vw;
+    }
+    .__select__content {
+        top: 3.5vw
+    }
+    .__select {
+        height: 3.5vw;
+    }
+    footer .footer .item .logo {
+        width: 15vw;
+    }
 }
