@@ -61,16 +61,26 @@
                     <li><a href="contacts.html">Контакты</a></li>
                     <li><a href="job.html">Вакансии</a></li>
                 </ul>
+                <div class="burger" data-bs-toggle="offcanvas" data-bs-target="#menuMob" aria-controls="offcanvasRight">
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="banner" style="background-image: url('assets/img/banner/banner.jpg');">
-            <div class="bannerBlock container">
-                <div class="titleText">Научим одеваться <span>в секондах</span></div>
+            <div class="titleText bebas">Научим одеваться <span>в секондах</span></div>
+            <div class="bannerBlock">
                 <div class="calendar-coupon">
                     <div class="calendar_banner bebas">
+                        <div class="circlesMob">
+                            <div class="circles"></div>
+                            <div class="circles"></div>
+                            <div class="circles"></div>
+                            <div class="circles"></div>
+                        </div>
                         <div class="calendar_banner_bg">
                             <div class="circles-block">
                                 <div class="circles"></div>
@@ -84,8 +94,10 @@
                             <div class="swiper calendarSlider">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <div class="nameDay">Понедельник</div>
-                                        <div class="discount-amount">70%</div>
+                                        <div class="nameDay-discAmount">
+                                            <div class="nameDay">Понедельник</div>
+                                            <div class="discount-amount">70%</div>
+                                        </div>
                                         <div class="dayBlock">
                                             <div class="btn-slide btn-slide-prev-cld"><div class="arrows close"></div></div>
                                             <div class="day">1 января</div>
@@ -93,8 +105,10 @@
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="nameDay">Вторник</div>
-                                        <div class="discount-amount">-70%</div>
+                                        <div class="nameDay-discAmount">
+                                            <div class="nameDay">Вторник</div>
+                                            <div class="discount-amount">-70%</div>
+                                        </div>
                                         <div class="dayBlock">
                                             <div class="btn-slide btn-slide-prev-cld"><div class="arrows close"></div></div>
                                             <div class="day">2 января</div>
@@ -103,11 +117,335 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="swiper discountSlider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="nameMonth">
+                                            <div class="btn-dsc btn-slide-prev-dsc"><div class="arrows close"></div></div>
+                                            <span class="bebas">Октябрь</span>
+                                            <div class="btn-dsc btn-slide-next-dsc"><div class="arrows"></div></div>
+                                        </div>
+                                        <div class="calendarBlock">
+                                            <div class="nameDay bebas">
+                                                <span>понедельник</span>
+                                                <span>вторник</span>
+                                                <span>среда</span>
+                                                <span>четверг</span>
+                                                <span>пятница</span>
+                                                <span>суббота</span>
+                                                <span>воскресенье</span>
+                                            </div>
+                                            <div class="calendar">
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">01</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">02</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">03</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">04</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">05</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">06</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">07</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">08</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">09</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">10</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">11</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">12</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">13</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">14</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">15</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">16</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">17</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">18</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">19</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">20</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">21</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">22</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">23</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">24</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">25</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">26</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">27</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">28</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">29</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">30</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">31</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="nameMonth">
+                                            <div class="btn-dsc btn-slide-prev-dsc"><div class="arrows close"></div></div>
+                                            <span class="bebas">Ноябрь</span>
+                                            <div class="btn-dsc btn-slide-next-dsc"><div class="arrows"></div></div>
+                                        </div>
+                                        <div class="calendarBlock">
+                                            <div class="nameDay bebas">
+                                                <span>понедельник</span>
+                                                <span>вторник</span>
+                                                <span>среда</span>
+                                                <span>четверг</span>
+                                                <span>пятница</span>
+                                                <span>суббота</span>
+                                                <span>воскресенье</span>
+                                            </div>
+                                            <div class="calendar">
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">01</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">02</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">03</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">04</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">05</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">06</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">07</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">08</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">09</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">10</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">11</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">12</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">13</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">14</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">15</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">16</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">17</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">18</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">19</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">20</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">21</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">22</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">23</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">24</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">25</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">26</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">27</div>
+                                                    <div class="discountNum newDelivery">Новый завоз</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">28</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">29</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">30</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar">31</div>
+                                                    <div class="discountNum">10%</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="dateCalendar"></div>
+                                                    <div class="discountNum"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="mainCalendar">
                             <a>Весь календарь</a>
                         </div>
-                        <div class="info-text">Календарь скидок</div>
+                        <div class="info-text"><span>Календарь скидок</span></div>
                     </div>
                     <div class="btnBlock btnDiscount">
                         <a class="btn white" data-bs-toggle="modal" data-bs-target="#coupon">Прямо сейчас получи 500 руб</a>
@@ -225,6 +563,22 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="sliderNewsBlock">
+                            <div class="btn-slide-prev-news"><div class="arrows close"></div></div>
+                            <div class="swiper newsSlider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="detailed-news.html" class="item">
+                                            <div class="titleInfo" style="background-image: url('assets/img/news/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg')">
+                                                <span class="bebas">В Волгограде и Новороссийске график скидок меняется на 2-х недельный</span>
+                                                <div class="actionA">Нажмите чтобы перейти</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-slide-next-news"><div class="arrows"></div></div>
+                        </div>
                         <div class="btnBlock btnDiscount">
                             <a href="news.html" class="btn dark">Все новости</a>
                         </div>
@@ -318,10 +672,10 @@
                     <div class="line"></div>
                     <div class="soc">
                         <ul>
-                            <li><a href="#" class="iconSoc inst"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="#" class="iconSoc vk"><i class="fa-brands fa-vk"></i></a></li>
-                            <li><a href="#" class="iconSoc ok"><i class="fa-brands fa-odnoklassniki"></i></a></li>
-                            <li><a href="#" class="iconSoc yt"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#" class="iconSoc inst"><img src="assets/img/soc/inst.svg" alt=""></a></li>
+                            <li><a href="#" class="iconSoc vk"><img src="assets/img/soc/vk.svg" alt=""></a></li>
+                            <li><a href="#" class="iconSoc ok"><img src="assets/img/soc/ok.svg" alt=""></a></li>
+                            <li><a href="#" class="iconSoc yt"><img src="assets/img/soc/yt.svg" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="infoCommunication">
@@ -341,7 +695,389 @@
         </div>
     </footer>
 
+    <div class="offcanvas offcanvas-end menuMob" tabindex="-1" id="menuMob" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas справа</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav>
+                <div class="nav container bebas">
+                    <ul class="topmenu">
+                        <li><a href="about-us.html">Главная</a>
+                        <li>
+                            <div class="nextOpen">
+                                <div class="arrows close"></div>
+                                <a href="about-us.html">О компании</a>
+                            </div>
+                          <ul class="submenu">
+                            <li><a href="about-us.html">О компании</a></li>
+                            <li>
+                                <div class="nextOpen">
+                                    <div class="arrows close"></div>
+                                    <a href="cooperation.html" class="submenu-link">Сотрудничество</a>
+                                </div>
+                              <ul class="submenu">
+                                <li><a href="landlords.html">Арендодадетелям</a></li>
+                                <li><a href="wholesalers.html">Оптовикам (ветошь)</a></li>
+                                <li><a href="advertisement.html">Реклама у нас</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="news.html">Новости</a></li>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="faq.html">FAQ (вопрос-ответ)</a></li>
+                            <li><a href="articles.html">Статьи</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="stocks.html">Акции</a></li>
+                        <li><a href="brands.html">Бренды</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="job.html">Вакансии</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
     <!-- Modal -->
+    <!-- Календарь -->
+    <div class="modal fade calendarModalBlock" id="calendarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="h5 modal-title bebas" id="exampleModalLabel">Календарь</div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="swiper discountSlider bebas">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="nameMonth">
+                                <div class="btn-dsc btn-slide-prev-dsc"><div class="arrows close"></div></div>
+                                <span class="bebas">Октябрь</span>
+                                <div class="btn-dsc btn-slide-next-dsc"><div class="arrows"></div></div>
+                            </div>
+                            <div class="calendarBlock">
+                                <div class="nameDay bebas">
+                                    <span>понедельник</span>
+                                    <span>вторник</span>
+                                    <span>среда</span>
+                                    <span>четверг</span>
+                                    <span>пятница</span>
+                                    <span>суббота</span>
+                                    <span>воскресенье</span>
+                                </div>
+                                <div class="calendar">
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">01</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">02</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">03</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">04</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">05</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">06</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">07</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">08</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">09</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">10</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">11</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">12</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">13</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">14</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">15</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">16</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">17</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">18</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">19</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">20</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">21</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">22</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">23</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">24</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">25</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">26</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">27</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">28</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">29</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">30</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">31</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="nameMonth">
+                                <div class="btn-dsc btn-slide-prev-dsc"><div class="arrows close"></div></div>
+                                <span class="bebas">Ноябрь</span>
+                                <div class="btn-dsc btn-slide-next-dsc"><div class="arrows"></div></div>
+                            </div>
+                            <div class="calendarBlock">
+                                <div class="nameDay bebas">
+                                    <span>понедельник</span>
+                                    <span>вторник</span>
+                                    <span>среда</span>
+                                    <span>четверг</span>
+                                    <span>пятница</span>
+                                    <span>суббота</span>
+                                    <span>воскресенье</span>
+                                </div>
+                                <div class="calendar">
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">01</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">02</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">03</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">04</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">05</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">06</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">07</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">08</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">09</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">10</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">11</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">12</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">13</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">14</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">15</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">16</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">17</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">18</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">19</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">20</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">21</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">22</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">23</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">24</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">25</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">26</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">27</div>
+                                        <div class="discountNum newDelivery">Новый завоз</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">28</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">29</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">30</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar">31</div>
+                                        <div class="discountNum">10%</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="dateCalendar"></div>
+                                        <div class="discountNum"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <!-- Купон -->
     <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

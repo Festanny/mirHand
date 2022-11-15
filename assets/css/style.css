@@ -201,7 +201,7 @@ header nav .nav > ul {
 
 .banner {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
     color: var(--white);
     background-size: cover;
@@ -225,11 +225,13 @@ header nav .nav > ul {
     opacity: .26;
 }
 .banner.aboutUsPage .bannerBlock {
+    justify-content: space-between;
     flex-direction: column;
 }
 .banner.aboutUsPage {
     align-items: inherit;
     padding-bottom: 1.43vw;
+    padding-top: 7.74vw;
 }
 .banner.aboutUsPage .bannerBlock {
     padding: 0;
@@ -242,12 +244,16 @@ header nav .nav > ul {
 }
 .banner .bannerBlock {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: flex-end;
     gap: 1vw;
-    padding: 7.68vw 0 0 0;
+    /* padding: 7.68vw 0 0 0; */
+    padding: 0;
     z-index: 5;
 }
-.banner .bannerBlock .titleText {
+.banner .titleText {
+    position: absolute;
+    top: 10.71vw;
     display: flex;
     flex-direction: column;
     letter-spacing: 0.02em;
@@ -255,7 +261,7 @@ header nav .nav > ul {
     font-size: var(--fz64);
     font-weight: 100;
 }
-.banner .bannerBlock .titleText span {
+.banner .titleText span {
     font-weight: 400;
 }
 .banner .bannerBlock .calendar-coupon {
@@ -275,8 +281,15 @@ header nav .nav > ul {
     border-radius: 50%;
     background-color: var(--dark-gray)
 }
-.banner .bannerBlock .calendar-coupon .calendar_banner .calendarSlider {
-    width: 20.65vw;
+.banner .bannerBlock .calendar-coupon .calendar_banner .circlesMob {
+    display: none;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner {
+    width: 347px;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendarSlider,
+.banner .bannerBlock .calendar-coupon .calendar_banner .discountSlider {
+    width: 100%;
 }
 .banner .bannerBlock .calendar-coupon .calendar_banner {
     background-color: var(--gray5)
@@ -328,9 +341,9 @@ header nav .nav > ul {
 }
 .banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar a {
     display: inline-block;
-    padding: 0.71vw 2.08vw;
+    padding: 0.71vw 1vw;
     border: 1px solid var(--dark);
-    min-width: auto;
+    min-width: 10vw;
     width: auto;
     cursor: pointer;
     transition: all .3s;
@@ -612,13 +625,20 @@ header nav .nav > ul {
 .articles .articlesBlock .photo-text:nth-child(2n) .photoCollections {
     margin-left: auto;
 }
+.swiper {
+    width: 100%;
+}
 
 .news .newsBlock .info-block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20.83vw, auto));
     gap: 5.71vw;
 }
-.news .newsBlock .info-block .item .titleInfo {
+.news .newsBlock .sliderNewsBlock {
+    display: none;
+}
+.news .newsBlock .info-block .item .titleInfo,
+.news .newsBlock .sliderNewsBlock .item .titleInfo {
     position: relative;
     font-size: var(--fz30);
     color: var(--white);
@@ -631,7 +651,11 @@ header nav .nav > ul {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.news .newsBlock .info-block .item .titleInfo::before {
+.news .newsBlock .sliderNewsBlock .item .titleInfo {
+    padding: 35px 5px 20px;
+}
+.news .newsBlock .info-block .item .titleInfo::before,
+.news .newsBlock .sliderNewsBlock .item .titleInfo::before {
     content: '';
     position: absolute;
     top: 0;
@@ -641,7 +665,23 @@ header nav .nav > ul {
     background-color: var(--dark);
     opacity: .58;
 }
-.news .newsBlock .info-block .item .titleInfo span {
+.news .newsBlock .info-block .item .titleInfo span,
+.news .newsBlock .sliderNewsBlock .item .titleInfo span {
+    position: relative;
+    z-index: 5;
+}
+.news .newsBlock .sliderNewsBlock .item .titleInfo span {
+    display: block;
+    margin-bottom: 10px;
+}
+.news .newsBlock .sliderNewsBlock .swiper-slide {
+    padding: 0 5px;
+}
+.news .newsBlock .sliderNewsBlock .item .titleInfo .actionA {
+    font-size: 12px;
+    color: var(--gray);
+    font-style: italic;
+    font-weight: 100;
     position: relative;
     z-index: 5;
 }
@@ -672,12 +712,20 @@ header nav .nav > ul {
     object-fit: contain;
     padding: 0 0.89vw;
 }
+.sliderNewsBlock {
+    position: relative;
+}
+.news .newsBlock .sliderNewsBlock .newsSlider {
+    width: calc(100% - 140px);
+}
 .brand .btn-swiper.btn-slide-prev,
-.brand .btn-swiper.btn-slide-next {
+.brand .btn-swiper.btn-slide-next,
+.news .newsBlock .btn-slide-prev-news,
+.news .newsBlock .btn-slide-next-news {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     z-index: 1000;
     width: 3.27vw;
     height: 3.27vw;
@@ -689,9 +737,24 @@ header nav .nav > ul {
     font-size: var(--fz30);
     color: var(--dark);
 }
-.brand .btn-swiper.btn-slide-next {
+.brand .btn-swiper.btn-slide-next,
+.news .newsBlock .btn-slide-next-news {
     right: 0;
     left: auto;
+    transform: translate(0, -50%);
+}
+.news .sliderNewsBlock .btn-slide-prev-news {
+    left: 0px;
+}
+.news .sliderNewsBlock .btn-slide-next-news {
+    right: 0px;
+}
+.news .sliderNewsBlock .btn-slide-prev-news,
+.news .sliderNewsBlock .btn-slide-next-news {
+    background-color: transparent;
+    border-radius: 0;
+    width: 60px;
+    height: 30px;
 }
 .location .locationBlock .map .container {
     position: relative;
@@ -819,22 +882,17 @@ footer .footer .item .contactInfo .soc ul {
     align-items: center;
     gap: 1.19vw;
 }
-footer .footer .item .contactInfo .soc ul li .iconSoc:not(.inst):not(.vk) {
+footer .footer .item .contactInfo .soc ul li .iconSoc {
     width: 29px;
     height: 29px;
-    border-radius: 8px;
-    border: 2px solid var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
 }
-footer .footer .item .contactInfo .soc ul li .iconSoc {
-    
-}
-footer .footer .item .contactInfo .soc ul li .iconSoc.inst,
-footer .footer .item .contactInfo .soc ul li .iconSoc.vk {
-    font-size: 34px;
+footer .footer .item .contactInfo .soc ul li .iconSoc img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 footer .footer .item .contactInfo .infoCommunication ul {
     display: flex;
@@ -1161,6 +1219,7 @@ progress{
     transition: all .3s;
 }
 .newsSection .newsSectionBlock .textMainCooperation.close {
+    min-height: 70px;
     max-height: 6.55vw;
     transition: all .3s;
 }
@@ -1537,15 +1596,16 @@ section.brandSection {
 }
 .brandSectionPage .brandSectionBlockPage .imgBrandBlock {
     filter: invert(100%);
-    max-width: 50%;
     margin-bottom: 1.90vw;
 }
 .brandSectionPage .brandSectionBlockPage .imgBrandBlock img {
-    max-width: 100%;
+    max-width: 50%;
+    height: 30px;
+    object-fit: contain;
 }
 .brandSectionPage .brandSectionBlockPage .info-block {
     display: grid;
-    grid-template-columns: auto 50%;
+    grid-template-columns: calc(50% - 4.64vw) 50%;
     gap: 4.64vw;
 }
 .brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText {
@@ -1644,7 +1704,7 @@ section.brandSection {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 64px;
+    font-size: var(--fz64);
     color: var(--white);
     line-height: 1;
     font-weight: bold;
@@ -1821,44 +1881,45 @@ section.jobList {
     font-weight: 400;
     margin-bottom: 2.68vw;
 }
-.discountBlock .discountBlockMain .discountSlider .nameMonth {
+.discountSlider .nameMonth {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.90vw;
+    padding-bottom: 0.60vw;
 }
-.discountBlock .discountBlockMain .discountSlider .nameMonth span {
+.discountSlider .nameMonth span {
     font-size: var(--fz64);
     font-weight: bold;
     line-height: 1;
 }
-.discountBlock .discountBlockMain .discountSlider .nameMonth .arrows {
+.discountSlider .nameMonth .arrows {
     width: 5.95vw;
     margin-bottom: 0.60vw;
 }
-.discountBlock .discountBlockMain .discountSlider .nameMonth .btn-dsc {
+.discountSlider .nameMonth .btn-dsc {
     height: 1.79vw;
     display: flex;
     align-items: center;
 }
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .nameDay {
+.discountSlider .calendarBlock .nameDay {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
     gap: 0.36vw;
     border-bottom: 1px solid var(--dark)
 }
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .nameDay span {
+.discountSlider .calendarBlock .nameDay span {
     text-align: center;
     font-weight: bold;
 }
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar {
+.discountSlider .calendarBlock .calendar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
     column-gap: 0.36vw;
     row-gap: 1.49vw;
     margin-top: 0.71vw;
 }
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item {
+.discountSlider .calendarBlock .calendar .item {
     background-color: var(--gray2);
     color: var(--dark);
     font-weight: bold;
@@ -1866,16 +1927,16 @@ section.jobList {
     flex-direction: column;
     padding: 0.71vw;
 }
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item:nth-child(7n - 1),
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item:nth-child(7n) {
+.discountSlider .calendarBlock .calendar .item:nth-child(7n - 1),
+.discountSlider .calendarBlock .calendar .item:nth-child(7n) {
     background-color: var(--red);
     color: var(--white);
 } 
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item .dateCalendar {
+.discountSlider .calendarBlock .calendar .item .dateCalendar {
     text-align: left;
     line-height: 1;
 }
-.discountBlock .discountBlockMain .discountSlider .calendarBlock .calendar .item .discountNum {
+.discountSlider .calendarBlock .calendar .item .discountNum {
     text-align: right;
     font-size: var(--fz32);
     line-height: 1;
@@ -1897,7 +1958,7 @@ section.stocksBlock {
 }
 .stocksBlock .stocksBlockMain .blockStocksInfo {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 60% auto;
     gap: 2.80vw;
 }
 .stocksBlock .stocksBlockMain .blockStocksInfo .item.imgStocks {
@@ -1913,7 +1974,7 @@ section.stocksBlock {
     flex-direction: column;
     gap: 8.69vw;
 }
-.stocksBlock .stocksBlockMain .info-block .item:last-of-type {
+.stocksBlock .stocksBlockMain .info-block > .item:last-of-type {
     margin-bottom: 10.71vw;
 }
 .infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain {
@@ -1947,7 +2008,9 @@ section.stocksBlock {
     margin-bottom: 3.87vw;
 }
 .faqSection .faqSectionBlock .categoryFaq span {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--gray3);
     text-transform: uppercase;
     padding: 0.95vw 0.60vw;
@@ -2252,4 +2315,173 @@ a.btnBlock {
 }
 .detailedNews .info-block .item.imgNews img {
     width: 100%;
+}
+.banner .discountSlider:not(.open) {
+    display: none;
+}
+.banner .discountSlider .calendarBlock .nameDay span {
+    font-size: 0.48vw;
+}
+.banner .discountSlider .calendarBlock .calendar .item,
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item {
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+}
+.banner .discountSlider .calendarBlock .calendar .item .dateCalendar,
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item .dateCalendar {
+    font-size: var(--fz12);
+    text-align: center;
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 0.18vw 0 0;
+}
+.banner .discountSlider .calendarBlock .calendar .item .discountNum,
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum {
+    font-size: var(--fz16);
+    background-color: var(--red2);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0.48vw;
+}
+.banner .discountSlider .calendarBlock .calendar .item .discountNum.newDelivery {
+    font-size: 0.60vw;
+}
+.banner .discountSlider .swiper-slide,
+.calendarModalBlock .discountSlider .swiper-slide {
+    padding: 0 0.89vw;
+}
+.banner .discountSlider .nameMonth,
+.calendarModalBlock .discountSlider .nameMonth {
+    padding-bottom: 0;
+}
+.banner .discountSlider .nameMonth span {
+    font-size: var(--fz38);
+}
+.banner .discountSlider .nameMonth,
+.calendarModalBlock .discountSlider .nameMonth {
+    margin-bottom: 0.42vw;
+}
+.banner .discountSlider .nameMonth .arrows {
+    width: 4vw;
+}
+.banner .discountSlider .calendarBlock .calendar {
+    column-gap: 0.1vw;
+    row-gap: 0.15vw;
+}
+.banner .discountSlider .calendarBlock .calendar,
+.calendarModalBlock .discountSlider .calendarBlock .calendar {
+    margin-top: 0.3vw;
+}
+.calendarModalBlock .discountSlider .nameMonth span {
+    font-size: 25px;
+}
+.calendarModalBlock .discountSlider .calendarBlock .calendar {
+    column-gap: 3px;
+    row-gap: 5px;
+}
+.calendarModalBlock .discountSlider .nameMonth .arrows {
+    width: 50px;
+}
+.calendarModalBlock .discountSlider .calendarBlock .nameDay span,
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item .dateCalendar {
+    font-size: 12px;
+}
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum.newDelivery,
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum {
+    font-size: 18px;
+}
+.calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum {
+    min-height: 45px;
+}
+header .burger {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0
+}
+header .burger div {
+    width: 50px;
+    height: 3px;
+    background-color: var(--dark);
+}
+.offcanvas.menuMob {
+    background-color: var(--dark)
+}
+.offcanvas.menuMob .btn-close {
+    filter: invert(100%)
+}
+.offcanvas.menuMob .offcanvas-body nav,
+.offcanvas.menuMob .offcanvas-body nav .nav {
+    width: 100%;
+}
+.offcanvas.menuMob .offcanvas-body nav ul.topmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    width: 100%;
+    margin-top: 40px;
+    font-size: 25px;
+}
+.offcanvas.menuMob .offcanvas-body nav ul li a {
+    color: var(--white);
+}
+.offcanvas.menuMob .offcanvas-body {
+    padding: 0;
+}
+.offcanvas.menuMob .offcanvas-header {
+    padding: 0;
+}
+.offcanvas.menuMob {
+    padding: 46px 36px 46px 36px; 
+}
+.offcanvas.menuMob .offcanvas-body nav ul.topmenu li > .submenu {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 20px;
+    display: none;
+}
+.offcanvas.menuMob .offcanvas-body nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.offcanvas.menuMob .offcanvas-body nav ul.topmenu li > .submenu li > .submenu {
+    flex-direction: column;
+    font-size: 16px;
+    display: none;
+}
+.offcanvas.menuMob .offcanvas-body .arrows,
+.offcanvas.menuMob .offcanvas-body .arrows::after,
+.offcanvas.menuMob .offcanvas-body .arrows::before {
+    background-color: var(--white)
+}
+.offcanvas.menuMob .offcanvas-body nav ul li > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+.offcanvas.menuMob .offcanvas-body nav ul li > div .arrows {
+    width: 39px;
+    transform: translateY(-3px);
+}
+.offcanvas.menuMob .offcanvas-body nav ul.topmenu > li div > div.arrows:not(.close) + a {
+    text-shadow: 0px 1px 7px #E30613;
+    transition: all .3s;
+}
+.offcanvas.menuMob .offcanvas-body nav ul.topmenu .submenu.open {
+    display: flex!important;
+}
+.offcanvas.menuMob .offcanvas-body nav ul.topmenu .submenu {
+    transition: all .3s;
 }

@@ -73,7 +73,8 @@ let swiper2 = new Swiper(".brandSliderPage", {
 });
 let swiper3 = new Swiper(".discountSlider", {
     slidesPerView: 1,
-    loop: true,
+    initialSlide: 1,
+    loop: false,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -85,6 +86,8 @@ let swiper3 = new Swiper(".discountSlider", {
 });
 let swiper4 = new Swiper(".calendarSlider", {
     slidesPerView: 1,
+    direction: "horizontal",
+    direction: "vertical",
     loop: false,
     pagination: {
         el: ".swiper-pagination",
@@ -93,7 +96,20 @@ let swiper4 = new Swiper(".calendarSlider", {
     navigation: {
         prevEl: ".btn-slide-prev-cld",
         nextEl: ".btn-slide-next-cld",
+    },
+    breakpoints: {
+        768: {
+            direction: "horizontal",
+        },
     }
+});
+let swiper5 = new Swiper(".newsSlider", {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+        prevEl: ".btn-slide-prev-news",
+        nextEl: ".btn-slide-next-news",
+    },
 });
 
 let addWidth = 700;
@@ -197,7 +213,19 @@ function styleNewsText() {
         'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
     })
     $('.advertisementSection .advertisementSectionBlock .info-block .item .textBlock').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
+    })
+    $('.brandSectionPage .brandSectionBlockPage .imgBrandBlock').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
+    })
+    $('.banner .titleText').css({
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10,
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+    })
+    $('.banner:not(.job) .bannerBlock').css({
+        'width': $('.container').width() + 20,
+        'margin-left': ($('body').width() - $('.container').width()) / 2,
+        'margin-right': ($('body').width() - $('.container').width()) / 2
     })
     let lengthTriagle = $('.lineTitleSection .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
@@ -243,7 +271,7 @@ $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAnd
             function blockImgHeight() {
                 let blockImgHeight = $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').height()
                 $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.imgNews').css('max-height', blockImgHeight + 'px')
-                blockImgHeight = blockImgHeight - $('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() - $('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').height() - 50
+                blockImgHeight = blockImgHeight - ($('.lineTitleSection .info-block .item').eq(i).children('.titleTextBlockNews').children('.textBlock').height() + ($('body').width()/100*1.07)) - ($('.newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block').eq(i).height() + ($('body').width()/100*1.61))
                 $('.newsSection .newsSectionBlock .info-block .item').eq(i).children('.titleTextBlockNews').children('.textAndBtn').children('.textMainCooperation').css('max-height', blockImgHeight + 'px')
             }
         }
@@ -650,3 +678,24 @@ $(document).ready(function(){
         }
     }
 });
+
+$('.banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar a').on('click', function() {    
+    let btnCalendar = $(this)
+    if ($('body').width() > 767) {
+        $(this).attr('data-bs-toggle', '').attr('data-bs-target', '')
+        $('.banner .calendarSlider').toggleClass('d-none');
+        $('.banner .discountSlider').toggleClass('open');
+        if ($('.banner .discountSlider').hasClass('open')) {
+            $(this).text('Свернуть')
+        } else {
+            $(this).text('Весь календарь')
+        }
+    } else {
+        $('#calendarModal').modal('show')
+    }
+})
+
+$('.offcanvas.menuMob .offcanvas-body nav ul.topmenu .arrows.close').on('click', function() {
+    $(this).toggleClass('close')
+    $(this).parent('.nextOpen').next('.submenu').toggleClass('open')
+})
