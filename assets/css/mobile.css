@@ -927,6 +927,9 @@
     .discountSlider .calendarBlock .nameDay {
         font-size: 12px;
     }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle {
+        width: 100%;
+    }
 }
 @media screen and (max-width: 540px) {
     .ourCollections .ourCollectionsBlock .photoCollections.man img {
@@ -1011,6 +1014,9 @@
         --fz64: 40px;
         --fz30: 20px;
         --fz20: 14px;
+    }
+    .jobList .jobListBlock .info-block .item .imgPlace {
+        width: 100%;
     }
     .banner .titleText {
         font-size: 42px;
@@ -1163,8 +1169,10 @@
     .stocksBlock .stocksBlockMain .textBlock {
         margin-bottom: 39px;
     }
-    .job .lineTitleSection .textBlock .h3.title__page, .stocksBlock .stocksBlockMain .info-block .textBlock .h3.title__page {
+    .job .lineTitleSection .textBlock .h3.title__page, .stocksBlock .stocksBlockMain .info-block .textBlock .h3.title__page,
+    .lineTitleSection .info-block .item .textBlock .h3.title__page, .lineTitleSection50 .info-block .item .textBlock .h3.title__page {
         padding: 10px 0 8px;
+        font-size: 20px;
     }
     .stocksBlock .stocksBlockMain .info-block .item .textBlock .h3.title__page {
         font-size: 20px;
@@ -1208,7 +1216,7 @@
         margin: 0 auto;
     }
     .jobList .jobListBlock .info-block .item .namePlace {
-        align-items: center;
+        align-items: flex-end;
     }
     .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text ul {
         padding-left: 30px;
@@ -1221,5 +1229,150 @@
     }
     .cooperation .cooperationBlock .info-block .item .imgBlockCooperation {
         margin-top: 15px;
+    }
+    .stocksBlock .stocksBlockMain .info-block .item .textBlock,
+    .lineTitleSection .info-block .item .textBlock, .lineTitleSection50 .info-block .item .textBlock, .job .lineTitleSection .textBlock, .stocksBlock .info-block .item .textBlock {
+        width: calc(100% - 15px)!important;
+    }
+    .cooperation .cooperationBlock .info-block .item:last-of-type, .newsSection .newsSectionBlock .info-block .item:last-of-type {
+        padding-bottom: 30px;
+    }
+    .newsSection.lineTitleSection .info-block .item .textBlock {
+        width: 100%!important;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .titleBlock span {
+        font-size: 28px;
+        padding: 30px 0;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .block {
+        padding: 30px 0 60px;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .btn-review .arrows {
+        width: 25px;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .btn-review {
+        gap: 5px
+    }
+    .reviewsSection form.newReview .review-block textarea {
+        width: 100%;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .block {
+        gap: 30px;
+    }
+    .faqSection .faqSectionBlock .info-block .item .question > span {
+        flex: 1;
+    }
+    .faqSection .faqSectionBlock .info-block .item .answer {
+        font-size: 14px;
+    }
+    .faqSection .faqSectionBlock .info-block .item .answer {
+        margin-top: 15px;
+    }
+    .faqSection .faqSectionBlock .info-block .item .answer span.adminText {
+        margin-top: 10px;
+    }
+    .faqSection .faqSectionBlock .info-block .item {
+        padding: 10px 15px;
+    }
+    .newsSection .newsSectionBlock .info-block .item {
+        gap: 30px;
+    }
+    .cooperation .cooperationBlock .info-block .item, .newsSection .newsSectionBlock .info-block .item {
+        padding: 30px 0;
+    }
+    .job .lineTitleSection .textBlock .h3.title__page, .stocksBlock .stocksBlockMain .info-block .textBlock .h3.title__page, .lineTitleSection .info-block .item .textBlock .h3.title__page, .lineTitleSection50 .info-block .item .textBlock .h3.title__page {
+        margin-left: 15px!important;
+    }
+    .modal .info-block .item .discount {
+        margin-bottom: 10px;
+    }
+    .modal .infoText {
+        margin: 10px 0;
+    }
+    input, textarea {
+        padding: 5px 10px;
+        min-height: 40px;
+    }
+    .advertisementSection .info-block .item .textBlock {
+        width: calc(100% - 30px);
+        margin: 0 auto!important;
+    }
+    .rent .rentBlockMain .textBlock {
+        margin-bottom: 35px;
+    }
+    .infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements > div {
+        margin-bottom: 20px;
+    }
+    .infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements .title__page_down {
+        margin-top: 35px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .dayBlock {
+        font-size: 22px;
+    }
+    .calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum.newDelivery, .calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum {
+        font-size: 12px;
+    }
+    .job .lineTitleSection .textBlock .h3.title__page {
+        font-size: 14px;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace,
+    .jobList .jobListBlock .info-block .item .textInformation {
+        width: 100%;
+        margin-left: 0;
+    }
+    .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo,
+    .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText {
+        margin-top: 20px;
+    }
+    .infoLandlords .infoLandlordsBlock .info-block .item {
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 340px) {
+    .banner.bannerMain .titleText {
+        margin-top: 10px;
+    }
+    .banner .bannerBlock .calendarSlider {
+        height: 70px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .nameDay {
+        font-size: 20px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount {
+        font-size: 30px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .info-text span {
+        font-size: 12px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner {
+        grid-template-columns: 30px auto;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount {
+        padding: 5px;
+    }
+    .calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum {
+        min-height: 35px;
+    }
+    .banner .discountSlider .nameMonth, .calendarModalBlock .discountSlider .nameMonth {
+        margin-bottom: 5px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.man img {
+        object-position: 0 -80px;
+    }
+    .location .locationBlock .map .container .locationInfo {
+        width: 180px;
+    }
+    .discountSlider .calendarBlock .nameDay {
+        font-size: 8px;
+    }
+    .infoContactsSection.contactsPage .infoContactsSectionBlock .info-block .textBlockMain {
+        width: calc(100% - 30px);
+        margin: 0!important;
+    }
+    .infoCompanySection .infoCompanyBlock .photo-text .photoCollections, .infoContactsSection .infoContactsSectionBlock .photo-text .photoCollections {
+        height: 150px;
+    }
+    .newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block, .jobList .jobListBlock .info-block .item .namePlace .arrows-block {
+        width: 100%;
     }
 }

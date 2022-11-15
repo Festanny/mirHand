@@ -57,7 +57,7 @@ section {
 section.ourCollections {
     padding-top: 0;
 }
-section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):not(.brandSection):not(.separatePage):last-of-type {
+section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):not(.brandSection):not(.separatePage):not(.infoLandlordsAdv):last-of-type {
     padding-bottom: 0;
 }
 input,
