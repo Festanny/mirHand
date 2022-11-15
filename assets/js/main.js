@@ -165,16 +165,16 @@ $('header nav').hover(
 
 function styleInfoCompany() {
     $('.articles .articlesBlock .info-block .photo-text:nth-child(2n - 1) .textBlockMain .textBlock').css({
-        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.articles .articlesBlock .info-block .photo-text:nth-child(2n) .textBlockMain .textBlock').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
 }
 function styleCooperationText() {
     $('.cooperation .cooperationBlock .info-block .item .textBlock').width($('body').width() / 2 + $('.container').width() * 25 / 100)
     $('.cooperation .cooperationBlock .info-block .item .textBlock .h3.title__page').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     let lengthTriagle = $('.cooperation .cooperationBlock .info-block .item .textBlock .triangle');
     for (let i=0; i<lengthTriagle.length; i++) {
@@ -183,22 +183,22 @@ function styleCooperationText() {
 }
 function styleNewsText() {
     $('.lineTitleSection .info-block .item .textBlock .h3.title__page').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.lineTitleSection .info-block .item .textAndBtn').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.brandSection .brandSectionBlock .search').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.banner.job .bannerBlock .block').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.banner.job .bannerBlock .h3.title__page').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.stocksBlock .stocksBlockMain .info-block .item .textBlock .h3.title__page').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.stocksBlock .stocksBlockMain .info-block .item .textBlock').css({
         'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.1)
@@ -207,10 +207,10 @@ function styleNewsText() {
         'width': $('body').width() - (($('body').width() - $('.container').width()) / 1.1)
     })
     $('.infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain').css({
-        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.ourCollections .ourCollectionsBlock .textBlockMain').css({
-        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.advertisementSection .advertisementSectionBlock .info-block .item .textBlock').css({
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
@@ -219,11 +219,11 @@ function styleNewsText() {
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.banner .titleText').css({
-        'margin-left': ($('body').width() - $('.container').width()) / 2 - 10,
-        'margin-right': ($('body').width() - $('.container').width()) / 2 - 10
+        'margin-left': ($('body').width() - $('.container').width()) / 2 - 5,
+        'margin-right': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.banner:not(.job) .bannerBlock').css({
-        'width': $('.container').width() + 20,
+        'width': $('.container').width(),
         'margin-left': ($('body').width() - $('.container').width()) / 2,
         'margin-right': ($('body').width() - $('.container').width()) / 2
     })

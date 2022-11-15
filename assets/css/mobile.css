@@ -651,7 +651,7 @@
         height: 450px;
     }
     .infoCompanySection .infoCompanyBlock .aboutUsTextBlock {
-        padding: 68px;
+        padding: 68px 0;
     }
     .rags .ragsBlock .ragsBlockMain .ragsTextBlock {
         margin: 45px auto;
@@ -744,5 +744,482 @@
     }
     .brandSectionPage .brandSectionBlockPage .info-block .item.sliderBlockBrand {
         height: 500px;
+    }
+    footer .footer .item .contactInfo .infoCommunication ul li,
+    footer .footer .item .contactInfo .soc ul {
+        gap: 10px;
+    }
+    .brand .brandBlock .brandBlockSlider .brandSlider {
+        width: calc(100% - 140px);
+    }
+    .brand .btn-swiper.btn-slide-prev, .brand .btn-swiper.btn-slide-next {
+        background-color: transparent;
+        border-radius: 0;
+        width: 60px;
+        height: 30px;
+    }
+    .modal .modal-content .modal-body {
+        padding: 20px 30px;
+    }
+    .modal#coupon .modal-body .btnTab {
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .ourCollections .ourCollectionsBlock .photoCollections.man img {
+        object-position: 0 -170px;
+    }
+}
+@media screen and (max-width: 575px) {
+    header .header .logo a {
+        width: 22vw;
+        height: 9vw;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.man {
+        height: 370px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.children img {
+        height: 500px;
+    }
+    footer .footer .item .contactInfo .soc ul li .iconSoc {
+        width: 25px;
+        height: 25px;
+    }
+    footer::after, footer::before {
+        display: none;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.women::before {
+        top: 25%;
+        right: 10%;
+    }
+    header .header {
+        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+    }
+    .brand .brandBlock .brandBlockSlider .btn-swiper .arrows {
+        display: block;
+    }
+    .brand .brandBlock .brandBlockSlider .btn-swiper i {
+        display: none;
+    }
+    .articles .articlesBlock .photo-text {
+        grid-template-columns: 45% 55%;
+    }
+    .location .locationBlock .map .container .locationInfo {
+        padding: 10px;
+    }
+    .discountBlock .discountBlockMain .swiper.discountSlider {
+        width: calc(100% - 30px);
+    }
+    .discountBlock .discountBlockMain .swiper.discountSlider .swiper-slide {
+        padding: 0 10px;
+    }
+    .brandSection .brandSectionBlock .info-block .item .imgBrand .nameBrand {
+        padding: 15px 30px;
+    }
+    .infoContactsSection.contactsPage .infoContactsSectionBlock .info-block .textBlockMain {
+        margin: 0 0 0 15px!important;
+    }
+    .jobList .jobListBlock .info-block {
+        width: 80%;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace > span {
+        width: 120px;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace .arrows-block {
+        max-width: none;
+        flex: 1;
+    }
+    .jobList .jobListBlock .info-block .item .imgPlace {
+        width: calc(100% - 15px);
+    }
+    .jobList .jobListBlock .info-block .item .imgPlace {
+        height: 200px;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace {
+        margin-bottom: 20px;
+    }
+    .jobList .jobListBlock .info-block {
+        gap: 40px;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text ul {
+        padding-left: 5vw;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain {
+        margin-bottom: 10px;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle {
+        gap: 10px;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMainTitle .arrows {
+        width: 30px;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation.cityInfo {
+        display: none;
+        margin-top: 20px;
+    }
+    .jobList .item .__select {
+        width: 100%;
+    }
+    .jobList .item .selectCity {
+        margin-right: 0;
+        margin-left: 15px;
+    }
+    section.jobList {
+        padding-bottom: 40px;
+    }
+    .newsSection .newsSectionBlock .info-block .item {
+        grid-template-columns: 100%;
+    }
+    .newsSection .newsSectionBlock .info-block .item .titleTextBlockNews {
+        margin-right: 15px;
+    }
+    .newsSection .newsSectionBlock .info-block .item .titleTextBlockNews .textAndBtn .arrows-block, .jobList .jobListBlock .info-block .item .namePlace .arrows-block {
+        max-width: none;
+        width: 50%;
+        margin-top: 20px;
+    }
+    .newsSection .newsSectionBlock .textMainCooperation.close {
+        max-height: 110px!important;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person .imgPerson {
+        width: 70px;
+        height: 70px;
+    }
+    .reviewsSection .reviewsSectionBlock .info-block .item .review-block,
+    .reviewsSection .reviewsSectionBlock .info-block .item .review-block .person {
+        gap: 10px;
+    }
+    section.reviewsSection {
+        padding-bottom: 40px!important;
+    }
+    .lineTitleSection .info-block .item .textBlock .h3.title__page, .lineTitleSection50 .info-block .item .textBlock .h3.title__page {
+        font-size: 25px;
+    }
+    .rags .ragsBlock .ragsBlockMain .info-block {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 45px;
+    }
+    .rags .ragsBlock .ragsBlockMain .info-block .item .imgRags {
+        transform: scale(-1, 1);
+    }
+    .rags .ragsBlock .imgRagsBottom, .rent .rentBlock .imgRentBottom {
+        height: 120px;
+    }
+    .ourCollections .ourCollectionsBlock .photo-text .textBlockMain,
+    .infoCompanySection .infoCompanyBlock .photo-text .textBlockMain, .infoContactsSection .infoContactsSectionBlock .photo-text .textBlockMain {
+        max-width: none;
+        margin: 0 15px!important;
+    }
+    .infoCompanySection .infoCompanyBlock .photo-text .textBlockMain {
+        padding: 68px 0;
+    }
+    .banner.aboutUsPage .bannerBlock {
+        justify-content: space-evenly;
+    }
+    .discountSlider .calendarBlock .calendar .item .discountNum {
+        font-size: 15px;
+    }
+    .discountSlider .calendarBlock .nameDay {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .ourCollections .ourCollectionsBlock .photoCollections.man img {
+        object-position: 0 -130px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .banner .bannerBlock .calendarSlider {
+        height: 110px;
+    }
+    header .header {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 10px 0;
+        gap: 10px;
+    }
+    header .header .city {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    header .header .logo {
+        grid-column: 2/3;
+        grid-row: 1/3;
+    }
+    header .header .phone {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        justify-content: flex-start;
+    }
+    header .header .logo a {
+        width: 115px;
+        height: 100%;
+        min-height: 30px;
+    }
+    .banner .titleText {
+        font-size: 45px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount {
+        padding: 10px;
+        font-size: 55px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .info-text span {
+        font-size: 16px;
+    }
+    .banner {
+        height: 90vh;
+    }
+    .banner.bannerMain {
+        background-size: 200%;
+    }
+    .banner.bannerMain .titleText {
+        margin-top: 60px;
+    }
+    .banner .bannerBlock .btn {
+        padding: 20px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner {
+        grid-template-columns: 40px auto;
+    }
+    .banner .calendarSlider .swiper-slide {
+        justify-content: space-between;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .nameDay {
+        text-align: left;
+    }
+    .banner .calendarSlider .swiper-slide .nameDay-discAmount {
+        width: auto;
+    }
+    .banner .calendarSlider .swiper-slide {
+        gap: 5px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.man {
+        height: 300px;
+    }
+    .banner .calendarSlider .swiper-slide {
+        padding: 5px 0;
+    }
+}
+@media screen and (max-width: 420px) {
+    :root {
+        --fz128: 64px;
+        --fz64: 40px;
+        --fz30: 20px;
+        --fz20: 14px;
+    }
+    .banner .titleText {
+        font-size: 42px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.man {
+        height: 280px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.children img {
+        height: auto;
+    }
+    .btn {
+        font-size: 18px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .nameDay {
+        font-size: 25px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount {
+        font-size: 40px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount {
+        min-width: 115px;
+    }
+    .banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar a {
+        padding: 10px;
+    }
+    .banner.bannerMain {
+        background-size: 230%;
+    }
+    .calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum.newDelivery, .calendarModalBlock .discountSlider .calendarBlock .calendar .item .discountNum {
+        font-size: 14px;
+    }
+    .calendarModalBlock .discountSlider .calendarBlock .nameDay span, .calendarModalBlock .discountSlider .calendarBlock .calendar .item .dateCalendar {
+        font-size: 8px;
+    }
+    .banner .discountSlider .calendarBlock .calendar, .calendarModalBlock .discountSlider .calendarBlock .calendar {
+        margin-top: 5px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.women::before, .ourCollections .ourCollectionsBlock .photoCollections.man::before, .ourCollections .ourCollectionsBlock .photoCollections.children::before {
+        font-size: 20px;
+    }
+    .ourCollections .ourCollectionsBlock .photoManChildren,
+    .ourCollections .ourCollectionsBlock .photoCollections.children {
+        margin-top: 60px;
+    }
+    section {
+        padding: 34px 0;
+    }
+    .mejs__overlay-button {
+        transform: scale(0.8);
+    }
+    .articles .articlesBlock .textBlockMain,
+    .articles .articlesBlock .photo-text:nth-child(2n) .photoCollections {
+        padding-left: 10px;
+    }
+    .articles .articlesBlock .photo-text .photoCollections,
+    .articles .articlesBlock .photo-text:nth-child(2n) .textBlockMain {
+        padding-right: 10px;
+    }
+    .articles .articlesBlock .textBlockMain .textBlock .textArticles {
+        max-height: 100px;
+    }
+    .arrows-block {
+        margin-top: 20px;
+    }
+    .news .sliderNewsBlock .btn-slide-prev-news, .news .sliderNewsBlock .btn-slide-next-news,
+    .brand .btn-swiper.btn-slide-prev, .brand .btn-swiper.btn-slide-next {
+        width: 32px;
+    }
+    .news .newsBlock .sliderNewsBlock .newsSlider,
+    .brand .brandBlock .brandBlockSlider .brandSlider {
+        width: calc(100% - 70px);
+    }
+    .location .locationBlock .map {
+        height: 400px;
+    }
+    .location .locationBlock .map .container .locationInfo .locText {
+        gap: 5px;
+    }
+    .location .locationBlock .map .container .locationInfo .locText i {
+        width: 15px;
+    }
+    footer .footer .item.infoContactMain {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    footer .footer .item .logo {
+        width: 130px;
+    }
+    footer .footer .item .logo, footer .footer .item .contactInfo,
+    footer .footer .item.navigation {
+        padding: 0;
+    }
+    footer .footer {
+        padding: 30px 0;
+    }
+    footer .footer .item nav > ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+    footer .footer .item nav > ul li > ul {
+        margin-bottom: 8px;
+        gap: 5px;
+    }
+    .news .newsBlock .info-block .item .titleInfo, .news .newsBlock .sliderNewsBlock .item .titleInfo {
+        font-size: 18px;
+    }
+    .articles .articlesBlock .photo-text {
+        margin-bottom: 50px;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.man img {
+        object-position: 0 -110px;
+    }
+    .banner.aboutUsPage .bannerBlock {
+        justify-content: space-evenly;
+    }
+    .banner.aboutUsPage {
+        padding-top: 50px;
+    }
+    .banner.aboutUsPage .bannerBlock .block p {
+        font-size: 14px;
+    }
+    .citySection {
+        padding: 25px 0 15px;
+    }
+    .discountSlider .calendarBlock .nameDay {
+        font-size: 10px;
+    }
+    .discountSlider .calendarBlock .calendar .item .dateCalendar {
+        font-size: 10px;
+    }
+    .discountSlider .calendarBlock .calendar .item .discountNum {
+        font-size: 12px;
+    }
+    .infoCompanySection .infoCompanyBlock .photo-text .photoCollections {
+        height: 220px;
+    }
+    .infoCompanySection .infoCompanyBlock .photo-text .photoCollections img {
+        object-position: 0 -180px;
+    }
+    .imgAboutUsBottom {
+        display: none;
+    }
+    section.discountBlock {
+        padding-bottom: 64px;
+    }
+    .stocksBlock .stocksBlockMain .textBlock {
+        margin-bottom: 39px;
+    }
+    .job .lineTitleSection .textBlock .h3.title__page, .stocksBlock .stocksBlockMain .info-block .textBlock .h3.title__page {
+        padding: 10px 0 8px;
+    }
+    .stocksBlock .stocksBlockMain .info-block .item .textBlock .h3.title__page {
+        font-size: 20px;
+    }
+    .stocksBlock .stocksBlockMain .blockStocksInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .stocksBlock .stocksBlockMain .blockStocksInfo .item.imgStocks {
+        height: 120px;
+    }
+    .brandSection .brandSectionBlock .info-block .item .btnMore {
+        display: none;
+    }
+    .brandSection .brandSectionBlock .info-block {
+        margin-top: 20px;
+    }
+    .brandSection .brandSectionBlock .search {
+        width: calc(100% - 30px);
+        margin: 0 auto!important;
+    }
+    .infoContactsSection .infoContactsSectionBlock .info-block {
+        gap: 50px;
+    }
+    .infoContactsSection .infoContactsSectionBlock .photo-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .infoContactsSection .infoContactsSectionBlock .photo-text {
+        gap: 30px;
+    }
+    .banner.job .bannerBlock .h2.title__page {
+        margin-right: 15px;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace > span {
+        width: 80px;
+    }
+    .jobList .jobListBlock .info-block {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+    }
+    .jobList .jobListBlock .info-block .item .namePlace {
+        align-items: center;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain .text ul {
+        padding-left: 30px;
+    }
+    .jobList .jobListBlock .info-block .item .textInformation .jobBlockMain {
+        margin-bottom: 20px;
+    }
+    .cooperation .cooperationBlock .info-block .item .imgBlockCooperation {
+        height: 100px;
+    }
+    .cooperation .cooperationBlock .info-block .item .imgBlockCooperation {
+        margin-top: 15px;
     }
 }

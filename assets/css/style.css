@@ -697,6 +697,9 @@ header nav .nav > ul {
 .brand .brandBlock .brandBlockSlider {
     position: relative;
 }
+.brand .brandBlock .brandBlockSlider .btn-swiper .arrows {
+    display: none;
+}
 .brand .brandBlock .brandBlockSlider .brandSlider {
     padding: 7.74vw 0;
     width: calc(100% - 5.95vw);
