@@ -301,6 +301,10 @@
     .banner {
         padding-top: 6.65vw;
     }
+    .ourCollections .ourCollectionsBlock .photoCollections.women::before {
+        top: 25%;
+        right: 1.98vw;
+    }
 }
 @media screen and (max-width: 767px) {
     :root {
@@ -549,7 +553,7 @@
     }
     .ourCollections .ourCollectionsBlock .photoCollections.women::before {
         top: 30%;
-        right: 15%;
+        right: 12%;
         
     }
     .ourCollections .ourCollectionsBlock .photoCollections.women::before,
@@ -790,7 +794,7 @@
     }
     .ourCollections .ourCollectionsBlock .photoCollections.women::before {
         top: 25%;
-        right: 10%;
+        right: 8%;
     }
     header .header {
         grid-template-columns: repeat(auto-fit, minmax(130px, auto));
