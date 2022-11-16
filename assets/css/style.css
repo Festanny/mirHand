@@ -1266,7 +1266,7 @@ progress{
     display: block;
     padding: 5.42vw 0;
     color: var(--white);
-    font-size: var(--fz34);
+    font-size: var(--fz64);
     font-weight: 700;
     letter-spacing: 0.02em;
     z-index: 1;

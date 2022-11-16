@@ -324,6 +324,9 @@
         --fz16: 15px;
         --fz15: 14px;
     }
+    .reviewsSection .reviewsSectionBlock .info-block .item .titleBlock span {
+        font-size: 35px;
+    }
     header .header .logo a {
         width: 17vw;
         height: 6vw;
@@ -781,6 +784,9 @@
     }
 }
 @media screen and (max-width: 575px) {
+    .reviewsSection .reviewsSectionBlock .info-block .item .titleBlock span {
+        font-size: 32px;
+    }
     header .header .logo a {
         width: 22vw;
         height: 9vw;
