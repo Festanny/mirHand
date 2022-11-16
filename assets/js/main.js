@@ -699,3 +699,9 @@ $('.offcanvas.menuMob .offcanvas-body nav ul.topmenu .arrows.close').on('click',
     $(this).toggleClass('close')
     $(this).parent('.nextOpen').next('.submenu').toggleClass('open')
 })
+
+$('.openSub').on('click', function(el) {
+    if ($('body').width() <= 900) {
+        el.preventDefault();
+    }
+})

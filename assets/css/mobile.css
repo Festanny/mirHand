@@ -189,6 +189,12 @@
         --fz15: 15px;
         --fz12: 12px;
     }
+    .ourCollections .ourCollectionsBlock .textBlock {
+        padding-bottom: 13vw;
+    }
+    .ourCollections .ourCollectionsBlock .photoCollections.women::before {
+        top: 27%;
+    }
     .banner {
         height: 60vh;
         padding: 5.88vw 0 3vw;
