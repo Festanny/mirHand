@@ -527,6 +527,7 @@ header nav .nav > ul {
     position: relative;
     overflow: hidden;
     max-height: 13.39vw;
+    word-wrap: break-word;
 }
 .articles .articlesBlock .textBlockMain .textBlock .textArticles::before {
     content: '';

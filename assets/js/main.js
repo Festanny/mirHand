@@ -440,7 +440,7 @@ $('.faqSection .faqSectionBlock .info-block .item .question').on('click', functi
         $(this).next('.answer').fadeOut().removeClass('active')
     } else {
         $('.faqSection .faqSectionBlock .info-block .item .question.active').removeClass('active')
-    $('.faqSection .faqSectionBlock .info-block .item .answer.active').removeClass('active')
+    $('.faqSection .faqSectionBlock .info-block .item .answer.active').removeClass('active').css('display', 'none')
         $(this).addClass('active')
         $(this).next('.answer').fadeIn().addClass('active')
     }
