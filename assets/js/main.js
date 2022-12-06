@@ -212,7 +212,7 @@ function styleNewsText() {
     $('.ourCollections .ourCollectionsBlock .textBlockMain').css({
         'margin-right': ($('body').width() - $('.container').width()) / 2 - 5
     })
-    $('.advertisementSection .advertisementSectionBlock .info-block .item .textBlock').css({
+    $('.advSection .advSectionBlock .info-block .item .textBlock').css({
         'margin-left': ($('body').width() - $('.container').width()) / 2 - 5
     })
     $('.brandSectionPage .brandSectionBlockPage .imgBrandBlock').css({

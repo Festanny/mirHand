@@ -2293,10 +2293,10 @@ a.btnBlock {
 .ui-datepicker {
     position: absolute!important;
 }
-.advertisementSection .advertisementSectionBlock .info-block .item p.title__page_down {
+.advSection .advSectionBlock .info-block .item p.title__page_down {
     font-size: var(--fz30);
 }
-.advertisementSection .advertisementSectionBlock .imgRentBottom img {
+.advSection .advSectionBlock .imgRentBottom img {
     object-position: 0 -42vw;
 }
 .infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements {

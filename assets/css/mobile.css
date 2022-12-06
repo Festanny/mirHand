@@ -675,11 +675,11 @@
     .rent .rentBlock .rentBlockMain .info-block {
         grid-template-columns: 1fr;
     }
-    .advertisementSection .info-block .item {
+    .advSection .info-block .item {
         max-width: 540px;
         margin: 0 auto
     }
-    .advertisementSection .info-block .item .textBlock {
+    .advSection .info-block .item .textBlock {
         margin: 0!important;
     }
     .rent .rentBlock .rentBlockMain .info-block {
@@ -1309,7 +1309,7 @@
         padding: 5px 10px;
         min-height: 40px;
     }
-    .advertisementSection .info-block .item .textBlock {
+    .advSection .info-block .item .textBlock {
         width: calc(100% - 30px);
         margin: 0 auto!important;
     }
