@@ -57,7 +57,7 @@ section {
 section.ourCollections {
     padding-top: 0;
 }
-section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):not(.brandSection):not(.separatePage):not(.infoLandlordsAdv):last-of-type {
+section:not(.error):not(.jobList):not(.faqSection):not(.newsSection):not(.brandSection):not(.separatePage):not(.infoLandlordsAdv):not(.textPage):last-of-type {
     padding-bottom: 0;
 }
 input,
@@ -290,6 +290,7 @@ header nav .nav > ul {
 .banner .bannerBlock .calendar-coupon .calendar_banner .calendarSlider,
 .banner .bannerBlock .calendar-coupon .calendar_banner .discountSlider {
     width: 100%;
+    min-height: 200px;
 }
 .banner .bannerBlock .calendar-coupon .calendar_banner {
     background-color: var(--gray5)
@@ -334,6 +335,9 @@ header nav .nav > ul {
     height: 1.19vw;
     display: flex;
     align-items: center;
+}
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .dayBlock .btn-slide.swiper-button-disabled {
+    opacity: .5;
 }
 .banner .bannerBlock .calendar-coupon .calendar_banner .mainCalendar {
     padding: 1.31vw;
@@ -715,6 +719,7 @@ header nav .nav > ul {
     height: 5.36vw;
     object-fit: contain;
     padding: 0 0.89vw;
+    filter: invert(.8);
 }
 .sliderNewsBlock {
     position: relative;
@@ -779,6 +784,7 @@ header nav .nav > ul {
     font-size: var(--fz12);
     width: 10.12vw;
     gap: 0.60vw;
+    z-index: 100;
 }
 .location .locationBlock .map .container .locationInfo .locText {
     display: flex;
@@ -1265,7 +1271,7 @@ progress{
 .reviewsSection .reviewsSectionBlock .info-block .item .titleBlock span {
     position: relative;
     display: block;
-    padding: 5.42vw 0;
+    padding: 8vw 0;
     color: var(--white);
     font-size: var(--fz64);
     font-weight: 700;
@@ -1501,7 +1507,14 @@ form.newReview textarea {
     font-style: italic;
 }
 .infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo p {
-    margin-bottom: 2.08vw;
+    margin-bottom: 1.79vw;
+}
+.infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo.requirements .contactCity {
+    margin-bottom: 2.98vw;
+}
+.infoLandlordsAdv .infoLandlordsAdvBlock .info-block .item .textMainInfo a,
+.infoLandlords .infoLandlordsBlock .info-block .item .textMainInfo.cooperationText p a {
+    text-decoration: underline;
 }
 .infoLandlords {
     padding-top: 0;
@@ -1612,6 +1625,15 @@ section.brandSection {
     grid-template-columns: calc(50% - 4.64vw) 50%;
     gap: 4.64vw;
 }
+.brandSectionPage.detailedNews .brandSectionBlockPage .info-block {
+    display: block;
+}
+.brandSectionPage.detailedNews .brandSectionBlockPage .info-block .item.desc {
+    margin-right: 0!important;
+}
+.brandSectionPage.detailedNews .brandSectionBlockPage .info-block .item.desc img {
+    width: 100%;
+}
 .brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText {
     font-size: var(--fz15);
     margin-bottom: 1.49vw;
@@ -1620,8 +1642,9 @@ section.brandSection {
     font-size: var(--fz30);
     font-weight: bold;
 }
-.brandSectionPage .brandSectionBlockPage .info-block .item.desc .brandNameText .text {
+.brandSectionPage .brandSectionBlockPage .info-block .item.desc .text {
     line-height: 1.3;
+    padding-bottom: 30px;
 }
 .brandSectionPage .brandSectionBlockPage .info-block .item.sliderBlockBrand {
     width: 100%;
@@ -1846,11 +1869,13 @@ section.jobList {
 .__select__input {
     display: none;
 }
-.__select__input:checked + label {
+.__select__input:checked + label,
+.__select__input:checked + label a {
     background-color: var(--dark);
     color: var(--white);
 }
-.__select__input:disabled + label {
+.__select__input:disabled + label,
+.__select__input:disabled + label a {
     opacity: 0.6;
     pointer-events: none;
 }
@@ -1928,6 +1953,7 @@ section.jobList {
     color: var(--dark);
     font-weight: bold;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     padding: 0.71vw;
 }
@@ -2041,12 +2067,20 @@ section.faqSection {
     background-color: var(--gray3);
 }
 .faqSection .faqSectionBlock .info-block .item .answer {
-    display: none;
+    /*display: none;*/
+    max-height: 0;
+    overflow: hidden;
     font-size: var(--fz16);
-    margin-top: 1.49vw;
+    padding-top: 0;
+    padding-right: 10px;
+    transition: all .3s;
 }
 .faqSection .faqSectionBlock .info-block .item .answer.active {
-    display: block;
+    /*display: block;*/
+    /*max-height: 1000px;*/
+    padding-top: 1.49vw;
+    /*overflow-y: auto;*/
+    transition: all .3s;
 }
 .faqSection .faqSectionBlock .info-block .item .answer span.adminText {
     display: block;
@@ -2060,6 +2094,9 @@ section.faqSection {
     align-items: center;
     gap: 0.60vw;
     cursor: pointer;
+}
+.faqSection .faqSectionBlock .info-block .item .question > span {
+    flex: 1;
 }
 .faqSection .faqSectionBlock .info-block .item .question i {
     width: 2.98vw;
@@ -2105,7 +2142,8 @@ section.faqSection {
 .modal .modal-content .modal-body {
     padding: 1.90vw 4.05vw;
 }
-.modal .modal-content .modal-body .info-block .item form .__select {
+.modal .modal-content .modal-body .info-block .item form .__select,
+.modal .modal-content .modal-body .info-block .item .form .__select {
     width: 100%;
 }
 .modal .modal-content .modal-body .info-block .item form .inputBlock {
@@ -2256,6 +2294,19 @@ button {
 .modal#choosingСity form .inputBlock .__select {
     margin-bottom: 1.5vw;
 }
+.modal#choosingСity .form .inputBlock .__select {
+    margin: 1.5vw 0;
+}
+.modal#choosingСity .form .__select__label:not(.first) {
+    padding: 20px 0;
+}
+.modal#choosingСity .form .__select__label a {
+    display: block;
+    padding: 20px 10px;
+}
+.modal#vacancyModal .vacancy__label:not(.active):not(.always_active) {
+    display: none;
+}
 
 .error .errorBlock {
     display: flex;
@@ -2331,6 +2382,7 @@ a.btnBlock {
     padding: 0;
     background-color: transparent;
     text-align: center;
+    min-height: 41px;
 }
 .banner .discountSlider .calendarBlock .calendar .item .dateCalendar,
 .calendarModalBlock .discountSlider .calendarBlock .calendar .item .dateCalendar {
@@ -2354,6 +2406,10 @@ a.btnBlock {
 }
 .banner .discountSlider .calendarBlock .calendar .item .discountNum.newDelivery {
     font-size: 0.60vw;
+}
+.discountSlider .calendarBlock .calendar .item .discountNum.newDelivery {
+    font-size: calc(var(--fz32) - 15px);
+    text-transform: uppercase;
 }
 .banner .discountSlider .swiper-slide,
 .calendarModalBlock .discountSlider .swiper-slide {
@@ -2488,4 +2544,17 @@ header .burger div {
 }
 .offcanvas.menuMob .offcanvas-body nav ul.topmenu .submenu {
     transition: all .3s;
+}
+
+.banner .bannerBlock .calendar-coupon .calendar_banner .calendar_banner_bg .calendarSlider .discount-amount.newDeliveryText {
+    font-size: 3.87vw;
+    padding: 0.9vw 1.95vw 0 1.95vw;
+}
+.modal#choosingСity .__select .__select__content label a {
+    width: 100%;
+    text-decoration: none;
+    transition: all .3s;
+}
+.modal#choosingСity .__select .__select__content label:hover a {
+    color: var(--white);
 }
